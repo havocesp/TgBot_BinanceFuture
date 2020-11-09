@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4b8716e6-dcfb-46ec-8e91-42cfd86275f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/交易插件/MChatLog/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Addons/插件拆分/交易插件/MChatLog/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/交易插件/MMacro/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Addons/插件拆分/交易插件/MMacro/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/交易插件/MTrade/MTrade.toc" beforeDir="false" afterPath="$PROJECT_DIR$/../Addons/插件拆分/交易插件/MTrade/MTrade.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/交易插件/MTrade/MyFunction.lua" beforeDir="false" afterPath="$PROJECT_DIR$/../Addons/插件拆分/交易插件/MTrade/MyFunction.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/交易插件/MTrade/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Addons/插件拆分/交易插件/MTrade/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MChatLog/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MChatLog/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MMacro/Localization.lua" beforeDir="false" afterPath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MMacro/Localization.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MMacro/Main.lua" beforeDir="false" afterPath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MMacro/Main.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MMacro/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MMacro/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MRBalance/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MRBalance/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MTrade/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/MTrade/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/功能介绍.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Addons/插件拆分/喊话插件/喊话插件.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HuoBiPython/huobi_Python-master/huobi/constant/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../HuoBiPython/huobi_Python-master/huobi/constant/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../aliyun/FileUpload/obj/Debug/FileUpload.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../aliyun/FileUpload/obj/Debug/FileUpload.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/BattlenetAutoRegister.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/BattlenetAutoRegister.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/Form1.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/Form1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/Form1.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/Properties/Resources.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/Properties/Resources.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/Properties/Settings.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/Properties/Settings.settings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/BattlenetAutoRegister.exe.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/BattlenetAutoRegister.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/CefSharp.BrowserSubprocess.Core.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/CefSharp.BrowserSubprocess.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/CefSharp.Core.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/CefSharp.Core.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/CefSharp.WinForms.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/CefSharp.WinForms.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/CefSharp.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/CefSharp.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/HtmlAgilityPack.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/cef.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/cef_100_percent.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/cef_200_percent.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/cef_extensions.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/devtools_resources.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/icudtl.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/am.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/ar.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/bg.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/bn.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/ca.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/cs.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/da.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/de.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/el.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/en-GB.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/en-US.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/es-419.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/es.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/et.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/fa.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/fi.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/fil.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/fr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/gu.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/he.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/hi.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/hr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/hu.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/id.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/it.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/ja.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/kn.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/ko.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/lt.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/lv.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/ml.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/mr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/ms.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/nb.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/nl.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/pl.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/pt-BR.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/pt-PT.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/ro.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/ru.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/sk.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/sl.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/sr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/sv.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/sw.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/ta.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/te.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/th.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/tr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/uk.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/vi.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/zh-CN.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/locales/zh-TW.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/snapshot_blob.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/bin/x64/Debug/v8_context_snapshot.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/Debug/BattlenetAutoRegister.csprojAssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x64/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x64/Debug/BattlenetAutoRegister.Form1.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x64/Debug/BattlenetAutoRegister.Properties.Resources.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x64/Debug/BattlenetAutoRegister.csproj.CopyComplete" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x64/Debug/BattlenetAutoRegister.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x64/Debug/BattlenetAutoRegister.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x64/Debug/BattlenetAutoRegister.csproj.GenerateResource.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x64/Debug/BattlenetAutoRegister.csprojAssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x64/Debug/BattlenetAutoRegister.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x64/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x64/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x86/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x86/Debug/BattlenetAutoRegister.csprojAssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x86/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/obj/x86/Debug/build.force" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp.Common.84.4.10.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x64/CefSharp.BrowserSubprocess.Core.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x64/CefSharp.BrowserSubprocess.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x64/CefSharp.Core.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x64/CefSharp.Core.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x64/CefSharp.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x64/CefSharp.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x86/CefSharp.BrowserSubprocess.Core.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x86/CefSharp.BrowserSubprocess.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x86/CefSharp.Core.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x86/CefSharp.Core.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x86/CefSharp.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/CefSharp/x86/CefSharp.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/build/CefSharp.Common.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/build/CefSharp.Common.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/AssemblyInfo.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Async/JavascriptAsyncMethodCallback.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Async/JavascriptAsyncMethodCallback.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Async/JavascriptAsyncMethodHandler.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Async/JavascriptAsyncMethodHandler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Async/JavascriptAsyncMethodWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Async/JavascriptAsyncMethodWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Async/JavascriptAsyncObjectWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Async/JavascriptAsyncObjectWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/BindObjectAsyncHandler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/BrowserSubprocessExecutable.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/CefAppUnmanagedWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/CefAppUnmanagedWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/CefBrowserWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptCallbackRegistry.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptCallbackRegistry.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptMethodHandler.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptMethodHandler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptMethodWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptMethodWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptObjectWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptObjectWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptPostMessageHandler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptPropertyHandler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptPropertyWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptPropertyWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptRootObjectWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/JavascriptRootObjectWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/RegisterBoundObjectHandler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/RegisterBoundObjectRegistry.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Serialization/JsObjectsSerialization.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Serialization/JsObjectsSerialization.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Serialization/V8Serialization.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Serialization/V8Serialization.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Stdafx.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Stdafx.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/SubProcess.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/SubProcessApp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/TypeUtils.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/TypeUtils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/WcfBrowserSubprocessExecutable.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/WcfEnabledSubProcess.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/WcfEnabledSubProcess.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Wrapper/Browser.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Wrapper/Browser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Wrapper/Frame.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Wrapper/Frame.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/Wrapper/V8Context.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/resource.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess.Core/vcclr_local.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.BrowserSubprocess/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/AssemblyInfo.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/BrowserSettings.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Cef.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/CefSettingsBase.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/CookieManager.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/CookieManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefAuthCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefBeforeDownloadCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefBrowserHostWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefBrowserHostWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefBrowserWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefBrowserWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefCertificateCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefCompletionCallbackAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefContextMenuParamsWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefContextMenuParamsWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefCookieAccessFilterAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefCookieVisitorAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefDeleteCookiesCallbackAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefDevToolsMessageObserverAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefDownloadItemCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefDragDataWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefExtensionHandlerAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefExtensionWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefExtensionWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefFileDialogCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefFrameWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefFrameWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefGetExtensionResourceCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefImageWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefJSDialogCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefMenuModelWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefNavigationEntryVisitorAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefPdfPrintCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefRegisterCdmCallbackAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefRegistrationWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefRequestCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefRequestContextHandlerAdapter.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefRequestContextHandlerAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefResolveCallbackAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefResourceHandlerAdapter.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefResourceHandlerAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefResourceReadCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefResourceRequestHandlerAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefResourceSkipCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefResponseFilterAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefResponseWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefRunContextMenuCallbackWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefRunFileDialogCallbackAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefSchemeHandlerFactoryAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefSchemeRegistrarWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefSetCookieCallbackAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefSharpApp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefSslInfoWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefStringVisitorAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefTaskScheduler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefTaskWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefUrlRequestClientAdapter.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefUrlRequestClientAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefValueWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefValueWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefWebPluginInfoVisitorAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/CefWriteHandlerWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/ClientAdapter.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/ClientAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/JavascriptCallbackFactory.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/JavascriptCallbackFactory.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/JavascriptCallbackProxy.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/JavascriptCallbackProxy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/MCefRefPtr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/Messaging/Messages.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/RenderClientAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/ReportUnhandledExceptions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/Serialization/JsObjectsSerialization.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/Serialization/JsObjectsSerialization.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/Serialization/ObjectsSerialization.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/Serialization/ObjectsSerialization.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/Serialization/Primitives.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/Serialization/Primitives.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/Serialization/V8Serialization.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/Serialization/V8Serialization.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/StringUtils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Internals/TypeConversion.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/ManagedCefBrowserAdapter.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/ManagedCefBrowserAdapter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/NativeMethodWrapper.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/NativeMethodWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/PopupFeatures.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/PostData.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/PostDataElement.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Request.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Request.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/RequestContext.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/RequestContext.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/RequestContextSettings.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Stdafx.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/Stdafx.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/UrlRequest.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/UrlRequest.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/WindowInfo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/resource.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp.Core/vcclr_local.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/AsyncExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/BindingOptions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IAuthCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IBeforeDownloadCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/ICallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/ICompletionCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IDeleteCookiesCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IDevToolsMessageObserver.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IDownloadItemCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IFileDialogCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IGetExtensionResourceCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IJavascriptCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IJsDialogCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IPrintToPdfCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IRegisterCdmCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IRequestCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IResolveCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IResourceReadCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IResourceSkipCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IRunContextMenuCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/IRunFileDialogCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/ISelectClientCertificateCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/ISetCookieCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/NoOpCompletionCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/TaskCompletionCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/TaskDeleteCookiesCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/TaskPrintToPdfCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/TaskRegisterCdmCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/TaskResolveCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Callback/TaskSetCookieCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/CdmRegistration.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/CefCustomScheme.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/CefLibraryHandle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/CefSharpSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Cookie.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/DefaultApp.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/DependencyChecker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/DevToolsExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/DomNode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/DownloadItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/AlphaType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CdmRegistrationErrorCode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefErrorCode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefEventFlags.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefFileDialogFlags.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefFileDialogMode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefFocusSource.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefJsDialogType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefMenuCommand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefPdfPrintMarginType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefReturnValue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefTerminationStatus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CefThreadIds.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CertStatus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/ChannelLayout.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/ColorType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CompositionUnderlineStyle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/ContextMenuEditState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/ContextMenuMediaState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/ContextMenuMediaType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/ContextMenuType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/CursorType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/DragOperationsMask.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/FilterStatus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/KeyEventType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/KeyType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/LogSeverity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/MenuItemType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/MouseButtonType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/PaintElementType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/PluginPolicy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/PointerType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/PostDataElementType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/ReferrerPolicy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/ResourceType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/SchemeOptions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/SslContentStatus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/SslVersion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/TextInputMode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/TouchEventType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/TransitionType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/UrlRequestFlags.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/UrlRequestStatus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/ValueType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Enums/WindowOpenDisposition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/AddressChangedEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/ConsoleMessageEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/FrameLoadEndEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/FrameLoadStartEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/JavascriptBindingCompleteEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/JavascriptBindingEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/JavascriptBindingMultipleCompleteEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/JavascriptMessageReceivedEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/LoadErrorEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/LoadingStateChangedEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/StatusMessageEventHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Event/TitleChangedEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/DefaultRequestHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IAccessibilityHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IAudioHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IBrowserProcessHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IContextMenuHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/ICookieAccessFilter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IDialogHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IDisplayHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IDownloadHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IDragHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IExtensionHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IFindHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IFocusHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IJsDialogHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IKeyboardHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/ILifeSpanHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/ILoadHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IRenderProcessMessageHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IRequestContextHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IRequestHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IResourceHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/IResourceRequestHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/RequestHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Handler/ResourceRequestHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IApp.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IBrowser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IBrowserHost.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IBrowserSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IContextMenuParams.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ICookieManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IDomNode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IDragData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IExtension.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IFrame.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IImage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IJavascriptObjectRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IMenuModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IPopupFeatures.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IPostData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IPostDataElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IRegistration.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IRequest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IRequestContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IResourceRequestHandlerFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IResponse.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IResponseFilter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ISchemeRegistrar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ISslInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IUrlRequest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IUrlRequestClient.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IValue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IWebBrowser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/IWindowInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/BrowserProcessResponse.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/BrowserProcessService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/BrowserProcessServiceHost.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/BrowserRefCounter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/ByteArrayResourceHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/CefSharpArguments.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/CefThread.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/CefTimeUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/CommandLineArgDictionary.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/CommandLineArgsParser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/ConcurrentMethodRunnerQueue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/CookieManagerDecorator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/DateTimeUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/FileResourceHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/HeaderNameValueCollection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/IBrowserAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/IBrowserProcess.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/IBrowserRefCounter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/IJavascriptCallbackFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/IMethodRunnerQueue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/IRenderWebBrowser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/ITaskScheduler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/IWebBrowserInternal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/InMemoryResourceRequestHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/IntPtrExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/InternalWebBrowserExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/JavascriptCallback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/JavascriptCallbackEndpointBehavior.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/JavascriptCallbackSurrogate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/JavascriptMethod.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/JavascriptObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/JavascriptObjectRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/JavascriptProperty.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/MethodInvocation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/MethodInvocationCompleteArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/MethodInvocationResult.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/MethodParameter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/MethodRunnerQueue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/MimeTypeMapping.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/NoOpBrowserRefCounter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/ParentProcessMonitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/PathCheck.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/PendingTaskRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/ReflectionUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/RenderprocessClientFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/TaskExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/TaskScheduler/LimitedConcurrencyLevelTaskScheduler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Internals/WCFExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/JavascriptBindingExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/JavascriptException.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/JavascriptIgnoreAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/JavascriptResponse.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/JavascriptStackFrame.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Lagacy/ResourceHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ModelBinding/BindingMemberInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ModelBinding/DefaultBinder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ModelBinding/IBinder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ModelBinding/IMethodInterceptor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ModelBinding/ModelBindingExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/NavigationEntry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/PdfPrintSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/PostDataExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ProxyOptions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/RenderProcess/IRenderProcessHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/RenderProcess/IV8Context.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/RenderProcess/V8Exception.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/RequestContextExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ResourceHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ResourceRequestHandlerFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ResourceRequestHandlerFactoryItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/ResponseFilter/StreamResponseFilter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/SchemeHandler/FolderSchemeHandlerFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/SchemeHandler/ISchemeHandlerFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/SslStatus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/AudioParamaters.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/CompositionUnderline.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/CursorInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/DraggableRegion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/KeyEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/MouseEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/Point.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/Range.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/Rect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/ResolveCallbackResult.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/ScreenInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/Size.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Structs/TouchEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/V8Extension.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Visitor/ICookieVisitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Visitor/INavigationEntryVisitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Visitor/IStringVisitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Visitor/IWebPluginInfoVisitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Visitor/TaskCookieVisitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Visitor/TaskNavigationEntryVisitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Visitor/TaskStringVisitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Visitor/TaskWebPluginInfoVisitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Web/HtmlString.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/Web/JsonString.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/WebBrowserExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.Common.84.4.10/src/CefSharp/WebPluginInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/CefSharp.WinForms.84.4.10.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/CefSharp/x64/CefSharp.WinForms.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/CefSharp/x64/CefSharp.WinForms.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/CefSharp/x86/CefSharp.WinForms.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/CefSharp/x86/CefSharp.WinForms.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/Readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/build/CefSharp.WinForms.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/build/CefSharp.WinForms.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/src/CefSharp.WinForms/CefSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/src/CefSharp.WinForms/ChromiumWebBrowser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/src/CefSharp.WinForms/ChromiumWebBrowserDesigner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/src/CefSharp.WinForms/IWinFormsWebBrowser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/src/CefSharp.WinForms/Internals/ControlExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/src/CefSharp.WinForms/Internals/DefaultFocusHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/src/CefSharp.WinForms/Internals/NativeMethods.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/src/CefSharp.WinForms/Internals/ParentFormMessageInterceptor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/src/CefSharp.WinForms/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/CefSharp.WinForms.84.4.10/src/CefSharp.WinForms/WebBrowserExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/HtmlAgilityPack.1.11.24.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/Net35/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/Net35/HtmlAgilityPack.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/Net40-client/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/Net40-client/HtmlAgilityPack.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/Net40/HtmlAgilityPack.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/Net40/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/Net45/HtmlAgilityPack.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/Net45/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/NetCore45/HtmlAgilityPack.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/NetCore45/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/netstandard1.3/HtmlAgilityPack.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/netstandard1.3/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/netstandard1.3/HtmlAgilityPack.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/netstandard1.6/HtmlAgilityPack.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/netstandard1.6/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/netstandard1.6/HtmlAgilityPack.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/netstandard2.0/HtmlAgilityPack.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/netstandard2.0/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/netstandard2.0/HtmlAgilityPack.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/uap10.0/HtmlAgilityPack.XML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/uap10.0/HtmlAgilityPack.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/HtmlAgilityPack.1.11.24/lib/uap10.0/HtmlAgilityPack.pri" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/cef.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/cef_100_percent.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/cef_200_percent.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/cef_extensions.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/devtools_resources.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/icudtl.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/am.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/ar.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/bg.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/bn.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/ca.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/cs.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/da.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/de.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/el.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/en-GB.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/en-US.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/es-419.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/es.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/et.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/fa.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/fi.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/fil.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/fr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/gu.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/he.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/hi.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/hr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/hu.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/id.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/it.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/ja.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/kn.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/ko.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/lt.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/lv.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/ml.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/mr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/ms.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/nb.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/nl.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/pl.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/pt-BR.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/pt-PT.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/ro.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/ru.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/sk.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/sl.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/sr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/sv.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/sw.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/ta.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/te.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/th.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/tr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/uk.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/vi.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/zh-CN.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/locales/zh-TW.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/snapshot_blob.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/CEF/v8_context_snapshot.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/build/cef.redist.x64.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x64.84.4.1/cef.redist.x64.84.4.1.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/cef.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/cef_100_percent.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/cef_200_percent.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/cef_extensions.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/devtools_resources.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/icudtl.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/am.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/ar.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/bg.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/bn.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/ca.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/cs.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/da.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/de.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/el.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/en-GB.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/en-US.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/es-419.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/es.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/et.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/fa.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/fi.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/fil.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/fr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/gu.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/he.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/hi.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/hr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/hu.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/id.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/it.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/ja.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/kn.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/ko.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/lt.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/lv.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/ml.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/mr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/ms.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/nb.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/nl.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/pl.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/pt-BR.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/pt-PT.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/ro.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/ru.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/sk.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/sl.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/sr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/sv.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/sw.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/ta.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/te.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/th.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/tr.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/uk.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/vi.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/zh-CN.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/locales/zh-TW.pak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/snapshot_blob.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/CEF/v8_context_snapshot.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/build/cef.redist.x86.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/Chrome/BattlenetAutoRegister/packages/cef.redist.x86.84.4.1/cef.redist.x86.84.4.1.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../账号半自动注册/IE/AutoRegister/obj/Debug/AutoRegister.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../账号半自动注册/IE/AutoRegister/obj/Debug/AutoRegister.csprojAssemblyReference.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JupyterTrust" id="772c4190-1bcb-4e9c-ab20-948bb23d11e8" />
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="lyh9qync" />
+  </component>
+  <component name="ProjectId" id="1jydPvBGfWw4eDI2aWgdF0V0u79" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py_TgBot_BinanceFuture-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/start.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b8716e6-dcfb-46ec-8e91-42cfd86275f3" name="Default Changelist" comment="" />
+      <created>1604780246251</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604780246251</updated>
+      <workItem from="1604780247729" duration="3825000" />
+      <workItem from="1604818403286" duration="1238000" />
+      <workItem from="1604887401227" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="781" key="GridCell.Tab.0.bottom" timestamp="1604818975299">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="781" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604818975299" />
+    <state width="1877" height="781" key="GridCell.Tab.0.center" timestamp="1604818975299">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="781" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604818975299" />
+    <state width="1877" height="781" key="GridCell.Tab.0.left" timestamp="1604818975299">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="781" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604818975299" />
+    <state width="1877" height="781" key="GridCell.Tab.0.right" timestamp="1604818975299">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="781" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604818975299" />
+    <state x="461" y="169" key="SettingsEditor" timestamp="1604780335281">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1604780335281" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/py_TgBot_BinanceFuture_master$start.coverage" NAME="start Coverage Results" MODIFIED="1604818963285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
