@@ -67,15 +67,9 @@ def error(update, context):
 def websocket_t(update, content_text):
     def process_message(msg):
         print(str(msg))
-        # new_msg = json.loads(msg)
-        # event_type = new_msg['e']
-        # Symbol = new_msg['s']
-        # Price = new_msg['p']
-        #
-        # msg = "类型：{}\n交易对：{}\n 价格：{}".format(event_type, Symbol, Price)
         update.message.bot.send_message(chat_id=685705504, text=str(msg))
     client = Client(api_key=SKey, api_secret=PKey)
-    bm = BinanceSocketManager(client, user_timeout=60)
+    bm = BinanceSocketManager(client)
     # start any sockets here, i.e a trade socket
     conn_key = bm.start_user_socket(process_message)
     update.message.bot.send_message(chat_id=685705504, text=conn_key)
@@ -84,32 +78,41 @@ def websocket_t(update, content_text):
 
 def main():
     """Start the bot."""
-    # Create the Updater and pass it your bot's token.
-    # Make sure to set use_context=True to use the new context based callbacks
-    updater = Updater(teltoken, use_context=True)
+    # # Create the Updater and pass it your bot's token.
+    # # Make sure to set use_context=True to use the new context based callbacks
+    # updater = Updater(teltoken, use_context=True)
+    #
+    # # Get the dispatcher to register handlers
+    # dp = updater.dispatcher
+    # dp.add_handler(MessageHandler(Filters.all, websocket_t))
+    #
+    #
+    # # on different commands - answer in Telegram
+    # dp.add_handler(CommandHandler("info", info))
+    # dp.add_handler(CommandHandler("balance", balance))
+    # dp.add_handler(CommandHandler("orders", orders))
+    #
+    #
+    # # on noncommand i.e message - echo the message on Telegram
+    # # dp.add_handler(MessageHandler(Filters.text, echo))
+    #
+    # # log all errors
+    # dp.add_error_handler(error)
+    #
+    # # Start the Bot
+    # updater.start_polling()
+    #
+    # # Run the bot until you press Ctrl-C or the process receives SIGINT
+    # updater.idle()
 
-    # Get the dispatcher to register handlers
-    dp = updater.dispatcher
-    dp.add_handler(MessageHandler(Filters.all, websocket_t))
-
-
-    # on different commands - answer in Telegram
-    dp.add_handler(CommandHandler("info", info))
-    dp.add_handler(CommandHandler("balance", balance))
-    dp.add_handler(CommandHandler("orders", orders))
-
-
-    # on noncommand i.e message - echo the message on Telegram
-    # dp.add_handler(MessageHandler(Filters.text, echo))
-
-    # log all errors
-    dp.add_error_handler(error)
-
-    # Start the Bot
-    updater.start_polling()
-
-    # Run the bot until you press Ctrl-C or the process receives SIGINT
-    updater.idle()
+    def process_message(msg):
+        print(str(msg))
+    client = Client(api_key=SKey, api_secret=PKey)
+    bm = BinanceSocketManager(client)
+    # start any sockets here, i.e a trade socket
+    conn_key = bm.start_user_socket(process_message)
+    # then start the socket manager
+    bm.start()
 
 
 if __name__ == '__main__':
