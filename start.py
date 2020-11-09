@@ -76,43 +76,37 @@ def websocket_t(update, content_text):
     # then start the socket manager
     bm.start()
 
+
 def main():
     """Start the bot."""
-    # # Create the Updater and pass it your bot's token.
-    # # Make sure to set use_context=True to use the new context based callbacks
-    # updater = Updater(teltoken, use_context=True)
-    #
-    # # Get the dispatcher to register handlers
-    # dp = updater.dispatcher
-    # dp.add_handler(MessageHandler(Filters.all, websocket_t))
-    #
-    #
-    # # on different commands - answer in Telegram
-    # dp.add_handler(CommandHandler("info", info))
-    # dp.add_handler(CommandHandler("balance", balance))
-    # dp.add_handler(CommandHandler("orders", orders))
-    #
-    #
-    # # on noncommand i.e message - echo the message on Telegram
-    # # dp.add_handler(MessageHandler(Filters.text, echo))
-    #
-    # # log all errors
-    # dp.add_error_handler(error)
-    #
-    # # Start the Bot
-    # updater.start_polling()
-    #
-    # # Run the bot until you press Ctrl-C or the process receives SIGINT
-    # updater.idle()
+    # Create the Updater and pass it your bot's token.
+    # Make sure to set use_context=True to use the new context based callbacks
+    updater = Updater(teltoken, use_context=True)
 
-    def process_message(msg):
-        print(str(msg))
-    client = Client(api_key=SKey, api_secret=PKey)
-    bm = BinanceSocketManager(client)
-    # start any sockets here, i.e a trade socket
-    conn_key = bm.start_user_socket(process_message)
-    # then start the socket manager
-    bm.start()
+    # Get the dispatcher to register handlers
+    dp = updater.dispatcher
+    dp.add_handler(MessageHandler(Filters.video, websocket_t))
+
+
+    # on different commands - answer in Telegram
+    dp.add_handler(CommandHandler("info", info))
+    dp.add_handler(CommandHandler("balance", balance))
+    dp.add_handler(CommandHandler("orders", orders))
+
+
+    # on noncommand i.e message - echo the message on Telegram
+    # dp.add_handler(MessageHandler(Filters.text, echo))
+
+    # log all errors
+    dp.add_error_handler(error)
+
+    # Start the Bot
+    updater.start_polling()
+
+    # Run the bot until you press Ctrl-C or the process receives SIGINT
+    updater.idle()
+
+
 
 
 if __name__ == '__main__':
