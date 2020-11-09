@@ -74,7 +74,7 @@ def websocket_t(update):
     bm = BinanceSocketManager(client, user_timeout=60)
     # start any sockets here, i.e a trade socket
     conn_key = bm.start_trade_socket('TRXUSDT', process_message)
-
+    update.message.bot.send_message(chat_id=685705504, text=conn_key)
     # then start the socket manager
     bm.start()
 
@@ -86,7 +86,7 @@ def main():
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
-    dp.add_handler(MessageHandler("*", websocket_t))
+    dp.add_handler(MessageHandler(Filters.all, websocket_t))
 
 
     # on different commands - answer in Telegram
