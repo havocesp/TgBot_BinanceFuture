@@ -1,8 +1,11 @@
 import logging
 from telegram import LabeledPrice, ShippingOption
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PreCheckoutQueryHandler, ShippingQueryHandler
+from telegram import InputTextMessageContent, InputMessageContent
 from binance.client import Client
 from settings import SKey, PKey, teltoken, telChanel
+from binance.websockets import BinanceSocketManager
+
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -15,6 +18,7 @@ logger = logging.getLogger(__name__)
 # context. Error handlers also receive the raised TelegramError object in error.
 def info(update, context):
     # Send a message when the command /start is issued.
+    update.message.bot.send_message(chat_id=685705504, text="这是开始了")
     update.message.reply_text(
         'BALANCE BOT Ahoy!\nCommands to use:\n  /balance = Display Account´s Balance\n  /orders = Display Open Orders')
 
@@ -58,19 +62,36 @@ def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 
+def process_message(msg):
+    print("Callback Message!!!!!")
+    print(msg)
+
+
+def webscoket_t(update):
+    client = Client(api_key=SKey, api_secret=PKey)
+    bm = BinanceSocketManager(client, user_timeout=60)
+    # start any sockets here, i.e a trade socket
+    conn_key = bm.start_trade_socket('BTCUSDT', process_message)
+    update.message.bot.send_message(chat_id=685705504, text="websocket connected, now, work!")
+    # then start the socket manager
+    bm.start()
+
 def main():
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
     updater = Updater(teltoken, use_context=True)
 
-    # Get the dispatcher to register handlers
-    dp = updater.dispatcher
+    webscoket_t(updater)
 
-    # on different commands - answer in Telegram
-    dp.add_handler(CommandHandler("info", info))
-    dp.add_handler(CommandHandler("balance", balance))
-    dp.add_handler(CommandHandler("orders", orders))
+    # Get the dispatcher to register handlers
+    # dp = updater.dispatcher
+    #
+    # # on different commands - answer in Telegram
+    # dp.add_handler(CommandHandler("info", info))
+    # dp.add_handler(CommandHandler("balance", balance))
+    # dp.add_handler(CommandHandler("orders", orders))
+
 
     # on noncommand i.e message - echo the message on Telegram
     # dp.add_handler(MessageHandler(Filters.text, echo))
