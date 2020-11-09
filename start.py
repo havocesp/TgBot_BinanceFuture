@@ -1,3 +1,4 @@
+import json
 import logging
 from telegram import LabeledPrice, ShippingOption
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PreCheckoutQueryHandler, ShippingQueryHandler
@@ -65,13 +66,18 @@ def error(update, context):
 
 def websocket_t(update, content_text):
     def process_message(msg):
-        print("Callback Message!!!!!")
         print(msg)
+        new_msg = json.loads(msg)
+        event_type = new_msg['e']
+        Symbol = new_msg['s']
+        Price = new_msg['p']
+
+        msg = "类型：{}\n交易对：{}\n 价格：{}".format(event_type, Symbol, Price)
         update.message.bot.send_message(chat_id=685705504, text=msg)
     client = Client(api_key=SKey, api_secret=PKey)
     bm = BinanceSocketManager(client, user_timeout=60)
     # start any sockets here, i.e a trade socket
-    conn_key = bm.start_trade_socket('TRXUSDT', process_message)
+    conn_key = bm.start_user_socket('TRXUSDT', process_message)
     update.message.bot.send_message(chat_id=685705504, text=conn_key)
     # then start the socket manager
     bm.start()
