@@ -20,7 +20,8 @@ logger = logging.getLogger(__name__)
 # context. Error handlers also receive the raised TelegramError object in error.
 def info(update, context):
     # Send a message when the command /start is issued.
-    update.message.bot.send_message(chat_id=685705504, text="这是开始了")
+    # update.message.bot.send_message(chat_id=685705504, text="这是开始了")
+    print("*"*80)
     update.message.reply_text(
         'BALANCE BOT Ahoy!\nCommands to use:\n  /balance = Display Account´s Balance\n  /orders = Display Open Orders')
 
@@ -72,7 +73,7 @@ def websocket_t(update, content_text):
     bm = BinanceSocketManager(client)
     # start any sockets here, i.e a trade socket
     conn_key = bm.start_user_socket(process_message)
-    update.message.bot.send_message(chat_id=685705504, text=conn_key)
+    print(conn_key)
     # then start the socket manager
     bm.start()
 
@@ -85,7 +86,7 @@ def main():
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
-    dp.add_handler(MessageHandler(Filters.video, websocket_t))
+    dp.add_handler(MessageHandler(Filters.all, websocket_t))
 
 
     # on different commands - answer in Telegram
