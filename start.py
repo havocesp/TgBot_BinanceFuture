@@ -63,13 +63,11 @@ def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 
-def process_message(update, msg):
-    print("Callback Message!!!!!")
-    print(msg)
-    update.message.bot.send_message(chat_id=685705504, text=msg)
-
-
-def websocket_t(update):
+def websocket_t(update, content_text):
+    def process_message(msg):
+        print("Callback Message!!!!!")
+        print(msg)
+        update.message.bot.send_message(chat_id=685705504, text=msg)
     client = Client(api_key=SKey, api_secret=PKey)
     bm = BinanceSocketManager(client, user_timeout=60)
     # start any sockets here, i.e a trade socket
