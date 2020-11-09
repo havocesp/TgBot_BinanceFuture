@@ -14,6 +14,21 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+import requests
+
+
+def telegram_bot_sendtext(bot_message):
+    bot_token = 'teltoken'
+    bot_chatID = '685705504'
+    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
+
+    response = requests.get(send_text)
+
+    return response.json()
+
+
+
+
 
 
 # Define a few command handlers. These usually take the two arguments update and
@@ -65,10 +80,11 @@ def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 
-def websocket_t(update, content_text):
+def websocket_t():
     def process_message(msg):
         print(str(msg))
-        update.message.bot.send_message(chat_id=685705504, text=str(msg))
+        test = telegram_bot_sendtext(str(msg))
+        print(test)
     client = Client(api_key=SKey, api_secret=PKey)
     bm = BinanceSocketManager(client)
     # start any sockets here, i.e a trade socket
@@ -86,7 +102,7 @@ def main():
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
-    dp.add_handler(MessageHandler(Filters.all, websocket_t))
+    # dp.add_handler(MessageHandler(Filters.all, websocket_t))
 
 
     # on different commands - answer in Telegram
@@ -94,7 +110,7 @@ def main():
     dp.add_handler(CommandHandler("balance", balance))
     dp.add_handler(CommandHandler("orders", orders))
 
-
+    websocket_t()
     # on noncommand i.e message - echo the message on Telegram
     # dp.add_handler(MessageHandler(Filters.text, echo))
 
