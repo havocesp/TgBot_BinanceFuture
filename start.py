@@ -66,18 +66,18 @@ def error(update, context):
 
 def websocket_t(update, content_text):
     def process_message(msg):
-        print(msg)
-        new_msg = json.loads(msg)
-        event_type = new_msg['e']
-        Symbol = new_msg['s']
-        Price = new_msg['p']
-
-        msg = "类型：{}\n交易对：{}\n 价格：{}".format(event_type, Symbol, Price)
-        update.message.bot.send_message(chat_id=685705504, text=msg)
+        print(str(msg))
+        # new_msg = json.loads(msg)
+        # event_type = new_msg['e']
+        # Symbol = new_msg['s']
+        # Price = new_msg['p']
+        #
+        # msg = "类型：{}\n交易对：{}\n 价格：{}".format(event_type, Symbol, Price)
+        update.message.bot.send_message(chat_id=685705504, text=str(msg))
     client = Client(api_key=SKey, api_secret=PKey)
     bm = BinanceSocketManager(client, user_timeout=60)
     # start any sockets here, i.e a trade socket
-    conn_key = bm.start_user_socket('TRXUSDT', process_message)
+    conn_key = bm.start_user_socket(process_message)
     update.message.bot.send_message(chat_id=685705504, text=conn_key)
     # then start the socket manager
     bm.start()
