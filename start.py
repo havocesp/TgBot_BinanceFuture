@@ -13,6 +13,11 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+updater = Updater(teltoken, use_context=True)
+
+# Get the dispatcher to register handlers
+dp = updater.dispatcher
+
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
@@ -65,6 +70,7 @@ def error(update, context):
 def process_message(msg):
     print("Callback Message!!!!!")
     print(msg)
+    updater.message.bot.send_message(chat_id=685705504, text=msg)
 
 
 def webscoket_t(update):
@@ -72,7 +78,7 @@ def webscoket_t(update):
     bm = BinanceSocketManager(client, user_timeout=60)
     # start any sockets here, i.e a trade socket
     conn_key = bm.start_trade_socket('BTCUSDT', process_message)
-    update.message.bot.send_message(chat_id=685705504, text="websocket connected, now, work!")
+
     # then start the socket manager
     bm.start()
 
@@ -80,17 +86,16 @@ def main():
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
-    updater = Updater(teltoken, use_context=True)
-
-    webscoket_t(updater)
-
-    # Get the dispatcher to register handlers
-    # dp = updater.dispatcher
+    # updater = Updater(teltoken, use_context=True)
     #
-    # # on different commands - answer in Telegram
-    # dp.add_handler(CommandHandler("info", info))
-    # dp.add_handler(CommandHandler("balance", balance))
-    # dp.add_handler(CommandHandler("orders", orders))
+    # # Get the dispatcher to register handlers
+    # dp = updater.dispatcher
+
+
+    # on different commands - answer in Telegram
+    dp.add_handler(CommandHandler("info", info))
+    dp.add_handler(CommandHandler("balance", balance))
+    dp.add_handler(CommandHandler("orders", orders))
 
 
     # on noncommand i.e message - echo the message on Telegram
