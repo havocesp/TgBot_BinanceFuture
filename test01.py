@@ -1,6 +1,6 @@
 import hashlib
 import hmac
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 from future.builtins import bytes
 import time
@@ -39,3 +39,26 @@ dt = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(1605011004107/ 1000))
 print(dt)
 sss = datetime.fromtimestamp(1605011004107 / 1000.0).strftime('%Y-%m-%d %H:%M:%S')
 print(sss)
+
+
+data = 1605011004107
+# 将时间戳转换为UTC时间
+data = datetime.utcfromtimestamp(data/1000)
+# utc_tz = timezone("UTC")
+# # 将UTC时间增加时区
+# data = data.replace(tzinfo=utc_tz)
+# 转换时区
+# datas = data.astimezone(timezone('US/Eastern'))   # 直接转带时区的时间
+# print(datas.strftime("%Y-%m-%d %H:%M:%S"))
+utc_dt = datetime.utcnow().replace(tzinfo=timezone.utc)
+bj_dt = utc_dt.astimezone(timezone(timedelta(hours=8)))
+print(utc_dt)
+print(bj_dt)
+
+
+import pytz
+ts = 1605011004107/1000
+tz = pytz.timezone('Asia/ShangHai')
+dt = pytz.datetime.datetime.fromtimestamp(ts, tz)
+dt.strftime('%Y-%m-%d %H:%M:%S')
+print(dt)

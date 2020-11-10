@@ -2,6 +2,7 @@ import logging
 from datetime import datetime
 from time import time, strftime, localtime
 
+import pytz
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PreCheckoutQueryHandler, ShippingQueryHandler
 from settings import SKey, PKey, teltoken, telChanel
 from futures import send_signed_request
@@ -89,6 +90,10 @@ def b_orders(update, context):
                 # 超过一天订单去除
                 if time() - time_/1000 > 12*60*60:
                     continue
+                # 转换时区
+                tz = pytz.timezone('Asia/ShangHai')
+                dt = pytz.datetime.datetime.fromtimestamp(time_, tz)
+                dt.strftime('%Y-%m-%d %H:%M:%S')
                 order_info_str = "订单ID：{}\n" \
                                  "交易对：{}\n" \
                                  "平均成交价：{}\n" \
@@ -98,7 +103,7 @@ def b_orders(update, context):
                                  "订单状态：{}\n" \
                                  "下单时间：{}".format(orderId, symbol, avgPrice,
                                                   executedQty, cumQuote, side, status,
-                                                  datetime.fromtimestamp(time_ / 1000.0).strftime('%Y-%m-%d %H:%M:%S'))
+                                                  dt)
                 update.message.reply_text(order_info_str)
     else:
         update.message.reply_text("您还未发生交易，暂无订单信息！")
