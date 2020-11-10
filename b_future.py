@@ -70,7 +70,8 @@ def bind_b_api(update, context):
     api_info_list = api_info.split('\n')
     # 绑定用户信息到数据库
     insert_sql = "insert into binance_tg(tg_id, b_api_key, b_secret_key, tg_token) " \
-                  "value(%s, %s, %s, %s)" % (user_id, api_info_list[0], api_info_list[1], teltoken)
+                  "value(%s, %s, %s, %s)" % (user_id, api_info_list[0], api_info_list[1], teltoken.replace(":", ""))
+    print(insert_sql)
     result = insert_data(insert_sql)
     if result:
         success_str = "Bind API succeed"

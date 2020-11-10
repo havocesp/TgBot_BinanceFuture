@@ -23,9 +23,9 @@ user_info = {
 
 # MySQL config
 mysql_info = {
-    "host": "34.96.156.49",
-    "user": "root-catfish-294318:asia-east2:tgb",
-    "password": "Muc2B4EjOjecJboL",
+    "host": "35.241.121.76",
+    "user": "root",
+    "password": "Ep5rFww5PuMrtCxk",
     "database": "binance_tg"
 }
 
