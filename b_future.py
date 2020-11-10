@@ -54,6 +54,12 @@ def tg_bind_command(update, context):
     """
     Bind binance API switch
     """
+    user_id = update.message.from_user.id
+    select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
+    results = select_data(select_sql)
+    if results:
+        print("用户已存在！")
+        return
     global bind_enable
     bind_enable = True
     tg_bot_send_text("请输入向相关密钥！", update.message.from_user.id)
@@ -79,6 +85,8 @@ def bind_b_api(update, context):
     else:
         failure_str = "Bind API failure, please try again!"
         tg_bot_send_text(failure_str, user_id)
+    global bind_enable
+    bind_enable = False
 
 
 def b_balance(update, context):
@@ -90,7 +98,6 @@ def b_balance(update, context):
     select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
-        print("不是注册的用户！")
         return
     balance_info = send_signed_request('GET', '/fapi/v2/balance', results[0])
     if len(balance_info) != 0:
@@ -121,6 +128,7 @@ def b_orders(update, context):
     """
     Get binance history orders
     """
+    have_order = False
     # 检查用户ID
     user_id = update.message.from_user.id
     select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
@@ -134,7 +142,7 @@ def b_orders(update, context):
             # 没有持仓的去掉
             # if float(symbol['entryPrice']) == 0.0:
             #     continue
-            history_orders = send_signed_request('GET', '/fapi/v1/allOrders', {'symbol': symbol['symbol']})
+            history_orders = send_signed_request('GET', '/fapi/v1/allOrders', results[0], {'symbol': symbol['symbol']})
             if not history_orders:
                 continue
             # 排序
@@ -169,6 +177,9 @@ def b_orders(update, context):
                                                   dt)
                 # 推送到指定用户
                 update.message.reply_text(order_info_str)
+                have_order = True
+        if not have_order:
+            update.message.reply_text("暂无符合条件的订单，请稍后重试！")
     else:
         update.message.reply_text("您还未发生交易，暂无订单信息！")
 
