@@ -1,11 +1,13 @@
 import logging
-from datetime import datetime
-from time import time, strftime, localtime
+from time import time
 
 import pytz
+import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PreCheckoutQueryHandler, ShippingQueryHandler
 from settings import SKey, PKey, teltoken, telChanel
 from futures import send_signed_request
+
+from settings import user_info
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -14,13 +16,29 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
+def tg_bot_send_text(message):
+    """
+    To send message
+    """
+    bot_token = '1473302982:AAH5HjAWjjimwL1xDNih7pfsZZ6BG2NUeTg'
+    user_id = '685705504'
+    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + user_id + '&parse_mode=Markdown&text=' + message
+    response = requests.get(send_text)
+    return response.json()
+
+
 def tg_start(update, context):
+    """
+    Telegram bot beginning
+    """
     update.message.reply_text("Welcome to use Trading bot!")
-    print(context)
     pass
 
 
 def tg_help(update, context):
+    """
+    Telegram bot help
+    """
     description_str = "/help = 查看所有命令\n" \
                       "/balance = 查看账户余额\n" \
                       "/orders = 查询所有订单"
@@ -28,7 +46,21 @@ def tg_help(update, context):
     pass
 
 
+def bind_b_api(update, context):
+    """
+    Bind binance API
+    """
+    api_info = update.message.text
+    print(len(api_info))
+    print("|" + api_info + "|")
+
+
 def b_balance(update, context):
+    """
+    Get binance account balance info
+    """
+    # 检查用户ID
+    user_id = update.message.from_user.id
     balance_info = send_signed_request('GET', '/fapi/v2/balance')
     if len(balance_info) != 0:
         print(balance_info[0])
@@ -55,16 +87,11 @@ def b_balance(update, context):
 
 
 def b_orders(update, context):
-    # account_info = send_signed_request('GET', '/fapi/v1/allOrders', {'symbol': 'TRXUSDT'})
-    # account_info1 = send_signed_request('GET', '/fapi/v1/openOrders')
-    # print("*"*100)
-    # print(account_info)
-    # print("*"*100)
-    # print(account_info1)
-    # print("*"*100)
-    # 先查询所有的交易对
-    # 查询交易对历史记录
-    # 对交易对历史记录进行排序、筛选，然后推送到Telegarm
+    """
+    Get binance history orders
+    """
+    # 检查用户ID
+    user_id = update.message.from_user.id
     all_symbols = send_signed_request('GET', '/fapi/v2/account')
     if all_symbols:
         all_symbols = all_symbols["positions"]
@@ -105,6 +132,7 @@ def b_orders(update, context):
                                  "下单时间：{}".format(orderId, symbol, avgPrice,
                                                   executedQty, cumQuote, side, status,
                                                   dt)
+                # 推送到指定用户
                 update.message.reply_text(order_info_str)
     else:
         update.message.reply_text("您还未发生交易，暂无订单信息！")
@@ -129,6 +157,7 @@ def main():
     dp.add_handler(CommandHandler("help", tg_help))
     dp.add_handler(CommandHandler("balance", b_balance))
     dp.add_handler(CommandHandler("orders", b_orders))
+    dp.add_handler(MessageHandler(Filters.text, bind_b_api))
 
     # log all errors
     dp.add_error_handler(error)
