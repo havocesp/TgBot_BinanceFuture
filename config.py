@@ -5,8 +5,8 @@ SKey = 'vWfJaeWvfmxcaMKcFa4BqVUmUEiQaLDfKfxPdFQnu34RGAhrAJUj2uPveFpqUFaA'
 PKey = 'Di2IJd7cNJfecQKqvgQXWytVX9c2DOJoIV6eQMyJWdPrTdAZnqvh19syjZsepiXd'
 
 # TELEGRAM
-# teltoken = '1473302982:AAH5HjAWjjimwL1xDNih7pfsZZ6BG2NUeTg'
-teltoken = '1386154312:AAGhq_iROaCy0_99hWg-jNKmH0o16fH50K8'
+teltoken = '1473302982:AAH5HjAWjjimwL1xDNih7pfsZZ6BG2NUeTg'
+# teltoken = '1386154312:AAGhq_iROaCy0_99hWg-jNKmH0o16fH50K8'
 telChanel = ''
 
 
@@ -20,4 +20,12 @@ user_info = {
     "tg_token": '1473302982:AAH5HjAWjjimwL1xDNih7pfsZZ6BG2NUeTg'
 }
 
+
+# MySQL config
+mysql_info = {
+    "host": "localhost",
+    "user": "root",
+    "password": "ewq123",
+    "database": "binance_tg"
+}
 

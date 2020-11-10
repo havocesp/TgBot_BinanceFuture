@@ -4,10 +4,12 @@ from time import time
 import pytz
 import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PreCheckoutQueryHandler, ShippingQueryHandler
-from settings import SKey, PKey, teltoken, telChanel
+from config import SKey, PKey, teltoken, telChanel
 from futures import send_signed_request
 
-from settings import user_info
+from sql_config import insert_data, select_data
+
+from config import user_info
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -19,13 +21,11 @@ logger = logging.getLogger(__name__)
 bind_enable = False
 
 
-def tg_bot_send_text(message):
+def tg_bot_send_text(message, user_id):
     """
     To send message
     """
-    bot_token = '1473302982:AAH5HjAWjjimwL1xDNih7pfsZZ6BG2NUeTg'
-    user_id = '685705504'
-    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + user_id + '&parse_mode=Markdown&text=' + message
+    send_text = 'https://api.telegram.org/bot' + teltoken + '/sendMessage?chat_id=' + user_id + '&parse_mode=Markdown&text=' + message
     response = requests.get(send_text)
     return response.json()
 
@@ -62,9 +62,21 @@ def bind_b_api(update, context):
     """
     Bind binance API
     """
-    api_info = update.message.text
-    print(len(api_info))
-    print("|" + api_info + "|")
+    user_id = update.message.from_user.id
+    api_info = update.message.text.strip().replace(" ", "")
+    if len(api_info) < 128:
+        return
+    api_info_list = api_info.split('\n')
+    # 绑定用户信息到数据库
+    insert_sql = "insert into binance_tg(tg_id, b_api_key, b_secret_key, tg_token) " \
+                  "value(%s, %s, %s, %s)" % (user_id, api_info_list[0], api_info_list[1], teltoken)
+    result = insert_data(insert_sql)
+    if result:
+        success_str = "Bind API succeed"
+        tg_bot_send_text(success_str, user_id)
+    else:
+        failure_str = "Bind API failure, please try again!"
+        tg_bot_send_text(failure_str, user_id)
 
 
 def b_balance(update, context):
@@ -73,6 +85,12 @@ def b_balance(update, context):
     """
     # 检查用户ID
     user_id = update.message.from_user.id
+    select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
+    results = select_data(select_sql)
+    if not results:
+        return
+    print("*"*89)
+    print(results)
     balance_info = send_signed_request('GET', '/fapi/v2/balance')
     if len(balance_info) != 0:
         print(balance_info[0])
@@ -104,6 +122,12 @@ def b_orders(update, context):
     """
     # 检查用户ID
     user_id = update.message.from_user.id
+    select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
+    results = select_data(select_sql)
+    if not results:
+        return
+    print("*"*89)
+    print(results)
     all_symbols = send_signed_request('GET', '/fapi/v2/account')
     if all_symbols:
         all_symbols = all_symbols["positions"]
@@ -150,7 +174,7 @@ def b_orders(update, context):
         update.message.reply_text("您还未发生交易，暂无订单信息！")
 
 
-def error(update, context):
+def tg_error(update, context):
     # Log Errors caused by Updates.
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
@@ -173,7 +197,7 @@ def main():
     dp.add_handler(MessageHandler(Filters.text, bind_b_api))
 
     # log all errors
-    dp.add_error_handler(error)
+    dp.add_error_handler(tg_error)
 
     # Start the Bot
     updater.start_polling()

@@ -4,7 +4,7 @@ import hashlib
 import requests
 import json
 from urllib.parse import urlencode
-from settings import SKey, PKey, teltoken, telChanel
+from config import SKey, PKey, teltoken, telChanel
 
 KEY = SKey
 SECRET = PKey
@@ -37,7 +37,7 @@ def dispatch_request(http_method):
 
 
 # used for sending request requires the signature
-def send_signed_request(http_method, url_path, payload={}):
+def send_signed_request(http_method, url_path, payload={}, api_info=[]):
     query_string = urlencode(payload)
     # replace single quote to double quote
     query_string = query_string.replace('%27', '%22')
