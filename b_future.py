@@ -25,7 +25,7 @@ def tg_bot_send_text(message, user_id):
     """
     To send message
     """
-    send_text = 'https://api.telegram.org/bot' + teltoken + '/sendMessage?chat_id=' + user_id + '&parse_mode=Markdown&text=' + message
+    send_text = 'https://api.telegram.org/bot' + teltoken + '/sendMessage?chat_id=' + str(user_id) + '&parse_mode=Markdown&text=' + message
     response = requests.get(send_text)
     return response.json()
 
@@ -56,6 +56,7 @@ def tg_bind_command(update, context):
     """
     global bind_enable
     bind_enable = True
+    tg_bot_send_text("请输入向相关密钥！", update.message.from_user.id)
 
 
 def bind_b_api(update, context):
