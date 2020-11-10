@@ -17,5 +17,5 @@ message = bytes('GET /sapi/v1/capital/config/getall&{}'.format(round(time.time()
 headers = {"X-MBX-APIKEY": "vWfJaeWvfmxcaMKcFa4BqVUmUEiQaLDfKfxPdFQnu34RGAhrAJUj2uPveFpqUFaA"}
 si = hmac.new(secret, message, digestmod=hashlib.sha256).hexdigest()
 print(hmac.new(secret, message, digestmod=hashlib.sha256).hexdigest())
-rp = requests.get(base_url + r_url + si)
+rp = requests.get(base_url + r_url +"&signature={}".format(si))
 print(rp.text)
