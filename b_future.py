@@ -92,7 +92,7 @@ def b_orders(update, context):
                     continue
                 # 转换时区
                 tz = pytz.timezone('Asia/ShangHai')
-                dt = pytz.datetime.datetime.fromtimestamp(time_, tz)
+                dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
                 dt.strftime('%Y-%m-%d %H:%M:%S')
                 order_info_str = "订单ID：{}\n" \
                                  "交易对：{}\n" \
