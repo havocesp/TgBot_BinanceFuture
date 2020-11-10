@@ -16,6 +16,9 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
+bind_enable = False
+
+
 def tg_bot_send_text(message):
     """
     To send message
@@ -41,9 +44,18 @@ def tg_help(update, context):
     """
     description_str = "/help = 查看所有命令\n" \
                       "/balance = 查看账户余额\n" \
-                      "/orders = 查询所有订单"
+                      "/orders = 查询所有订单\n" \
+                      "/bind = 绑定交易所API"
     update.message.reply_text(description_str)
     pass
+
+
+def tg_bind_command(update, context):
+    """
+    Bind binance API switch
+    """
+    global bind_enable
+    bind_enable = True
 
 
 def bind_b_api(update, context):
@@ -157,6 +169,7 @@ def main():
     dp.add_handler(CommandHandler("help", tg_help))
     dp.add_handler(CommandHandler("balance", b_balance))
     dp.add_handler(CommandHandler("orders", b_orders))
+    dp.add_handler(CommandHandler("bind", tg_bind_command))
     dp.add_handler(MessageHandler(Filters.text, bind_b_api))
 
     # log all errors
