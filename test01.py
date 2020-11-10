@@ -24,8 +24,15 @@ import requests
 # print(rp.text)
 
 
+#coding:UTF-8
+import time
 
-ss = [{'time':100}, {'time':90}]
-for i in range(len(ss)):
-    del ss[0]
-print(ss)
+#获取当前时间
+print(time.time())
+#转换成localtime
+time_local = time.localtime(1605011004107/1000)
+#转换成新的时间格式(2016-05-09 18:59:20)
+dt = time.strftime("%Y-%m-%d %H:%M:%S",  time_local)
+
+print(dt)
+

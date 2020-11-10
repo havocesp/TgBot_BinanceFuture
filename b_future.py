@@ -1,5 +1,5 @@
 import logging
-from time import time
+from time import time, strftime, localtime
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PreCheckoutQueryHandler, ShippingQueryHandler
 from settings import SKey, PKey, teltoken, telChanel
@@ -91,7 +91,8 @@ def b_orders(update, context):
                                  "买卖方向：{}\n" \
                                  "订单状态：{}\n" \
                                  "下单时间：{}".format(orderId, symbol, avgPrice,
-                                                  executedQty, cumQuote, side, status, time_)
+                                                  executedQty, cumQuote, side,
+                                                  status, strftime("%Y-%m-%d %H:%M:%S:%s", localtime(time_/1000)))
                 update.message.reply_text(order_info_str)
     else:
         update.message.reply_text("您还未发生交易，暂无订单信息！")
@@ -117,7 +118,7 @@ def main():
     dp.add_handler(CommandHandler("balance", b_balance))
     dp.add_handler(CommandHandler("orders", b_orders))
 
-   # log all errors
+    # log all errors
     dp.add_error_handler(error)
 
     # Start the Bot
@@ -125,8 +126,6 @@ def main():
 
     # Run the bot until you press Ctrl-C or the process receives SIGINT
     updater.idle()
-
-
 
 
 if __name__ == '__main__':
