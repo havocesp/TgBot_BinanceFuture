@@ -4,9 +4,10 @@ import hashlib
 import requests
 import json
 from urllib.parse import urlencode
+from settings import SKey, PKey, teltoken, telChanel
 
-KEY = 'Di2IJd7cNJfecQKqvgQXWytVX9c2DOJoIV6eQMyJWdPrTdAZnqvh19syjZsepiXd'
-SECRET = 'vWfJaeWvfmxcaMKcFa4BqVUmUEiQaLDfKfxPdFQnu34RGAhrAJUj2uPveFpqUFaA'
+KEY = PKey
+SECRET = SKey
 BASE_URL = 'https://fapi.binance.com'  # production base url
 # BASE_URL = 'https://testnet.binancefuture.com' # testnet base url
 
