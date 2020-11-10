@@ -46,9 +46,12 @@ def b_balance(update, context):
 
 
 def b_orders(update, context):
-    account_info = send_signed_request('GET', '/fapi/v2/account')
+    account_info = send_signed_request('GET', '/fapi/v1/allOrders', {'symbol': 'TRXUSDT'})
+    account_info1 = send_signed_request('GET', '/fapi/v1/openOrders')
     print("*"*100)
     print(account_info)
+    print("*"*100)
+    print(account_info1)
     print("*"*100)
     pass
 
