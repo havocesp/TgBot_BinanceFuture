@@ -56,8 +56,6 @@ def balance(update, context):
 def orders(update, context):
     time_flag = round((time()-24*60*60)*1000)
 
-
-
     client = Client(api_key=SKey, api_secret=PKey)
     data = client.futures_get_open_orders()
     if len(data) == 0:

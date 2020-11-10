@@ -85,7 +85,7 @@ def send_public_request(url_path, payload={}):
 
 # get account informtion
 # if you can see the account details, then the API key/secret is correct
-response = send_signed_request('GET', '/fapi/v2/account')
+response = send_signed_request('GET', '/fapi/v1/trades?symbol=TRXUSDT')
 print(response)
 
 
