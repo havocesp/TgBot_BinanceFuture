@@ -70,7 +70,7 @@ def bind_b_api(update, context):
     api_info_list = api_info.split('\n')
     # 绑定用户信息到数据库
     insert_sql = "insert into binance_tg(tg_id, b_api_key, b_secret_key, tg_token) " \
-                  "value(%s, %s, %s, %s)" % (user_id, api_info_list[0], api_info_list[1], teltoken.replace(":", ""))
+                  "value(%s, '%s', '%s', '%s')" % (user_id, api_info_list[0], api_info_list[1], teltoken.replace(":", ""))
     print(insert_sql)
     result = insert_data(insert_sql)
     if result:
@@ -91,9 +91,7 @@ def b_balance(update, context):
     results = select_data(select_sql)
     if not results:
         return
-    print("*"*89)
-    print(results)
-    balance_info = send_signed_request('GET', '/fapi/v2/balance')
+    balance_info = send_signed_request('GET', '/fapi/v2/balance', results[0])
     if len(balance_info) != 0:
         print(balance_info[0])
         for balance in balance_info:
@@ -128,9 +126,7 @@ def b_orders(update, context):
     results = select_data(select_sql)
     if not results:
         return
-    print("*"*89)
-    print(results)
-    all_symbols = send_signed_request('GET', '/fapi/v2/account')
+    all_symbols = send_signed_request('GET', '/fapi/v2/account', results[0])
     if all_symbols:
         all_symbols = all_symbols["positions"]
         for symbol in all_symbols:
