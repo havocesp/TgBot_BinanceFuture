@@ -1,6 +1,7 @@
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PreCheckoutQueryHandler, ShippingQueryHandler
 from settings import SKey, PKey, teltoken, telChanel
+from futures import send_signed_request
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -11,7 +12,6 @@ logger = logging.getLogger(__name__)
 
 def tg_help(update, context):
     description_str = "Welcome to use Trading bot!\n " \
-                      "All commands list:\n" \
                       "/help = 查看所有命令\n" \
                       "/balance = 查看账户余额\n" \
                       "/orders = 查询所有订单"
@@ -20,6 +20,9 @@ def tg_help(update, context):
 
 
 def b_balance(update, context):
+    balance_info = send_signed_request('GET', '/fapi/v2/account')
+    print(balance_info)
+    update.message.reply_text(balance_info)
     pass
 
 
