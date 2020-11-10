@@ -90,6 +90,7 @@ def b_balance(update, context):
     select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
+        print("不是注册的用户！")
         return
     balance_info = send_signed_request('GET', '/fapi/v2/balance', results[0])
     if len(balance_info) != 0:
