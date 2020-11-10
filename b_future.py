@@ -70,6 +70,7 @@ def b_orders(update, context):
                 continue
             # 没有持仓的去掉
             history_orders = send_signed_request('GET', '/fapi/v1/allOrders', {'symbol': symbol['symbol']})
+            print(history_orders)
             # 排序
             history_orders.sort(key=lambda k: (k.get('time', 0)))
             # 获取持有的币种的最后五笔订单
@@ -92,7 +93,7 @@ def b_orders(update, context):
                                  "订单状态：{}\n" \
                                  "下单时间：{}".format(orderId, symbol, avgPrice,
                                                   executedQty, cumQuote, side,
-                                                  status, strftime("%Y-%m-%d %H:%M:%S:%s", localtime(time_/1000)))
+                                                  status, strftime("%Y-%m-%d %H:%M:%S", localtime(float(time_/1000))))
                 update.message.reply_text(order_info_str)
     else:
         update.message.reply_text("您还未发生交易，暂无订单信息！")
