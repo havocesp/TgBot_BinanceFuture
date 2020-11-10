@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4b8716e6-dcfb-46ec-8e91-42cfd86275f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +56,51 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Python.test01">
+  <component name="RunManager" selected="Python.futures">
+    <configuration name="futures" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py_TgBot_BinanceFuture-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python/futures.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="signature" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py_TgBot_BinanceFuture-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python/signature.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py_TgBot_BinanceFuture-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,6 +169,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.futures" />
+        <item itemvalue="Python.signature" />
         <item itemvalue="Python.test01" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.start" />
@@ -143,7 +189,7 @@
       <workItem from="1604818403286" duration="1238000" />
       <workItem from="1604887401227" duration="4000" />
       <workItem from="1604892403697" duration="34313000" />
-      <workItem from="1604982190307" duration="7449000" />
+      <workItem from="1604982190307" duration="10321000" />
     </task>
     <servers />
   </component>
@@ -168,29 +214,31 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1860" height="209" key="GridCell.Tab.0.bottom" timestamp="1604990102347">
+    <state width="1877" height="234" key="GridCell.Tab.0.bottom" timestamp="1604993322957">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1860" height="209" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604990102347" />
-    <state width="1860" height="209" key="GridCell.Tab.0.center" timestamp="1604990102347">
+    <state width="1877" height="234" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604993322957" />
+    <state width="1877" height="234" key="GridCell.Tab.0.center" timestamp="1604993322956">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1860" height="209" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604990102347" />
-    <state width="1860" height="209" key="GridCell.Tab.0.left" timestamp="1604990102347">
+    <state width="1877" height="234" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604993322956" />
+    <state width="1877" height="234" key="GridCell.Tab.0.left" timestamp="1604993322955">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1860" height="209" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604990102347" />
-    <state width="1860" height="209" key="GridCell.Tab.0.right" timestamp="1604990102347">
+    <state width="1877" height="234" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604993322955" />
+    <state width="1877" height="234" key="GridCell.Tab.0.right" timestamp="1604993322956">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1860" height="209" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604990102347" />
+    <state width="1877" height="234" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604993322956" />
     <state x="461" y="169" key="SettingsEditor" timestamp="1604892445236">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1604892445236" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1604990098634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1604992455567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$futures.coverage" NAME="futures Coverage Results" MODIFIED="1604993322946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python" />
+    <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$signature.coverage" NAME="signature Coverage Results" MODIFIED="1604992965467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python" />
     <SUITE FILE_PATH="coverage/py_TgBot_BinanceFuture_master$start.coverage" NAME="start Coverage Results" MODIFIED="1604818963285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$test.coverage" NAME="test Coverage Results" MODIFIED="1604931403311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
