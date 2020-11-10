@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4b8716e6-dcfb-46ec-8e91-42cfd86275f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/b_future.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_future.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +189,7 @@
       <workItem from="1604818403286" duration="1238000" />
       <workItem from="1604887401227" duration="4000" />
       <workItem from="1604892403697" duration="34313000" />
-      <workItem from="1604982190307" duration="24403000" />
+      <workItem from="1604982190307" duration="24751000" />
     </task>
     <servers />
   </component>
@@ -213,22 +214,22 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="189" key="GridCell.Tab.0.bottom" timestamp="1605011115049">
+    <state width="1877" height="189" key="GridCell.Tab.0.bottom" timestamp="1605011944013">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="189" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1605011115049" />
-    <state width="1877" height="189" key="GridCell.Tab.0.center" timestamp="1605011115049">
+    <state width="1877" height="189" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1605011944013" />
+    <state width="1877" height="189" key="GridCell.Tab.0.center" timestamp="1605011944013">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="189" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1605011115049" />
-    <state width="1877" height="189" key="GridCell.Tab.0.left" timestamp="1605011115049">
+    <state width="1877" height="189" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1605011944013" />
+    <state width="1877" height="189" key="GridCell.Tab.0.left" timestamp="1605011944013">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="189" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1605011115049" />
-    <state width="1877" height="189" key="GridCell.Tab.0.right" timestamp="1605011115049">
+    <state width="1877" height="189" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1605011944013" />
+    <state width="1877" height="189" key="GridCell.Tab.0.right" timestamp="1605011944013">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="189" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1605011115049" />
+    <state width="1877" height="189" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1605011944013" />
     <state x="461" y="169" key="SettingsEditor" timestamp="1604892445236">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -236,7 +237,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$futures.coverage" NAME="futures Coverage Results" MODIFIED="1604996128702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python" />
-    <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1605011111332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1605011943998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$signature.coverage" NAME="signature Coverage Results" MODIFIED="1604992965467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python" />
     <SUITE FILE_PATH="coverage/py_TgBot_BinanceFuture_master$start.coverage" NAME="start Coverage Results" MODIFIED="1604818963285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$b_future.coverage" NAME="b_future Coverage Results" MODIFIED="1605000872163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

@@ -32,7 +32,7 @@ print(time.time())
 #转换成localtime
 time_local = time.localtime(1605011004107/1000)
 #转换成新的时间格式(2016-05-09 18:59:20)
-dt = time.strftime("%Y-%m-%d %H:%M:%S",  time_local)
+dt = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(1605011004107/ 1000))
 
 print(dt)
 
