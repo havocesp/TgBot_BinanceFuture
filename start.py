@@ -1,5 +1,7 @@
 import json
 import logging
+from time import time
+
 from telegram import LabeledPrice, ShippingOption
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PreCheckoutQueryHandler, ShippingQueryHandler
 from telegram import InputTextMessageContent, InputMessageContent
@@ -18,17 +20,13 @@ import requests
 
 
 def telegram_bot_sendtext(bot_message):
-    bot_token = 'teltoken'
+    bot_token = '1473302982:AAH5HjAWjjimwL1xDNih7pfsZZ6BG2NUeTg'
     bot_chatID = '685705504'
     send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
 
     response = requests.get(send_text)
 
     return response.json()
-
-
-
-
 
 
 # Define a few command handlers. These usually take the two arguments update and
@@ -56,11 +54,18 @@ def balance(update, context):
 
 
 def orders(update, context):
+    time_flag = round((time()-24*60*60)*1000)
+
+
+
     client = Client(api_key=SKey, api_secret=PKey)
     data = client.futures_get_open_orders()
     if len(data) == 0:
         update.message.reply_text("Buddy, No Open Orders!")
     else:
+        for order in data:
+            if time_flag - order["time"] <= 24:
+
         price = data[0]['price']
         side = data[0]['side']
         symbol = data[0]['symbol']
