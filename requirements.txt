@@ -1,2 +1,0 @@
-python-binance<=0.7.5
-python-telegram-bot<=12.8

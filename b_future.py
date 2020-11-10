@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 
 def tg_start(update, context):
     update.message.reply_text("Welcome to use Trading bot!")
+    print(context)
     pass
 
 
