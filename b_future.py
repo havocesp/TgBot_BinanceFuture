@@ -12,9 +12,13 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
+def tg_start(update, context):
+    update.message.reply_text("Welcome to use Trading bot!")
+    pass
+
+
 def tg_help(update, context):
-    description_str = "Welcome to use Trading bot!\n " \
-                      "/help = 查看所有命令\n" \
+    description_str = "/help = 查看所有命令\n" \
                       "/balance = 查看账户余额\n" \
                       "/orders = 查询所有订单"
     update.message.reply_text(description_str)
@@ -56,6 +60,8 @@ def b_orders(update, context):
     # print(account_info1)
     # print("*"*100)
     # 先查询所有的交易对
+    # 查询交易对历史记录
+    # 对交易对历史记录进行排序、筛选，然后推送到Telegarm
     all_symbols = send_signed_request('GET', '/fapi/v2/account')
     if all_symbols:
         all_symbols = all_symbols["positions"]
@@ -66,20 +72,29 @@ def b_orders(update, context):
             history_orders = send_signed_request('GET', '/fapi/v1/allOrders', {'symbol': symbol['symbol']})
             # 排序
             history_orders.sort(key=lambda k: (k.get('time', 0)))
-            history_orders = history_orders[-10:]
+            # 获取持有的币种的最后五笔订单
+            history_orders = history_orders[-5:]
             for info in history_orders:
-                update.message.reply_text(info)
-
+                orderId = info['orderId']  # 订单ID
+                symbol = info['symbol']  # 交易对
+                avgPrice = info['avgPrice']  # 平均成交价
+                executedQty = info['executedQty']  # 成交量
+                cumQuote = info['cumQuote']  # 成交金额
+                side = info['side']  # 买卖方向
+                status = info['status']  # 订单状态
+                time_ = info['time']  # 下单时间
+                order_info_str = "订单ID：{}\n" \
+                                 "交易对：{}\n" \
+                                 "平均成交价：{}\n" \
+                                 "成交量：{}\n" \
+                                 "成交金额：{}\n" \
+                                 "买卖方向：{}\n" \
+                                 "订单状态：{}\n" \
+                                 "下单时间：{}".format(orderId, symbol, avgPrice,
+                                                  executedQty, cumQuote, side, status, time_)
+                update.message.reply_text(order_info_str)
     else:
         update.message.reply_text("您还未发生交易，暂无订单信息！")
-    # 查询交易对历史记录
-    # 对交易对历史记录进行排序、筛选，然后推送到Telegarm
-
-
-
-
-
-    pass
 
 
 def error(update, context):
@@ -97,6 +112,7 @@ def main():
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
+    dp.add_handler(CommandHandler("start", tg_start))
     dp.add_handler(CommandHandler("help", tg_help))
     dp.add_handler(CommandHandler("balance", b_balance))
     dp.add_handler(CommandHandler("orders", b_orders))
