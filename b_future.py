@@ -34,11 +34,11 @@ def b_balance(update, context):
             maxWithdrawAmount = balance['maxWithdrawAmount']  # 最大可转出余额
 
             send_str = "资产：{}\n" \
-                       "总余额:{}\n" \
-                       "全仓余额:{}\n" \
-                       "全仓未实现盈亏:{}\n" \
-                       "可用余额:{}\n" \
-                       "最大可转出余额:{}".format(asset, total_balance, crossWalletBalance,
+                       "总余额：{}\n" \
+                       "全仓余额：{}\n" \
+                       "全仓未实现盈亏：{}\n" \
+                       "可用余额：{}\n" \
+                       "最大可转出余额：{}".format(asset, total_balance, crossWalletBalance,
                                            crossUnPnl, availableBalance, maxWithdrawAmount)
             update.message.reply_text(send_str)
     else:
@@ -46,6 +46,10 @@ def b_balance(update, context):
 
 
 def b_orders(update, context):
+    account_info = send_signed_request('GET', '/fapi/v2/account')
+    print("*"*100)
+    print(account_info)
+    print("*"*100)
     pass
 
 

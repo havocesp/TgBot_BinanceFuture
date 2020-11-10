@@ -70,9 +70,9 @@ def send_public_request(url_path, payload={}):
 # get klines
 # response = send_public_request('/fapi/v1/klines' , {"symbol": "BTCUSDT", "interval": "1d"})
 # print(response)
-
-balance_info = send_signed_request('GET', '/fapi/v1/account')
-print(balance_info)
+#
+# balance_info = send_signed_request('GET', '/fapi/v1/account')
+# print(balance_info)
 
 # get account informtion
 # if you can see the account details, then the API key/secret is correct
