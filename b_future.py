@@ -60,6 +60,9 @@ def b_orders(update, context):
     if all_symbols:
         all_symbols = all_symbols["positions"]
         for symbol in all_symbols:
+            if float(symbol['entryPrice']) == 0.0:
+                continue
+            # 没有持仓的去掉
             history_orders = send_signed_request('GET', '/fapi/v1/allOrders', {'symbol': symbol['symbol']})
             # 排序
             history_orders.sort(key=lambda k: (k.get('time', 0)))
