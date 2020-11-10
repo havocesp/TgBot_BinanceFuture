@@ -1,4 +1,6 @@
 import logging
+from time import time
+
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PreCheckoutQueryHandler, ShippingQueryHandler
 from settings import SKey, PKey, teltoken, telChanel
 from futures import send_signed_request
@@ -46,13 +48,34 @@ def b_balance(update, context):
 
 
 def b_orders(update, context):
-    account_info = send_signed_request('GET', '/fapi/v1/allOrders', {'symbol': 'TRXUSDT'})
-    account_info1 = send_signed_request('GET', '/fapi/v1/openOrders')
-    print("*"*100)
-    print(account_info)
-    print("*"*100)
-    print(account_info1)
-    print("*"*100)
+    # account_info = send_signed_request('GET', '/fapi/v1/allOrders', {'symbol': 'TRXUSDT'})
+    # account_info1 = send_signed_request('GET', '/fapi/v1/openOrders')
+    # print("*"*100)
+    # print(account_info)
+    # print("*"*100)
+    # print(account_info1)
+    # print("*"*100)
+    # 先查询所有的交易对
+    all_symbols = send_signed_request('GET', '/fapi/v2/account')
+    if all_symbols:
+        all_symbols = all_symbols["positions"]
+        for symbol in all_symbols:
+            history_orders = send_signed_request('GET', '/fapi/v1/allOrders', {'symbol': symbol['symbol']})
+            # 排序
+            history_orders.sort(key=lambda k: (k.get('time', 0)))
+            history_orders = history_orders[-10:]
+            for info in history_orders:
+                update.message.reply_text(info)
+
+    else:
+        update.message.reply_text("您还未发生交易，暂无订单信息！")
+    # 查询交易对历史记录
+    # 对交易对历史记录进行排序、筛选，然后推送到Telegarm
+
+
+
+
+
     pass
 
 
