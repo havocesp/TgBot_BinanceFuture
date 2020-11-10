@@ -6,8 +6,8 @@ import json
 from urllib.parse import urlencode
 from settings import SKey, PKey, teltoken, telChanel
 
-KEY = PKey
-SECRET = SKey
+KEY = SKey
+SECRET = PKey
 BASE_URL = 'https://fapi.binance.com'  # production base url
 # BASE_URL = 'https://testnet.binancefuture.com' # testnet base url
 
@@ -71,11 +71,13 @@ def send_public_request(url_path, payload={}):
 # response = send_public_request('/fapi/v1/klines' , {"symbol": "BTCUSDT", "interval": "1d"})
 # print(response)
 
+balance_info = send_signed_request('GET', '/fapi/v1/account')
+print(balance_info)
 
 # get account informtion
 # if you can see the account details, then the API key/secret is correct
-response = send_signed_request('GET', '/fapi/v1/trades?symbol=TRXUSDT')
-print(response)
+# response = send_signed_request('GET', '/fapi/v1/trades?symbol=TRXUSDT')
+# print(response)
 
 # ### USER_DATA endpoints, call send_signed_request #####
 # # place an order

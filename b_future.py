@@ -20,10 +20,29 @@ def tg_help(update, context):
 
 
 def b_balance(update, context):
-    balance_info = send_signed_request('GET', '/fapi/v2/account')
-    print(balance_info)
-    update.message.reply_text(balance_info)
-    pass
+    balance_info = send_signed_request('GET', '/fapi/v2/balance')
+    if len(balance_info) != 0:
+        print(balance_info[0])
+        for balance in balance_info:
+            if float(balance["balance"]) <= 0.0:
+                continue
+            asset = balance['asset']  # 资产
+            total_balance = balance['balance']  # 总余额
+            crossWalletBalance = balance['crossWalletBalance']  # 全仓余额
+            crossUnPnl = balance['crossUnPnl']  # 全仓未实现盈亏
+            availableBalance = balance['availableBalance']  # 可用余额
+            maxWithdrawAmount = balance['maxWithdrawAmount']  # 最大可转出余额
+
+            send_str = "资产：{}\n" \
+                       "总余额:{}\n" \
+                       "全仓余额:{}\n" \
+                       "全仓未实现盈亏:{}\n" \
+                       "可用余额:{}\n" \
+                       "最大可转出余额:{}".format(asset, total_balance, crossWalletBalance,
+                                           crossUnPnl, availableBalance, maxWithdrawAmount)
+            update.message.reply_text(send_str)
+    else:
+        update.message.reply_text("您的资产正在结算中，请稍后重试！")
 
 
 def b_orders(update, context):
