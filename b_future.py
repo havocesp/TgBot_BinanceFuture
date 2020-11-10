@@ -85,6 +85,9 @@ def b_orders(update, context):
                 side = info['side']  # 买卖方向
                 status = info['status']  # 订单状态
                 time_ = info['time']  # 下单时间
+                # 超过一天订单去除
+                if time_/1000 - time() > 24*60*60:
+                    continue
                 order_info_str = "订单ID：{}\n" \
                                  "交易对：{}\n" \
                                  "平均成交价：{}\n" \
