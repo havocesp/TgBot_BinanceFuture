@@ -1,5 +1,7 @@
 import hashlib
 import hmac
+from datetime import datetime
+
 from future.builtins import bytes
 import time
 import requests
@@ -35,4 +37,5 @@ time_local = time.localtime(1605011004107/1000)
 dt = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(1605011004107/ 1000))
 
 print(dt)
-
+sss = datetime.fromtimestamp(1605011004107 / 1000.0).strftime('%Y-%m-%d %H:%M:%S')
+print(sss)

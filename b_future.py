@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime
 from time import time, strftime, localtime
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PreCheckoutQueryHandler, ShippingQueryHandler
@@ -86,7 +87,7 @@ def b_orders(update, context):
                 status = info['status']  # 订单状态
                 time_ = info['time']  # 下单时间
                 # 超过一天订单去除
-                if time_/1000 - time() > 24*60*60:
+                if time() - time_/1000 > 12*60*60:
                     continue
                 order_info_str = "订单ID：{}\n" \
                                  "交易对：{}\n" \
@@ -96,8 +97,8 @@ def b_orders(update, context):
                                  "买卖方向：{}\n" \
                                  "订单状态：{}\n" \
                                  "下单时间：{}".format(orderId, symbol, avgPrice,
-                                                  executedQty, cumQuote, side,
-                                                  status, strftime("%Y-%m-%d %H:%M:%S", localtime(time_/1000)))
+                                                  executedQty, cumQuote, side, status,
+                                                  datetime.fromtimestamp(time_ / 1000.0).strftime('%Y-%m-%d %H:%M:%S'))
                 update.message.reply_text(order_info_str)
     else:
         update.message.reply_text("您还未发生交易，暂无订单信息！")
