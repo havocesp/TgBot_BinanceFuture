@@ -112,6 +112,7 @@ def b_balance(update, context):
     user_id = update.message.from_user.id
     select_sql = "select b_api_key, b_secret_key,api_lable from binance_tg where tg_id={}".format(user_id)
     results = select_data(select_sql)
+
     if not results:
         update.message.reply_text("请先绑定API")
         return
@@ -121,20 +122,19 @@ def b_balance(update, context):
     update.message.reply_text("资产核算中，请稍后。")
     for u_api in results:
         account_info = send_signed_request('GET', '/fapi/v2/account', u_api)
-        for account in account_info:
-            totalWalletBalance = account['totalWalletBalance']  # 账户总余额
-            account_total += float(totalWalletBalance)
+        totalWalletBalance = account_info['totalWalletBalance']  # 账户总余额
+        account_total += float(totalWalletBalance)
 
-            for asset in account['assets']:
-                currency = asset['asset']  # 币种
-                walletBalance = asset['walletBalance']  # 余额
-                # 币种相加
-                if total_usdt.endswith(currency.upper()):
-                    total_usdt = str(float(total_usdt.replace("USDT", "")) + float(walletBalance)) + "USDT"
-                elif total_bnb.endswith(currency.upper()):
-                    total_bnb = str(float(total_bnb.replace("BNB", "")) + float(walletBalance)) + "BNB"
-                send_str = "{}：余额：{} {}\n".format(u_api['api_lable'], walletBalance, currency)
-                update.message.reply_text(send_str)
+        for asset in account_info['assets']:
+            currency = asset['asset']  # 币种
+            walletBalance = asset['walletBalance']  # 余额
+            # 币种相加
+            if total_usdt.endswith(currency.upper()):
+                total_usdt = str(float(total_usdt.replace("USDT", "")) + float(walletBalance)) + "USDT"
+            elif total_bnb.endswith(currency.upper()):
+                total_bnb = str(float(total_bnb.replace("BNB", "")) + float(walletBalance)) + "BNB"
+            send_str = "{}：余额：{} {}\n".format(u_api['api_lable'], walletBalance, currency)
+            update.message.reply_text(send_str)
         # if len(balance_info) != 0:
         #     for balance in balance_info:
         #         if float(balance["balance"]) <= 0.0:
