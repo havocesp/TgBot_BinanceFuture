@@ -117,10 +117,24 @@ def b_balance(update, context):
         return
     total_usdt = "0USDT"
     total_bnb = "0BNB"
+    account_total = 0.0
     update.message.reply_text("资产核算中，请稍后。")
     for u_api in results:
-        balance_info = send_signed_request('GET', '/fapi/v2/account', u_api)
-        print(balance_info)
+        account_info = send_signed_request('GET', '/fapi/v2/account', u_api)
+        for account in account_info:
+            totalWalletBalance = account['totalWalletBalance']  # 账户总余额
+            account_total += float(totalWalletBalance)
+
+            for asset in account['assets']:
+                currency = asset['asset']  # 币种
+                walletBalance = asset['walletBalance']  # 余额
+                # 币种相加
+                if total_usdt.endswith(currency.upper()):
+                    total_usdt = str(float(total_usdt.replace("USDT", "")) + float(walletBalance)) + "USDT"
+                elif total_bnb.endswith(currency.upper()):
+                    total_bnb = str(float(total_bnb.replace("BNB", "")) + float(walletBalance)) + "BNB"
+                send_str = "{}：余额：{} {}\n".format(u_api['api_lable'], walletBalance, currency)
+                update.message.reply_text(send_str)
         # if len(balance_info) != 0:
         #     for balance in balance_info:
         #         if float(balance["balance"]) <= 0.0:
@@ -147,9 +161,9 @@ def b_balance(update, context):
         # else:
         #     continue
     # 发送余额
-    update.message.reply_text("{}核算完成，合计：\n"
+    update.message.reply_text("{}核算完成，合计：{}\n"
                               "{}\n"
-                              "{}".format(results[0]['api_lable'], total_usdt, total_bnb))
+                              "{}".format(results[0]['api_lable'], str(account_total), total_usdt, total_bnb))
 
 
 def b_orders(update, context):
