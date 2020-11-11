@@ -15,8 +15,6 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
-
-
 bind_enable = False
 
 
@@ -82,7 +80,7 @@ def bind_b_api(update, context):
     # 对输入API进行处理
     api_info_list = filter(None, api_info.split('\n'))
     # 查询当前API是否被绑定
-    select_sql = "select * from binance_tg where b_api_key='{}'".format(api_info_list[0].strip())
+    select_sql = "select * from binance_tg where b_api_key='{}'".format(api_info_list[0])
     results = select_data(select_sql)
     if results:
         update.message.reply_text("此API已经被绑定！")

@@ -1,5 +1,5 @@
 # TELEGRAM
-# teltoken = '1473302982:AAH5HjAWjjimwL1xDNih7pfsZZ6BG2NUeTg'
+teltoken = '1473302982:AAH5HjAWjjimwL1xDNih7pfsZZ6BG2NUeTg'
 teltoken = '1386154312:AAGhq_iROaCy0_99hWg-jNKmH0o16fH50K8'
 telChanel = ''
 

@@ -2,9 +2,7 @@ import hmac
 import time
 import hashlib
 import requests
-import json
 from urllib.parse import urlencode
-from config import SKey, PKey, teltoken, telChanel
 
 BASE_URL = 'https://fapi.binance.com'  # production base url
 # BASE_URL = 'https://testnet.binancefuture.com' # testnet base url
