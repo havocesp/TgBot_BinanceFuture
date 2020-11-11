@@ -64,11 +64,11 @@ def tg_bind_command(update, context):
     results = select_data(select_sql)
     if results:
         print("用户已存在！")
-        tg_bot_send_text("您已经绑定过API，无需重复绑定！", update.message.from_user.id)
+        update.message.reply_text("您已经绑定过API，无需重复绑定！")
         return
     global bind_enable
     bind_enable = True
-    tg_bot_send_text("请输入向相关密钥！", update.message.from_user.id)
+    update.message.reply_text("请输入向相关密钥！")
 
 
 def bind_b_api(update, context):
@@ -87,10 +87,10 @@ def bind_b_api(update, context):
     result = insert_data(insert_sql)
     if result:
         success_str = "绑定成功。"
-        tg_bot_send_text(success_str, user_id)
+        update.message.reply_text(success_str)
     else:
         failure_str = "绑定失败，请重试。"
-        tg_bot_send_text(failure_str, user_id)
+        update.message.reply_text(failure_str)
     global bind_enable
     bind_enable = False
 
@@ -104,7 +104,7 @@ def b_balance(update, context):
     select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
-        tg_bot_send_text("请先绑定API", user_id)
+        update.message.reply_text("请先绑定API")
         return
     balance_info = send_signed_request('GET', '/fapi/v2/balance', results[0])
     if len(balance_info) != 0:
@@ -126,9 +126,9 @@ def b_balance(update, context):
                        "可用余额：{}\n" \
                        "最大可转出余额：{}".format(asset, total_balance, crossWalletBalance,
                                            crossUnPnl, availableBalance, maxWithdrawAmount)
-            tg_bot_send_text(send_str, user_id)
+            update.message.reply_text(send_str)
     else:
-        tg_bot_send_text("您的资产正在结算中，请稍后重试。", user_id)
+        update.message.reply_text("您的资产正在结算中，请稍后重试。")
 
 
 def b_orders(update, context):
@@ -141,10 +141,10 @@ def b_orders(update, context):
     select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
-        tg_bot_send_text("请先绑定API", user_id)
+        update.message.reply_text("请先绑定API")
         return
     # 友情提示
-    tg_bot_send_text("订单查询中，请耐心等待。", user_id)
+    update.message.reply_text("订单查询中，请耐心等待。")
     all_symbols = send_signed_request('GET', '/fapi/v2/account', results[0])  # 查询账户交易对
     # all_symbols = send_signed_request('GET', '/fapi/v1/openOrders', results[0])  # 所有挂单
     if all_symbols:
@@ -187,14 +187,14 @@ def b_orders(update, context):
                                                   executedQty, cumQuote, side, status,
                                                   dt)
                 # 推送到指定用户
-                tg_bot_send_text(order_info_str, user_id)
+                update.message.reply_text(order_info_str)
                 have_order = True
         if not have_order:
-            tg_bot_send_text("您当前暂无相关订单，请稍后重试。", user_id)
+            update.message.reply_text("您当前暂无相关订单，请稍后重试。")
         else:
-            tg_bot_send_text("查询完成。", user_id)
+            update.message.reply_text("查询完成。")
     else:
-        tg_bot_send_text("您还未发生交易，暂无订单信息！", user_id)
+        update.message.reply_text("您还未发生交易，暂无订单信息！")
 
 
 def tg_error(update, context):
