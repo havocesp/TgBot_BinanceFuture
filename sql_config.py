@@ -14,18 +14,19 @@ def create_table():
     cursor = db.cursor()
     # 创建表
     create_binance_tg = "create table binance_tg (" \
-                        "user_name char (10)" \
+                        "user_name char (10)," \
                         "tg_id int not null," \
                         "b_api_key char(65) not null," \
                         "b_secret_key char(65) not null," \
                         "tg_token char(50) not null)," \
-                        "insert_time timestamp DEFAULT CURRENT_TIMESTAMP," \
-                        "update_time timestamp default CURRENT_TIMESTAMP" \
+                        "insert_time timestamp default CURRENT_TIMESTAMP," \
+                        "update_time timestamp default CURRENT_TIMESTAMP," \
                         "UNIQUE (b_api_key)"
     try:
         cursor.execute(create_binance_tg)
         db.commit()
-    except:
+    except Exception as e:
+        print(e)
         db.rollback()
     # 关闭数据库连接
     db.close()
@@ -46,7 +47,8 @@ def insert_data(insert_sql):
         # 关闭数据库连接
         db.close()
         return True
-    except:
+    except Exception as e:
+        print(e)
         db.rollback()
         return False
 
@@ -68,7 +70,8 @@ def select_data(select_sql):
         # 关闭数据库连接
         db.close()
         return results
-    except:
+    except Exception as e:
+        print(e)
         return results
 
 
