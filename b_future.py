@@ -1,10 +1,8 @@
 import logging
-from time import time
 
-import pytz
 import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-from config import teltoken
+from config import teltoken, database
 from futures import send_signed_request
 
 from sql_config import insert_data, select_data
@@ -59,7 +57,7 @@ def tg_bind_command(update, context):
     """
     # 绑定唯一API
     # user_id = update.message.from_user.id
-    # select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
+    # select_sql = "select b_api_key, b_secret_key from " + database +" where tg_id={}".format(user_id)
     # results = select_data(select_sql)
     # if results:
     #     print("用户已存在！")
@@ -83,14 +81,14 @@ def bind_b_api(update, context):
     if len(api_info) < 3:
         return
     # 查询当前API是否被绑定
-    select_sql = "select * from binance_tg where b_api_key='{}'".format(api_info_list[1])
+    select_sql = "select * from " + database +" where b_api_key='{}'".format(api_info_list[1])
     results = select_data(select_sql)
     if results:
         update.message.reply_text("此API已经被绑定！")
         return
 
     # 绑定用户信息到数据库
-    insert_sql = "insert into binance_tg(tg_id, api_lable, b_api_key, b_secret_key, tg_token) " \
+    insert_sql = "insert into " + database + "(tg_id, api_lable, b_api_key, b_secret_key, tg_token) " \
                  "value(%s, '%s','%s', '%s', '%s')" % \
                  (user_id, api_info_list[0], api_info_list[1], api_info_list[2], teltoken.replace(":", ""))
     result = insert_data(insert_sql)
@@ -110,7 +108,7 @@ def b_balance(update, context):
     """
     # 检查用户ID
     user_id = update.message.from_user.id
-    select_sql = "select b_api_key, b_secret_key,api_lable from binance_tg where tg_id={}".format(user_id)
+    select_sql = "select b_api_key, b_secret_key,api_lable from " + database +" where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
         update.message.reply_text("请先绑定API")
@@ -171,7 +169,7 @@ def b_orders(update, context):
     have_order = False
     # 检查用户ID
     user_id = update.message.from_user.id
-    select_sql = "select b_api_key, b_secret_key, api_lable from binance_tg where tg_id={}".format(user_id)
+    select_sql = "select b_api_key, b_secret_key, api_lable from " + database +" where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
         update.message.reply_text("请先绑定API")
