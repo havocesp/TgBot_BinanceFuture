@@ -35,6 +35,11 @@ def tg_start(update, context):
     Telegram bot beginning
     """
     update.message.reply_text("Welcome to use Trading bot!")
+    description_str = "/help = 查看命令\n" \
+                      "/balance = 查询余额\n" \
+                      "/orders = 查询订单\n" \
+                      "/bind = 绑定API"
+    update.message.reply_text(description_str)
     pass
 
 
