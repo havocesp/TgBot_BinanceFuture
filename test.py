@@ -33,3 +33,30 @@
 #                                       executedQty, cumQuote, side, status, dt)
 #     # 推送到指定用户
 #     update.message.reply_text(order_info_str)
+
+
+# if len(balance_info) != 0:
+#     for balance in balance_info:
+#         if float(balance["balance"]) <= 0.0:
+#             continue
+#         asset = balance['asset']  # 资产（币种）
+#         total_balance = balance['balance']  # 总余额
+#         if total_usdt.endswith(asset.upper()):
+#             total_usdt = str(float(total_usdt.replace("USDT", "")) + float(total_balance)) + "USDT"
+#         elif total_bnb.endswith(asset.upper()):
+#             total_bnb = str(float(total_bnb.replace("BNB", "")) + float(total_balance)) + "BNB"
+#         crossWalletBalance = balance['crossWalletBalance']  # 全仓余额
+#         crossUnPnl = balance['crossUnPnl']  # 全仓未实现盈亏
+#         availableBalance = balance['availableBalance']  # 可用余额
+#         maxWithdrawAmount = balance['maxWithdrawAmount']  # 最大可转出余额
+#
+#         send_str = "{}：资产：{}\n" \
+#                    "总余额：{}\n" \
+#                    "全仓余额：{}\n" \
+#                    "全仓未实现盈亏：{}\n" \
+#                    "可用余额：{}\n" \
+#                    "最大可转出余额：{}".format(u_api['api_lable'], asset, total_balance, crossWalletBalance,
+#                                        crossUnPnl, availableBalance, maxWithdrawAmount)
+#         update.message.reply_text(send_str)
+# else:
+#     continue

@@ -2,7 +2,7 @@ import logging
 
 import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-from config import teltoken, database
+from config import teltoken, t_table
 from futures import send_signed_request
 
 from sql_config import insert_data, select_data
@@ -57,7 +57,7 @@ def tg_bind_command(update, context):
     """
     # 绑定唯一API
     # user_id = update.message.from_user.id
-    # select_sql = "select b_api_key, b_secret_key from " + database +" where tg_id={}".format(user_id)
+    # select_sql = "select b_api_key, b_secret_key from " + t_table +" where tg_id={}".format(user_id)
     # results = select_data(select_sql)
     # if results:
     #     print("用户已存在！")
@@ -81,14 +81,14 @@ def bind_b_api(update, context):
     if len(api_info) < 3:
         return
     # 查询当前API是否被绑定
-    select_sql = "select * from " + database +" where b_api_key='{}'".format(api_info_list[1])
+    select_sql = "select * from " + t_table +" where b_api_key='{}'".format(api_info_list[1])
     results = select_data(select_sql)
     if results:
         update.message.reply_text("此API已经被绑定！")
         return
 
     # 绑定用户信息到数据库
-    insert_sql = "insert into " + database + "(tg_id, api_lable, b_api_key, b_secret_key, tg_token) " \
+    insert_sql = "insert into " + t_table + "(tg_id, api_lable, b_api_key, b_secret_key, tg_token) " \
                  "value(%s, '%s','%s', '%s', '%s')" % \
                  (user_id, api_info_list[0], api_info_list[1], api_info_list[2], teltoken.replace(":", ""))
     result = insert_data(insert_sql)
@@ -108,7 +108,7 @@ def b_balance(update, context):
     """
     # 检查用户ID
     user_id = update.message.from_user.id
-    select_sql = "select b_api_key, b_secret_key,api_lable from " + database +" where tg_id={}".format(user_id)
+    select_sql = "select b_api_key, b_secret_key,api_lable from " + t_table +" where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
         update.message.reply_text("请先绑定API")
@@ -131,33 +131,8 @@ def b_balance(update, context):
                 total_bnb = str(float(total_bnb.replace("BNB", "")) + float(walletBalance))
             send_str = "{}：余额：{} {}\n".format(u_api[2] or "User", walletBalance, currency)
             update.message.reply_text(send_str)
-        # if len(balance_info) != 0:
-        #     for balance in balance_info:
-        #         if float(balance["balance"]) <= 0.0:
-        #             continue
-        #         asset = balance['asset']  # 资产（币种）
-        #         total_balance = balance['balance']  # 总余额
-        #         if total_usdt.endswith(asset.upper()):
-        #             total_usdt = str(float(total_usdt.replace("USDT", "")) + float(total_balance)) + "USDT"
-        #         elif total_bnb.endswith(asset.upper()):
-        #             total_bnb = str(float(total_bnb.replace("BNB", "")) + float(total_balance)) + "BNB"
-        #         crossWalletBalance = balance['crossWalletBalance']  # 全仓余额
-        #         crossUnPnl = balance['crossUnPnl']  # 全仓未实现盈亏
-        #         availableBalance = balance['availableBalance']  # 可用余额
-        #         maxWithdrawAmount = balance['maxWithdrawAmount']  # 最大可转出余额
-        #
-        #         send_str = "{}：资产：{}\n" \
-        #                    "总余额：{}\n" \
-        #                    "全仓余额：{}\n" \
-        #                    "全仓未实现盈亏：{}\n" \
-        #                    "可用余额：{}\n" \
-        #                    "最大可转出余额：{}".format(u_api['api_lable'], asset, total_balance, crossWalletBalance,
-        #                                        crossUnPnl, availableBalance, maxWithdrawAmount)
-        #         update.message.reply_text(send_str)
-        # else:
-        #     continue
     # 发送余额
-    update.message.reply_text("{}核算完成，合计：{}\n"
+    update.message.reply_text("{}：核算完成，合计：{} USDT\n"
                               "USDT：{}\n"
                               "BNB：{}".format(results[0][2] or "User", account_total, total_usdt, total_bnb))
 
@@ -169,7 +144,7 @@ def b_orders(update, context):
     have_order = False
     # 检查用户ID
     user_id = update.message.from_user.id
-    select_sql = "select b_api_key, b_secret_key, api_lable from " + database +" where tg_id={}".format(user_id)
+    select_sql = "select b_api_key, b_secret_key, api_lable from " + t_table +" where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
         update.message.reply_text("请先绑定API")
