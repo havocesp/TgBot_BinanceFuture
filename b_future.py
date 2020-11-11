@@ -59,13 +59,14 @@ def tg_bind_command(update, context):
     """
     Bind binance API switch
     """
-    user_id = update.message.from_user.id
-    select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
-    results = select_data(select_sql)
-    if results:
-        print("用户已存在！")
-        update.message.reply_text("您已经绑定过API，无需重复绑定！")
-        return
+    # 绑定唯一API
+    # user_id = update.message.from_user.id
+    # select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
+    # results = select_data(select_sql)
+    # if results:
+    #     print("用户已存在！")
+    #     update.message.reply_text("您已经绑定过API，无需重复绑定！")
+    #     return
     global bind_enable
     bind_enable = True
     update.message.reply_text("请输入向相关密钥！")
@@ -80,6 +81,14 @@ def bind_b_api(update, context):
     if len(api_info) < 128:
         return
     api_info_list = api_info.split('\n')
+
+    # 查询当前API是否被绑定
+    select_sql = "select * from binance_tg where b_api_key={}".format(api_info_list[0])
+    results = select_data(select_sql)
+    if results:
+        update.message.reply_text("此API已经被绑定！")
+        return
+
     # 绑定用户信息到数据库
     insert_sql = "insert into binance_tg(tg_id, b_api_key, b_secret_key, tg_token) " \
                   "value(%s, '%s', '%s', '%s')" % (user_id, api_info_list[0], api_info_list[1], teltoken.replace(":", ""))
@@ -106,29 +115,37 @@ def b_balance(update, context):
     if not results:
         update.message.reply_text("请先绑定API")
         return
-    balance_info = send_signed_request('GET', '/fapi/v2/balance', results[0])
-    if len(balance_info) != 0:
-        print(balance_info[0])
-        for balance in balance_info:
-            if float(balance["balance"]) <= 0.0:
-                continue
-            asset = balance['asset']  # 资产
-            total_balance = balance['balance']  # 总余额
-            crossWalletBalance = balance['crossWalletBalance']  # 全仓余额
-            crossUnPnl = balance['crossUnPnl']  # 全仓未实现盈亏
-            availableBalance = balance['availableBalance']  # 可用余额
-            maxWithdrawAmount = balance['maxWithdrawAmount']  # 最大可转出余额
+    total_asset = "0 USDT"
+    update.message.reply_text("资产核算中，请稍后。")
+    for u_api in results:
+        balance_info = send_signed_request('GET', '/fapi/v2/balance', u_api)
+        if len(balance_info) != 0:
+            print(balance_info[0])
+            for balance in balance_info:
+                if float(balance["balance"]) <= 0.0:
+                    continue
+                asset = balance['asset']  # 资产（币种）
+                total_balance = balance['balance']  # 总余额
+                if total_asset.endswith(asset.upper()):
+                    total_asset = str(float(total_asset.split(" ")[0]) + float(total_balance)) + "USDT"
+                crossWalletBalance = balance['crossWalletBalance']  # 全仓余额
+                crossUnPnl = balance['crossUnPnl']  # 全仓未实现盈亏
+                availableBalance = balance['availableBalance']  # 可用余额
+                maxWithdrawAmount = balance['maxWithdrawAmount']  # 最大可转出余额
 
-            send_str = "资产：{}\n" \
-                       "总余额：{}\n" \
-                       "全仓余额：{}\n" \
-                       "全仓未实现盈亏：{}\n" \
-                       "可用余额：{}\n" \
-                       "最大可转出余额：{}".format(asset, total_balance, crossWalletBalance,
-                                           crossUnPnl, availableBalance, maxWithdrawAmount)
-            update.message.reply_text(send_str)
-    else:
-        update.message.reply_text("您的资产正在结算中，请稍后重试。")
+                send_str = "资产：{}\n" \
+                           "总余额：{}\n" \
+                           "全仓余额：{}\n" \
+                           "全仓未实现盈亏：{}\n" \
+                           "可用余额：{}\n" \
+                           "最大可转出余额：{}".format(asset, total_balance, crossWalletBalance,
+                                               crossUnPnl, availableBalance, maxWithdrawAmount)
+                update.message.reply_text(send_str)
+        else:
+            continue
+    update.message.reply_text("核算完成，合计：{}".format(total_asset))
+    # 发送余额
+
 
 
 def b_orders(update, context):
@@ -151,8 +168,8 @@ def b_orders(update, context):
         all_symbols = all_symbols["positions"]
         for symbol in all_symbols:
             # 没有持仓的去掉
-            # if float(symbol['entryPrice']) == 0.0:
-            #     continue
+            if float(symbol['entryPrice']) == 0.0:
+                continue
             history_orders = send_signed_request('GET', '/fapi/v1/allOrders', results[0], {'symbol': symbol['symbol']})  # 订单历史
             if not history_orders:
                 continue
