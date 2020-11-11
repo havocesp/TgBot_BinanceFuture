@@ -132,11 +132,7 @@ def b_balance(update, context):
             send_str = "{}：余额：{} {}\n".format(u_api[2] or "User", walletBalance, currency)
             update.message.reply_text(send_str)
     # 发送余额
-    update.message.reply_text("{}：核算完成\n"
-                              "合计：{} USDT\n"
-                              "USDT：{}\n"
-                              "BNB：{}".format(results[0][2] or "User", account_total,
-                                              total_usdt.replace("USDT", ""), total_bnb.replace("BNB", "")))
+    update.message.reply_text("{}：核算完成\n合计：{} USDT".format(results[0][2] or "User", account_total))
 
 
 def b_orders(update, context):
@@ -166,11 +162,15 @@ def b_orders(update, context):
                 positionAmt = symbol['positionAmt']  # 持仓数量
                 entryPrice = symbol['entryPrice']  # 持仓成本价
                 unrealizedProfit = symbol['unrealizedProfit']  # 持仓未实现盈亏
+                positionType = "多单"
+                if float(positionAmt) < 0:
+                    positionType = "空单"
                 order_info_str = "{}：交易对：{}\n" \
+                                 "持仓方式：{}\n" \
                                  "持仓数量：{}\n" \
                                  "持仓成本价：{}\n" \
-                                 "持仓未实现盈亏：{}" .format(result['api_lable'], symbol_,
-                                                      positionAmt, entryPrice, unrealizedProfit)
+                                 "持仓未实现盈亏：{}" .format(result[2], positionType,
+                                                      symbol_, positionAmt, entryPrice, unrealizedProfit)
                 # 推送到指定用户
                 update.message.reply_text(order_info_str)
                 have_order = True
