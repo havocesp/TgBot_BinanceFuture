@@ -59,6 +59,7 @@ def tg_bind_command(update, context):
     results = select_data(select_sql)
     if results:
         print("用户已存在！")
+        tg_bot_send_text("用户：{}，已经绑定过API，无需重复绑定！".format(update.message.from_user.), update.message.from_user.id)
         return
     global bind_enable
     bind_enable = True
