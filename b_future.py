@@ -130,11 +130,11 @@ def b_balance(update, context):
                 total_usdt = str(float(total_usdt.replace("USDT", "")) + float(walletBalance)) + "USDT"
             elif total_bnb.endswith(currency.upper()):
                 total_bnb = str(float(total_bnb.replace("BNB", "")) + float(walletBalance)) + "BNB"
-            send_str = "{} {}\n".format(walletBalance, currency)
+            send_str += "{} {}\n".format(walletBalance, currency)
         send_str = "{}：\n".format(u_api[2] or "User") + send_str
         update.message.reply_text(send_str)
     # 发送余额
-    update.message.reply_text("{}：核算完成\n合计：{} USDT".format(results[0][2] or "User", account_total))
+    update.message.reply_text("账户：{}，核算完成\n合计：{} USDT".format(results[0][2] or "User", account_total))
 
 
 def b_orders(update, context):
@@ -167,13 +167,13 @@ def b_orders(update, context):
                 positionType = "多单"
                 if float(positionAmt) < 0:
                     positionType = "空单"
-                order_info_str = "{}：\n" \
+                order_info_str = "账户：{}\n" \
                                  "交易对：{}\n" \
                                  "持仓方式：{}\n" \
                                  "持仓数量：{}\n" \
                                  "持仓成本价：{}\n" \
-                                 "持仓未实现盈亏：{}" .format(result[2], positionType,
-                                                      symbol_, positionAmt, entryPrice, unrealizedProfit)
+                                 "持仓未实现盈亏：{}" .format(result[2], symbol_, positionType,
+                                                      positionAmt, entryPrice, unrealizedProfit)
                 # 推送到指定用户
                 update.message.reply_text(order_info_str)
                 have_order = True
