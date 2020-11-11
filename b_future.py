@@ -59,7 +59,7 @@ def tg_bind_command(update, context):
     results = select_data(select_sql)
     if results:
         print("用户已存在！")
-        tg_bot_send_text("用户：{}，已经绑定过API，无需重复绑定！".format(update.message.from_user.), update.message.from_user.id)
+        tg_bot_send_text("您已经绑定过API，无需重复绑定！", update.message.from_user.id)
         return
     global bind_enable
     bind_enable = True
@@ -99,6 +99,7 @@ def b_balance(update, context):
     select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
+        tg_bot_send_text("请先绑定API", user_id)
         return
     balance_info = send_signed_request('GET', '/fapi/v2/balance', results[0])
     if len(balance_info) != 0:
@@ -120,9 +121,9 @@ def b_balance(update, context):
                        "可用余额：{}\n" \
                        "最大可转出余额：{}".format(asset, total_balance, crossWalletBalance,
                                            crossUnPnl, availableBalance, maxWithdrawAmount)
-            update.message.reply_text(send_str)
+            tg_bot_send_text(send_str, user_id)
     else:
-        update.message.reply_text("您的资产正在结算中，请稍后重试！")
+        tg_bot_send_text("您的资产正在结算中，请稍后重试！", user_id)
 
 
 def b_orders(update, context):
@@ -136,53 +137,57 @@ def b_orders(update, context):
     results = select_data(select_sql)
     if not results:
         return
-    all_symbols = send_signed_request('GET', '/fapi/v2/account', results[0])
-    if all_symbols:
-        all_symbols = all_symbols["positions"]
-        for symbol in all_symbols:
-            # 没有持仓的去掉
-            # if float(symbol['entryPrice']) == 0.0:
-            #     continue
-            history_orders = send_signed_request('GET', '/fapi/v1/allOrders', results[0], {'symbol': symbol['symbol']})
-            if not history_orders:
-                continue
-            # 排序
-            # history_orders.sort(key=lambda k: (k.get('time', 0)))
-            # 获取持有的币种的最后五笔订单
-            history_orders = history_orders[-5:]
-            for info in history_orders:
-                orderId = info['orderId']  # 订单ID
-                symbol = info['symbol']  # 交易对
-                avgPrice = info['avgPrice']  # 平均成交价
-                executedQty = info['executedQty']  # 成交量
-                cumQuote = info['cumQuote']  # 成交金额
-                side = info['side']  # 买卖方向
-                status = info['status']  # 订单状态
-                time_ = info['time']  # 下单时间
-                # 超过一天订单去除
-                if time() - time_/1000 > 12*60*60:
-                    continue
-                # 转换时区
-                tz = pytz.timezone('Asia/ShangHai')
-                dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
-                dt.strftime('%Y-%m-%d %H:%M:%S')
-                order_info_str = "订单ID：{}\n" \
-                                 "交易对：{}\n" \
-                                 "平均成交价：{}\n" \
-                                 "成交量：{}\n" \
-                                 "成交金额：{}\n" \
-                                 "买卖方向：{}\n" \
-                                 "订单状态：{}\n" \
-                                 "下单时间：{}".format(orderId, symbol, avgPrice,
-                                                  executedQty, cumQuote, side, status,
-                                                  dt)
-                # 推送到指定用户
-                update.message.reply_text(order_info_str)
-                have_order = True
-        if not have_order:
-            update.message.reply_text("暂无符合条件的订单，请稍后重试！")
-    else:
-        update.message.reply_text("您还未发生交易，暂无订单信息！")
+    # 友情提示
+    tg_bot_send_text("订单查询中，请稍后...", user_id)
+    # all_symbols = send_signed_request('GET', '/fapi/v2/account', results[0])
+    all_symbols = send_signed_request('GET', '/fapi/v1/openOrders', results[0])
+    print(all_symbols)
+    # if all_symbols:
+    #     all_symbols = all_symbols["positions"]
+    #     for symbol in all_symbols:
+    #         # 没有持仓的去掉
+    #         # if float(symbol['entryPrice']) == 0.0:
+    #         #     continue
+    #         history_orders = send_signed_request('GET', '/fapi/v1/allOrders', results[0], {'symbol': symbol['symbol']})
+    #         if not history_orders:
+    #             continue
+    #         # 排序
+    #         # history_orders.sort(key=lambda k: (k.get('time', 0)))
+    #         # 获取持有的币种的最后五笔订单
+    #         history_orders = history_orders[-5:]
+    #         for info in history_orders:
+    #             orderId = info['orderId']  # 订单ID
+    #             symbol = info['symbol']  # 交易对
+    #             avgPrice = info['avgPrice']  # 平均成交价
+    #             executedQty = info['executedQty']  # 成交量
+    #             cumQuote = info['cumQuote']  # 成交金额
+    #             side = info['side']  # 买卖方向
+    #             status = info['status']  # 订单状态
+    #             time_ = info['time']  # 下单时间
+    #             # 超过一天订单去除
+    #             if time() - time_/1000 > 12*60*60:
+    #                 continue
+    #             # 转换时区
+    #             tz = pytz.timezone('Asia/ShangHai')
+    #             dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
+    #             dt.strftime('%Y-%m-%d %H:%M:%S')
+    #             order_info_str = "订单ID：{}\n" \
+    #                              "交易对：{}\n" \
+    #                              "平均成交价：{}\n" \
+    #                              "成交量：{}\n" \
+    #                              "成交金额：{}\n" \
+    #                              "买卖方向：{}\n" \
+    #                              "订单状态：{}\n" \
+    #                              "下单时间：{}".format(orderId, symbol, avgPrice,
+    #                                               executedQty, cumQuote, side, status,
+    #                                               dt)
+    #             # 推送到指定用户
+    #             tg_bot_send_text(order_info_str, user_id)
+    #             have_order = True
+    #     if not have_order:
+    #         tg_bot_send_text("暂无符合条件的订单，请稍后重试！", user_id)
+    # else:
+    #     tg_bot_send_text("您还未发生交易，暂无订单信息！", user_id)
 
 
 def tg_error(update, context):
