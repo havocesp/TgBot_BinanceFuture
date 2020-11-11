@@ -121,6 +121,7 @@ def b_balance(update, context):
         account_info = send_signed_request('GET', '/fapi/v2/account', u_api)
         totalWalletBalance = account_info['totalWalletBalance']  # 账户总余额
         account_total += float(totalWalletBalance)
+        send_str = ""
         for asset in account_info['assets']:
             currency = asset['asset']  # 币种
             walletBalance = asset['walletBalance']  # 余额
@@ -129,8 +130,9 @@ def b_balance(update, context):
                 total_usdt = str(float(total_usdt.replace("USDT", "")) + float(walletBalance)) + "USDT"
             elif total_bnb.endswith(currency.upper()):
                 total_bnb = str(float(total_bnb.replace("BNB", "")) + float(walletBalance)) + "BNB"
-            send_str = "{}：余额：{} {}\n".format(u_api[2] or "User", walletBalance, currency)
-            update.message.reply_text(send_str)
+            send_str = "{} {}\n".format(walletBalance, currency)
+        send_str = "{}：\n".format(u_api[2] or "User") + send_str
+        update.message.reply_text(send_str)
     # 发送余额
     update.message.reply_text("{}：核算完成\n合计：{} USDT".format(results[0][2] or "User", account_total))
 
@@ -165,7 +167,8 @@ def b_orders(update, context):
                 positionType = "多单"
                 if float(positionAmt) < 0:
                     positionType = "空单"
-                order_info_str = "{}：交易对：{}\n" \
+                order_info_str = "{}：\n" \
+                                 "交易对：{}\n" \
                                  "持仓方式：{}\n" \
                                  "持仓数量：{}\n" \
                                  "持仓成本价：{}\n" \
