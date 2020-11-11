@@ -19,10 +19,14 @@
 """This module contains the classes that represent Telegram InlineQueryResult."""
 
 from telegram import TelegramObject
+from typing import Any
 
 
 class InlineQueryResult(TelegramObject):
     """Baseclass for the InlineQueryResult* classes.
+
+    Objects of this class are comparable in terms of equality. Two objects of this class are
+    considered equal, if their :attr:`id` is equal.
 
     Attributes:
         type (:obj:`str`): Type of the result.
@@ -35,7 +39,7 @@ class InlineQueryResult(TelegramObject):
 
     """
 
-    def __init__(self, type, id, **kwargs):
+    def __init__(self, type: str, id: str, **kwargs: Any):
         # Required
         self.type = str(type)
         self.id = str(id)
@@ -43,9 +47,9 @@ class InlineQueryResult(TelegramObject):
         self._id_attrs = (self.id,)
 
     @property
-    def _has_parse_mode(self):
+    def _has_parse_mode(self) -> bool:
         return hasattr(self, 'parse_mode')
 
     @property
-    def _has_input_message_content(self):
+    def _has_input_message_content(self) -> bool:
         return hasattr(self, 'input_message_content')

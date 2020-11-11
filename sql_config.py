@@ -13,15 +13,16 @@ def create_table():
     # 使用 cursor() 方法创建一个游标对象 cursor
     cursor = db.cursor()
     # 创建表
-    create_binance_tg = "create table binance_tg (" \
-                        "user_name char (10)," \
+    create_binance_tg = "create table IF NOT EXISTS binance_tg (" \
+                        "user_name char(10)," \
                         "tg_id int not null," \
                         "b_api_key char(65) not null," \
                         "b_secret_key char(65) not null," \
                         "tg_token char(50) not null," \
-                        "insert_time timestamp default current_timestamp ()," \
+                        "insert_time timestamp default current_timestamp()," \
                         "update_time timestamp default current_timestamp()," \
-                        "UNIQUE (b_api_key)"
+                        "UNIQUE (b_api_key)" \
+                        ")"
     try:
         cursor.execute(create_binance_tg)
         db.commit()

@@ -19,10 +19,18 @@
 """This module contains an object that represents a Telegram UserProfilePhotos."""
 
 from telegram import PhotoSize, TelegramObject
+from telegram.utils.types import JSONDict
+from typing import Any, List, Optional, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from telegram import Bot
 
 
 class UserProfilePhotos(TelegramObject):
     """This object represent a user's profile pictures.
+
+    Objects of this class are comparable in terms of equality. Two objects of this class are
+    considered equal, if their :attr:`total_count` and :attr:`photos` are equal.
 
     Attributes:
         total_count (:obj:`int`): Total number of profile pictures.
@@ -35,23 +43,25 @@ class UserProfilePhotos(TelegramObject):
 
     """
 
-    def __init__(self, total_count, photos, **kwargs):
+    def __init__(self, total_count: int, photos: List[List[PhotoSize]], **kwargs: Any):
         # Required
         self.total_count = int(total_count)
         self.photos = photos
 
+        self._id_attrs = (self.total_count, self.photos)
+
     @classmethod
-    def de_json(cls, data, bot):
+    def de_json(cls, data: Optional[JSONDict], bot: 'Bot') -> Optional['UserProfilePhotos']:
+        data = cls.parse_data(data)
+
         if not data:
             return None
-
-        data = super().de_json(data, bot)
 
         data['photos'] = [PhotoSize.de_list(photo, bot) for photo in data['photos']]
 
         return cls(**data)
 
-    def to_dict(self):
+    def to_dict(self) -> JSONDict:
         data = super().to_dict()
 
         data['photos'] = []
@@ -59,3 +69,6 @@ class UserProfilePhotos(TelegramObject):
             data['photos'].append([x.to_dict() for x in photo])
 
         return data
+
+    def __hash__(self) -> int:
+        return hash(tuple(tuple(p for p in photo) for photo in self.photos))

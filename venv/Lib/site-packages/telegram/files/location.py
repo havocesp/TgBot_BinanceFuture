@@ -19,10 +19,14 @@
 """This module contains an object that represents a Telegram Location."""
 
 from telegram import TelegramObject
+from typing import Any
 
 
 class Location(TelegramObject):
     """This object represents a point on the map.
+
+    Objects of this class are comparable in terms of equality. Two objects of this class are
+    considered equal, if their :attr:`longitute` and :attr:`latitude` are equal.
 
     Attributes:
         longitude (:obj:`float`): Longitude as defined by sender.
@@ -35,16 +39,9 @@ class Location(TelegramObject):
 
     """
 
-    def __init__(self, longitude, latitude, **kwargs):
+    def __init__(self, longitude: float, latitude: float, **kwargs: Any):
         # Required
         self.longitude = float(longitude)
         self.latitude = float(latitude)
 
         self._id_attrs = (self.longitude, self.latitude)
-
-    @classmethod
-    def de_json(cls, data, bot):
-        if not data:
-            return None
-
-        return cls(**data)

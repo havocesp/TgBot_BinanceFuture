@@ -3,13 +3,12 @@ from time import time
 
 import pytz
 import requests
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, PreCheckoutQueryHandler, ShippingQueryHandler
-from config import SKey, PKey, teltoken, telChanel
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from config import teltoken
 from futures import send_signed_request
 
 from sql_config import insert_data, select_data
 
-from config import user_info
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -69,7 +68,7 @@ def tg_bind_command(update, context):
     #     return
     global bind_enable
     bind_enable = True
-    update.message.reply_text("请输入向相关密钥！")
+    update.message.reply_text("请输入相关API！")
 
 
 def bind_b_api(update, context):
@@ -80,19 +79,18 @@ def bind_b_api(update, context):
     api_info = update.message.text.strip().replace(" ", "")
     if len(api_info) < 128:
         return
-    api_info_list = api_info.split('\n')
-
+    # 对输入API进行处理
+    api_info_list = filter(None, api_info.split('\n'))
     # 查询当前API是否被绑定
-    select_sql = "select * from binance_tg where b_api_key={}".format(api_info_list[0])
+    select_sql = "select * from binance_tg where b_api_key='{}'".format(api_info_list[0].strip())
     results = select_data(select_sql)
     if results:
         update.message.reply_text("此API已经被绑定！")
         return
 
     # 绑定用户信息到数据库
-    insert_sql = "insert into binance_tg(tg_id, b_api_key, b_secret_key, tg_token) " \
-                  "value(%s, '%s', '%s', '%s')" % (user_id, api_info_list[0], api_info_list[1], teltoken.replace(":", ""))
-    print(insert_sql)
+    insert_sql = "insert into binance_tg(tg_id, b_api_key, b_secret_key, tg_token) value(%s, '%s', '%s', '%s')" \
+                 % (user_id, api_info_list[0], api_info_list[1], teltoken.replace(":", ""))
     result = insert_data(insert_sql)
     if result:
         success_str = "绑定成功。"
@@ -143,9 +141,8 @@ def b_balance(update, context):
                 update.message.reply_text(send_str)
         else:
             continue
-    update.message.reply_text("核算完成，合计：{}".format(total_asset))
     # 发送余额
-
+    update.message.reply_text("核算完成，合计：{}".format(total_asset))
 
 
 def b_orders(update, context):
@@ -201,13 +198,12 @@ def b_orders(update, context):
                                  "买卖方向：{}\n" \
                                  "订单状态：{}\n" \
                                  "下单时间：{}".format(orderId, symbol, avgPrice,
-                                                  executedQty, cumQuote, side, status,
-                                                  dt)
+                                                  executedQty, cumQuote, side, status, dt)
                 # 推送到指定用户
                 update.message.reply_text(order_info_str)
                 have_order = True
         if not have_order:
-            update.message.reply_text("您当前暂无相关订单，请稍后重试。")
+            update.message.reply_text("当前暂无持单，请稍后重试。")
         else:
             update.message.reply_text("查询完成。")
     else:
