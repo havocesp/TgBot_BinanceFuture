@@ -15,6 +15,7 @@ def create_table():
     # 创建表
     create_binance_tg = "create table IF NOT EXISTS binance_tg (" \
                         "user_name char(10)," \
+                        "api_lable char(15)," \
                         "tg_id int not null," \
                         "b_api_key char(65) not null," \
                         "b_secret_key char(65) not null," \
@@ -23,8 +24,22 @@ def create_table():
                         "update_time timestamp default current_timestamp()," \
                         "UNIQUE (b_api_key)" \
                         ")"
+    # 测试表
+    create_binance_tg_t = "create table IF NOT EXISTS binance_tg_t (" \
+                        "user_name char(10)," \
+                        "api_lable char(15)," \
+                        "tg_id int not null," \
+                        "b_api_key char(65) not null," \
+                        "b_secret_key char(65) not null," \
+                        "tg_token char(50) not null," \
+                        "insert_time timestamp default current_timestamp()," \
+                        "update_time timestamp default current_timestamp()," \
+                        "UNIQUE (b_api_key)" \
+                        ")"
+
     try:
         cursor.execute(create_binance_tg)
+        cursor.execute(create_binance_tg_t)
         db.commit()
     except Exception as e:
         print(e)

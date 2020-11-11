@@ -79,16 +79,19 @@ def bind_b_api(update, context):
         return
     # 对输入API进行处理
     api_info_list = api_info.split('\n')
+    if len(api_info) < 3:
+        return
     # 查询当前API是否被绑定
-    select_sql = "select * from binance_tg where b_api_key='{}'".format(api_info_list[0])
+    select_sql = "select * from binance_tg where b_api_key='{}'".format(api_info_list[1])
     results = select_data(select_sql)
     if results:
         update.message.reply_text("此API已经被绑定！")
         return
 
     # 绑定用户信息到数据库
-    insert_sql = "insert into binance_tg(tg_id, b_api_key, b_secret_key, tg_token) value(%s, '%s', '%s', '%s')" \
-                 % (user_id, api_info_list[0], api_info_list[1], teltoken.replace(":", ""))
+    insert_sql = "insert into binance_tg(tg_id, api_lable, b_api_key, b_secret_key, tg_token) " \
+                 "value(%s, '%s','%s', '%s', '%s')" % \
+                 (user_id, api_info_list[0], api_info_list[1], api_info_list[2], teltoken.replace(":", ""))
     result = insert_data(insert_sql)
     if result:
         success_str = "绑定成功。"
@@ -106,7 +109,7 @@ def b_balance(update, context):
     """
     # 检查用户ID
     user_id = update.message.from_user.id
-    select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
+    select_sql = "select b_api_key, b_secret_key,api_lable from binance_tg where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
         update.message.reply_text("请先绑定API")
@@ -131,21 +134,20 @@ def b_balance(update, context):
                 availableBalance = balance['availableBalance']  # 可用余额
                 maxWithdrawAmount = balance['maxWithdrawAmount']  # 最大可转出余额
 
-                send_str = "资产：{}\n" \
+                send_str = "{}：资产：{}\n" \
                            "总余额：{}\n" \
                            "全仓余额：{}\n" \
                            "全仓未实现盈亏：{}\n" \
                            "可用余额：{}\n" \
-                           "最大可转出余额：{}".format(asset, total_balance, crossWalletBalance,
+                           "最大可转出余额：{}".format(u_api['api_lable'], asset, total_balance, crossWalletBalance,
                                                crossUnPnl, availableBalance, maxWithdrawAmount)
                 update.message.reply_text(send_str)
         else:
-            print("======="*30)
             continue
     # 发送余额
-    update.message.reply_text("核算完成，合计：\n"
+    update.message.reply_text("{}核算完成，合计：\n"
                               "{}\n"
-                              "{}".format(total_usdt, total_bnb))
+                              "{}".format(results[0]['api_lable'], total_usdt, total_bnb))
 
 
 def b_orders(update, context):
@@ -155,7 +157,7 @@ def b_orders(update, context):
     have_order = False
     # 检查用户ID
     user_id = update.message.from_user.id
-    select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
+    select_sql = "select b_api_key, b_secret_key, api_lable from binance_tg where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
         update.message.reply_text("请先绑定API")
@@ -175,19 +177,17 @@ def b_orders(update, context):
                 positionAmt = symbol['positionAmt']  # 持仓数量
                 entryPrice = symbol['entryPrice']  # 持仓成本价
                 unrealizedProfit = symbol['unrealizedProfit']  # 持仓未实现盈亏
-                order_info_str = "交易对：{}\n" \
+                order_info_str = "{}：交易对：{}\n" \
                                  "持仓数量：{}\n" \
                                  "持仓成本价：{}\n" \
-                                 "持仓未实现盈亏：{}" .format(symbol_, positionAmt, entryPrice, unrealizedProfit)
+                                 "持仓未实现盈亏：{}" .format(result['api_lable'], symbol_, positionAmt, entryPrice, unrealizedProfit)
                 # 推送到指定用户
                 update.message.reply_text(order_info_str)
                 have_order = True
-            if not have_order:
-                update.message.reply_text("当前暂无持单，请稍后重试。")
-            else:
-                update.message.reply_text("查询完成。")
+    if not have_order:
+        update.message.reply_text("当前暂无持单，请稍后重试。")
     else:
-        update.message.reply_text("您还未发生交易，暂无订单信息！")
+        update.message.reply_text("订单查询完成。")
 
 
 def tg_error(update, context):
