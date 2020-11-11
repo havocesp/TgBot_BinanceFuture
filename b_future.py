@@ -42,10 +42,10 @@ def tg_help(update, context):
     """
     Telegram bot help
     """
-    description_str = "/help = 查看所有命令\n" \
-                      "/balance = 查看账户余额\n" \
-                      "/orders = 查询所有订单\n" \
-                      "/bind = 绑定交易所API"
+    description_str = "/help = 查看命令\n" \
+                      "/balance = 查询余额\n" \
+                      "/orders = 查询订单\n" \
+                      "/bind = 绑定API"
     update.message.reply_text(description_str)
     pass
 
@@ -140,7 +140,7 @@ def b_orders(update, context):
         return
     # 友情提示
     tg_bot_send_text("订单查询中，请耐心等待。", user_id)
-    all_symbols = send_signed_request('GET', '/fapi/v2/account', results[0])  # 订单历史
+    all_symbols = send_signed_request('GET', '/fapi/v2/account', results[0])  # 查询账户交易对
     # all_symbols = send_signed_request('GET', '/fapi/v1/openOrders', results[0])  # 所有挂单
     if all_symbols:
         all_symbols = all_symbols["positions"]
@@ -148,7 +148,7 @@ def b_orders(update, context):
             # 没有持仓的去掉
             if float(symbol['entryPrice']) == 0.0:
                 continue
-            history_orders = send_signed_request('GET', '/fapi/v1/allOrders', results[0], {'symbol': symbol['symbol']})
+            history_orders = send_signed_request('GET', '/fapi/v1/allOrders', results[0], {'symbol': symbol['symbol']})  # 订单历史
             if not history_orders:
                 continue
             # 排序
@@ -185,7 +185,39 @@ def b_orders(update, context):
                 tg_bot_send_text(order_info_str, user_id)
                 have_order = True
         if not have_order:
-            tg_bot_send_text("您当前暂无持单，请稍后重试。", user_id)
+            open_orders = send_signed_request('GET', '/fapi/v1/openOrders', results[0])  # 所有挂单
+            if open_orders:
+                for info in open_orders:
+                    orderId = info['orderId']  # 订单ID
+                    symbol = info['symbol']  # 交易对
+                    avgPrice = info['avgPrice']  # 平均成交价
+                    executedQty = info['executedQty']  # 成交量
+                    cumQuote = info['cumQuote']  # 成交金额
+                    side = info['side']  # 买卖方向
+                    status = info['status']  # 订单状态
+                    time_ = info['time']  # 下单时间
+                    # 超过一天订单去除
+                    if time() - time_ / 1000 > 12 * 60 * 60:
+                        continue
+                    # 转换时区
+                    tz = pytz.timezone('Asia/ShangHai')
+                    dt = pytz.datetime.datetime.fromtimestamp(time_ / 1000, tz)
+                    dt.strftime('%Y-%m-%d %H:%M:%S')
+                    order_info_str = "订单ID：{}\n" \
+                                     "交易对：{}\n" \
+                                     "平均成交价：{}\n" \
+                                     "成交量：{}\n" \
+                                     "成交金额：{}\n" \
+                                     "买卖方向：{}\n" \
+                                     "订单状态：{}\n" \
+                                     "下单时间：{}".format(orderId, symbol, avgPrice,
+                                                      executedQty, cumQuote, side, status,
+                                                      dt)
+                    # 推送到指定用户
+                    tg_bot_send_text(order_info_str, user_id)
+                pass
+            else:
+                tg_bot_send_text("您当前暂无相关订单，请稍后重试。", user_id)
         else:
             tg_bot_send_text("查询完成。", user_id)
     else:
