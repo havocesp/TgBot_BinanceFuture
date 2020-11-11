@@ -81,10 +81,10 @@ def bind_b_api(update, context):
     print(insert_sql)
     result = insert_data(insert_sql)
     if result:
-        success_str = "Bind API succeed"
+        success_str = "绑定成功。"
         tg_bot_send_text(success_str, user_id)
     else:
-        failure_str = "Bind API failure, please try again!"
+        failure_str = "绑定失败，请重试。"
         tg_bot_send_text(failure_str, user_id)
     global bind_enable
     bind_enable = False
@@ -123,7 +123,7 @@ def b_balance(update, context):
                                            crossUnPnl, availableBalance, maxWithdrawAmount)
             tg_bot_send_text(send_str, user_id)
     else:
-        tg_bot_send_text("您的资产正在结算中，请稍后重试！", user_id)
+        tg_bot_send_text("您的资产正在结算中，请稍后重试。", user_id)
 
 
 def b_orders(update, context):
@@ -136,9 +136,10 @@ def b_orders(update, context):
     select_sql = "select b_api_key, b_secret_key from binance_tg where tg_id={}".format(user_id)
     results = select_data(select_sql)
     if not results:
+        tg_bot_send_text("请先绑定API", user_id)
         return
     # 友情提示
-    tg_bot_send_text("订单查询中，请稍后...", user_id)
+    tg_bot_send_text("订单查询中，请耐心等待。", user_id)
     all_symbols = send_signed_request('GET', '/fapi/v2/account', results[0])  # 订单历史
     # all_symbols = send_signed_request('GET', '/fapi/v1/openOrders', results[0])  # 所有挂单
     if all_symbols:
@@ -184,7 +185,9 @@ def b_orders(update, context):
                 tg_bot_send_text(order_info_str, user_id)
                 have_order = True
         if not have_order:
-            tg_bot_send_text("您当前暂无持单，请稍后重试！", user_id)
+            tg_bot_send_text("您当前暂无持单，请稍后重试。", user_id)
+        else:
+            tg_bot_send_text("查询完成。", user_id)
     else:
         tg_bot_send_text("您还未发生交易，暂无订单信息！", user_id)
 

@@ -36,7 +36,6 @@ def insert_data(insert_sql):
 
     # 使用 cursor() 方法创建一个游标对象 cursor
     cursor = db.cursor()
-
     try:
         cursor.execute(insert_sql)
         db.commit()
