@@ -5,7 +5,7 @@
 teltoken = '1386154312:AAGhq_iROaCy0_99hWg-jNKmH0o16fH50K8'
 # ====================Database==================================
 database = "binance_tg"
-t_table = "binance_tg"
+t_table = "binance_tg_t"
 # ==============================================================
 
 

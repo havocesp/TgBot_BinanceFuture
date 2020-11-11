@@ -134,7 +134,7 @@ def b_balance(update, context):
         send_str = "账户：{}\n".format(u_api[2] or "User") + send_str
         update.message.reply_text(send_str)
     # 发送余额
-    update.message.reply_text("账户核算完成合计：\n{} USDT".format(account_total))
+    update.message.reply_text("全部账户共计总额：\n{} USDT".format(account_total))
 
 
 def b_orders(update, context):
@@ -172,7 +172,7 @@ def b_orders(update, context):
                                  "持仓方式：{}\n" \
                                  "持仓数量：{}\n" \
                                  "持仓均价：{}\n" \
-                                 "持仓未实现盈亏：{}" .format(result[2], symbol_, positionType,
+                                 "持仓未实现盈亏：{}" .format(result[2], symbol_.replace("USDT", "_USDT"), positionType,
                                                       positionAmt, entryPrice, unrealizedProfit)
                 # 推送到指定用户
                 update.message.reply_text(order_info_str)
