@@ -22,7 +22,8 @@ def tg_bot_send_text(message, user_id):
     """
     To send message
     """
-    send_text = 'https://api.telegram.org/bot' + teltoken + '/sendMessage?chat_id=' + str(user_id) + '&parse_mode=Markdown&text=' + message
+    send_text = 'https://api.telegram.org/bot' + teltoken + '/sendMessage?chat_id=' + \
+                str(user_id) + '&parse_mode=Markdown&text=' + message
     response = requests.get(send_text)
     return response.json()
 
@@ -118,32 +119,33 @@ def b_balance(update, context):
     total_bnb = "0BNB"
     update.message.reply_text("资产核算中，请稍后。")
     for u_api in results:
-        balance_info = send_signed_request('GET', '/fapi/v2/balance', u_api)
-        if len(balance_info) != 0:
-            for balance in balance_info:
-                if float(balance["balance"]) <= 0.0:
-                    continue
-                asset = balance['asset']  # 资产（币种）
-                total_balance = balance['balance']  # 总余额
-                if total_usdt.endswith(asset.upper()):
-                    total_usdt = str(float(total_usdt.replace("USDT", "")) + float(total_balance)) + "USDT"
-                elif total_bnb.endswith(asset.upper()):
-                    total_bnb = str(float(total_bnb.replace("BNB", "")) + float(total_balance)) + "BNB"
-                crossWalletBalance = balance['crossWalletBalance']  # 全仓余额
-                crossUnPnl = balance['crossUnPnl']  # 全仓未实现盈亏
-                availableBalance = balance['availableBalance']  # 可用余额
-                maxWithdrawAmount = balance['maxWithdrawAmount']  # 最大可转出余额
-
-                send_str = "{}：资产：{}\n" \
-                           "总余额：{}\n" \
-                           "全仓余额：{}\n" \
-                           "全仓未实现盈亏：{}\n" \
-                           "可用余额：{}\n" \
-                           "最大可转出余额：{}".format(u_api['api_lable'], asset, total_balance, crossWalletBalance,
-                                               crossUnPnl, availableBalance, maxWithdrawAmount)
-                update.message.reply_text(send_str)
-        else:
-            continue
+        balance_info = send_signed_request('GET', '/fapi/v2/account', u_api)
+        print(balance_info)
+        # if len(balance_info) != 0:
+        #     for balance in balance_info:
+        #         if float(balance["balance"]) <= 0.0:
+        #             continue
+        #         asset = balance['asset']  # 资产（币种）
+        #         total_balance = balance['balance']  # 总余额
+        #         if total_usdt.endswith(asset.upper()):
+        #             total_usdt = str(float(total_usdt.replace("USDT", "")) + float(total_balance)) + "USDT"
+        #         elif total_bnb.endswith(asset.upper()):
+        #             total_bnb = str(float(total_bnb.replace("BNB", "")) + float(total_balance)) + "BNB"
+        #         crossWalletBalance = balance['crossWalletBalance']  # 全仓余额
+        #         crossUnPnl = balance['crossUnPnl']  # 全仓未实现盈亏
+        #         availableBalance = balance['availableBalance']  # 可用余额
+        #         maxWithdrawAmount = balance['maxWithdrawAmount']  # 最大可转出余额
+        #
+        #         send_str = "{}：资产：{}\n" \
+        #                    "总余额：{}\n" \
+        #                    "全仓余额：{}\n" \
+        #                    "全仓未实现盈亏：{}\n" \
+        #                    "可用余额：{}\n" \
+        #                    "最大可转出余额：{}".format(u_api['api_lable'], asset, total_balance, crossWalletBalance,
+        #                                        crossUnPnl, availableBalance, maxWithdrawAmount)
+        #         update.message.reply_text(send_str)
+        # else:
+        #     continue
     # 发送余额
     update.message.reply_text("{}核算完成，合计：\n"
                               "{}\n"
@@ -180,7 +182,8 @@ def b_orders(update, context):
                 order_info_str = "{}：交易对：{}\n" \
                                  "持仓数量：{}\n" \
                                  "持仓成本价：{}\n" \
-                                 "持仓未实现盈亏：{}" .format(result['api_lable'], symbol_, positionAmt, entryPrice, unrealizedProfit)
+                                 "持仓未实现盈亏：{}" .format(result['api_lable'], symbol_,
+                                                      positionAmt, entryPrice, unrealizedProfit)
                 # 推送到指定用户
                 update.message.reply_text(order_info_str)
                 have_order = True
