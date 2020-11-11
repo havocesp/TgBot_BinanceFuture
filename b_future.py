@@ -126,15 +126,17 @@ def b_balance(update, context):
             walletBalance = asset['walletBalance']  # 余额
             # 币种相加
             if total_usdt.endswith(currency.upper()):
-                total_usdt = str(float(total_usdt.replace("USDT", "")) + float(walletBalance))
+                total_usdt = str(float(total_usdt.replace("USDT", "")) + float(walletBalance)) + "USDT"
             elif total_bnb.endswith(currency.upper()):
-                total_bnb = str(float(total_bnb.replace("BNB", "")) + float(walletBalance))
+                total_bnb = str(float(total_bnb.replace("BNB", "")) + float(walletBalance)) + "BNB"
             send_str = "{}：余额：{} {}\n".format(u_api[2] or "User", walletBalance, currency)
             update.message.reply_text(send_str)
     # 发送余额
-    update.message.reply_text("{}：核算完成，合计：{} USDT\n"
+    update.message.reply_text("{}：核算完成\n"
+                              "合计：{} USDT\n"
                               "USDT：{}\n"
-                              "BNB：{}".format(results[0][2] or "User", account_total, total_usdt, total_bnb))
+                              "BNB：{}".format(results[0][2] or "User", account_total,
+                                              total_usdt.replace("USDT", ""), total_bnb.replace("BNB", "")))
 
 
 def b_orders(update, context):
