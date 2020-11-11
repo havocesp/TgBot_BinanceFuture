@@ -78,7 +78,7 @@ def bind_b_api(update, context):
     if len(api_info) < 128:
         return
     # 对输入API进行处理
-    api_info_list = filter(None, api_info.split('\n'))
+    api_info_list = api_info.split('\n')
     # 查询当前API是否被绑定
     select_sql = "select * from binance_tg where b_api_key='{}'".format(api_info_list[0])
     results = select_data(select_sql)
@@ -111,19 +111,21 @@ def b_balance(update, context):
     if not results:
         update.message.reply_text("请先绑定API")
         return
-    total_asset = "0 USDT"
+    total_usdt = "0USDT"
+    total_bnb = "0BNB"
     update.message.reply_text("资产核算中，请稍后。")
     for u_api in results:
         balance_info = send_signed_request('GET', '/fapi/v2/balance', u_api)
         if len(balance_info) != 0:
-            print(balance_info[0])
             for balance in balance_info:
                 if float(balance["balance"]) <= 0.0:
                     continue
                 asset = balance['asset']  # 资产（币种）
                 total_balance = balance['balance']  # 总余额
-                if total_asset.endswith(asset.upper()):
-                    total_asset = str(float(total_asset.split(" ")[0]) + float(total_balance)) + "USDT"
+                if total_usdt.endswith(asset.upper()):
+                    total_usdt = str(float(total_usdt.replace("USDT", "")) + float(total_balance)) + "USDT"
+                elif total_bnb.endswith(asset.upper()):
+                    total_bnb = str(float(total_usdt.replace("BNB", "")) + float(total_balance)) + "BNB"
                 crossWalletBalance = balance['crossWalletBalance']  # 全仓余额
                 crossUnPnl = balance['crossUnPnl']  # 全仓未实现盈亏
                 availableBalance = balance['availableBalance']  # 可用余额
@@ -138,9 +140,12 @@ def b_balance(update, context):
                                                crossUnPnl, availableBalance, maxWithdrawAmount)
                 update.message.reply_text(send_str)
         else:
+            print("======="*30)
             continue
     # 发送余额
-    update.message.reply_text("核算完成，合计：{}".format(total_asset))
+    update.message.reply_text("核算完成，合计：\n"
+                              "{}\n"
+                              "{}".format(total_usdt, total_bnb))
 
 
 def b_orders(update, context):
