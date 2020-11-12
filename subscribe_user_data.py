@@ -108,7 +108,7 @@ def run(user_info):
                 tz = pytz.timezone('Asia/ShangHai')
                 dt = pytz.datetime.datetime.fromtimestamp(event.orderTradeTime/1000, tz)
                 dt.strftime('%Y-%m-%d %H:%M:%S')
-                orderTradeTime = dt[:-10]  # 成交时间
+                orderTradeTime = str(dt)[:-10]  # 成交时间
                 orderProfit = event.orderProfit  # 该交易实现盈亏
                 if float(orderProfit) < 0:
                     order_str = "账户：{}\n" \
@@ -116,7 +116,7 @@ def run(user_info):
                                 "持仓方向：{}\n" \
                                 "持仓数量：{}\n" \
                                 "持仓均价：{}\n" \
-                                "本单盈亏：{} \ud83e\udd7a\ud83e\udd7a\ud83e\udd7a\n" \
+                                "本单盈亏：{} USDT %f0%9f%a5%ba%f0%9f%a5%ba%f0%9f%a5%ba\n" \
                                 "订单号：{}\n" \
                                 "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
                                                  side, origQty, avgPrice, orderProfit, orderId, orderTradeTime)
@@ -126,7 +126,7 @@ def run(user_info):
                                 "持仓方向：{}\n" \
                                 "持仓数量：{}\n" \
                                 "持仓均价：{}\n" \
-                                "本单盈亏：{} \ud83d\udcb0\ud83d\udcb0\ud83d\udcb0\n" \
+                                "本单盈亏：{} USDT %f0%9f%92%b0%f0%9f%92%b0%f0%9f%92%b0\n" \
                                 "订单号：{}\n" \
                                 "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
                                                  side, origQty, avgPrice, orderProfit, orderId, orderTradeTime)
