@@ -31,6 +31,7 @@ class OrderUpdate:
         self.activationPrice = 0.0
         self.callbackRate = 0.0
         self.positionSide = None
+        self.orderProfit = 0.0  # 自定义添加盈利
 
 
     @staticmethod
@@ -69,14 +70,6 @@ class OrderUpdate:
         result.activationPrice = data_group.get_float_or_default("AP", None)
         result.callbackRate = data_group.get_float_or_default("cr", None)
         result.positionSide = data_group.get_string("ps")
-
-        print("*"*90)
-        try:
-            print(data_group.get_float("rp"))
-            print("========")
-            print(data_group.get_float("RP"))
-        except Exception as e:
-            print(e)
-        print("*"*90)
+        result.orderProfit = data_group.get_float("rp")  # 自定义添加盈利
 
         return result
