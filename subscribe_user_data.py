@@ -48,9 +48,6 @@ def run(user_info):
                 PrintMix.print_data(event.balances)
                 balance_str = ""
                 for user_balance in event.balances:
-                    print("--"*90)
-                    print(user_balance.asset)
-                    print("--"*90)
                     asset = user_balance.asset  # 交易对
                     walletBalance = user_balance.walletBalance  # 余额
                     balance_str += "{} {}\n".format(walletBalance, asset)
@@ -60,9 +57,8 @@ def run(user_info):
 
                 print("=== Positions ===")
                 PrintMix.print_data(event.positions)
-                # positions_str = ""
-                # for position_info in event.positions:
-                #
+                for i in event.positions:
+                    print(i.asset)
                 print("================")
 
             elif (event.eventType == "ORDER_TRADE_UPDATE"):
@@ -112,7 +108,7 @@ def run(user_info):
                 tz = pytz.timezone('Asia/ShangHai')
                 dt = pytz.datetime.datetime.fromtimestamp(event.orderTradeTime/1000, tz)
                 dt.strftime('%Y-%m-%d %H:%M:%S')
-                orderTradeTime = dt  # 成交时间
+                orderTradeTime = dt[:-10]  # 成交时间
                 orderProfit = event.orderProfit  # 该交易实现盈亏
                 order_str = "账户：{}\n" \
                             "交易对：{}\n" \

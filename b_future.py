@@ -2,7 +2,7 @@ import logging
 
 import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-from config import teltoken, t_table
+from config import teltoken, t_table, win
 from futures import send_signed_request
 
 from sql_config import insert_data, select_data
@@ -134,7 +134,7 @@ def b_balance(update, context):
         send_str = "账户：{}\n".format(u_api[2] or "User") + send_str
         update.message.reply_text(send_str)
     # 发送余额
-    update.message.reply_text("全部账户共计总额：\n{} USDT\n".format(account_total, total_bnb.replace("BNB", "")))
+    update.message.reply_text("全部账户共计总额：\n{}".format(account_total, total_bnb.replace("BNB", ""), win*70))
 
 
 def b_orders(update, context):
