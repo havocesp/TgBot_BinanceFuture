@@ -134,7 +134,7 @@ def b_balance(update, context):
         send_str = "账户：{}\n".format(u_api[2] or "User") + send_str
         update.message.reply_text(send_str)
     # 发送余额
-    update.message.reply_text("全部账户共计总额：\n{} USDT".format(account_total))
+    update.message.reply_text("全部账户共计总额：\n{} USDT\n".format(account_total, total_bnb.replace("BNB", "")))
 
 
 def b_orders(update, context):
