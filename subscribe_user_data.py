@@ -110,15 +110,26 @@ def run(user_info):
                 dt.strftime('%Y-%m-%d %H:%M:%S')
                 orderTradeTime = dt[:-10]  # 成交时间
                 orderProfit = event.orderProfit  # 该交易实现盈亏
-                order_str = "账户：{}\n" \
-                            "交易对：{}\n" \
-                            "持仓方向：{}\n" \
-                            "持仓数量：{}\n" \
-                            "持仓均价：{}\n" \
-                            "本单盈亏：{}\n" \
-                            "订单号：{}\n" \
-                            "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
-                                             side, origQty, avgPrice, orderProfit, orderId, orderTradeTime)
+                if float(orderProfit) < 0:
+                    order_str = "账户：{}\n" \
+                                "交易对：{}\n" \
+                                "持仓方向：{}\n" \
+                                "持仓数量：{}\n" \
+                                "持仓均价：{}\n" \
+                                "本单盈亏：{} \ud83e\udd7a\ud83e\udd7a\ud83e\udd7a\n" \
+                                "订单号：{}\n" \
+                                "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
+                                                 side, origQty, avgPrice, orderProfit, orderId, orderTradeTime)
+                else:
+                    order_str = "账户：{}\n" \
+                                "交易对：{}\n" \
+                                "持仓方向：{}\n" \
+                                "持仓数量：{}\n" \
+                                "持仓均价：{}\n" \
+                                "本单盈亏：{} \ud83d\udcb0\ud83d\udcb0\ud83d\udcb0\n" \
+                                "订单号：{}\n" \
+                                "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
+                                                 side, origQty, avgPrice, orderProfit, orderId, orderTradeTime)
                 tg_bot_send_text(order_str, user_info[1], user_info[4])
                 print("=======================")
                 if not event.activationPrice is None:
