@@ -114,17 +114,16 @@ def run(user_info):
                 print("Is this Close-All: ", event.isClosePosition)
                 print("========Orders=========")
                 symbol = event.symbol  # 交易对
-                side = ""  # 订单方向
-                if event.side == "SELL":
-                    side = "做空"
+                positionSide = ""  # 订单方向
+                if event.positionSide == "LONG":
+                    positionSide = "做多"
                 else:
-                    side = "做多"
+                    positionSide = "做空"
                 origQty = event.origQty  # 订单原始数量
                 avgPrice = event.avgPrice  # 订单平均价格
                 # 订单筛选
                 orderStatus = event.orderStatus  # 订单的当前状态
      
-
                 orderId = event.orderId  # 订单ID
                 tz = pytz.timezone('Asia/ShangHai')
                 dt = pytz.datetime.datetime.fromtimestamp(event.orderTradeTime/1000, tz)
@@ -141,7 +140,7 @@ def run(user_info):
                                     "本单盈亏：{} USDT %f0%9f%a5%ba%f0%9f%a5%ba%f0%9f%a5%ba\n" \
                                     "订单号：{}\n" \
                                     "订单状态：{}\n" \
-                                    "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), side,
+                                    "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), positionSide,
                                                      origQty, avgPrice, orderProfit, orderId,
                                                      zh_order_status(orderStatus) or orderStatus, orderTradeTime)
                     else:
@@ -153,7 +152,7 @@ def run(user_info):
                                     "本单盈亏：{} USDT %f0%9f%92%b0%f0%9f%92%b0%f0%9f%92%b0\n" \
                                     "订单号：{}\n" \
                                     "订单状态：{}\n" \
-                                    "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), side,
+                                    "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), positionSide,
                                                      origQty, avgPrice, orderProfit, orderId,
                                                      zh_order_status(orderStatus) or orderStatus, orderTradeTime)
                 else:
@@ -165,7 +164,7 @@ def run(user_info):
                                 "订单号：{}\n" \
                                 "订单状态：{}\n" \
                                 "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
-                                                 side, origQty, avgPrice, orderId,
+                                                 positionSide, origQty, avgPrice, orderId,
                                                  zh_order_status(orderStatus) or orderStatus, orderTradeTime)
                 tg_bot_send_text(order_str, user_info[1], user_info[4])
                 print("=======================")
