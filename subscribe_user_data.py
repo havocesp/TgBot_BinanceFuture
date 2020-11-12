@@ -52,7 +52,7 @@ def run(user_info):
                     walletBalance = user_balance.walletBalance  # 余额
                     balance_str += "{} {}\n".format(walletBalance, asset)
                 balance_str = "账户：{}\n".format(user_info[0]) + balance_str
-                tg_bot_send_text(balance_str, user_info[1], user_info[4])
+                # tg_bot_send_text(balance_str, user_info[1], user_info[4])
                 print("================")
 
                 print("=== Positions ===")
@@ -102,34 +102,46 @@ def run(user_info):
                 avgPrice = event.avgPrice  # 订单平均价格
                 # 订单筛选
                 orderStatus = event.orderStatus  # 订单的当前状态
-                # if orderStatus != "FILLED" or orderStatus != "PARTIALLY_FILLED ":
-                #     return
                 orderId = event.orderId  # 订单ID
                 tz = pytz.timezone('Asia/ShangHai')
                 dt = pytz.datetime.datetime.fromtimestamp(event.orderTradeTime/1000, tz)
                 dt.strftime('%Y-%m-%d %H:%M:%S')
                 orderTradeTime = str(dt)[:-10]  # 成交时间
                 orderProfit = event.orderProfit  # 该交易实现盈亏
-                if float(orderProfit) < 0:
-                    order_str = "账户：{}\n" \
-                                "交易对：{}\n" \
-                                "持仓方向：{}\n" \
-                                "持仓数量：{}\n" \
-                                "持仓均价：{}\n" \
-                                "本单盈亏：{} USDT %f0%9f%a5%ba%f0%9f%a5%ba%f0%9f%a5%ba\n" \
-                                "订单号：{}\n" \
-                                "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
-                                                 side, origQty, avgPrice, orderProfit, orderId, orderTradeTime)
+                if orderStatus == "FILLED" or orderStatus == "PARTIALLY_FILLED ":
+                    if float(orderProfit) < 0:
+                        order_str = "账户：{}\n" \
+                                    "交易对：{}\n" \
+                                    "持仓方向：{}\n" \
+                                    "持仓数量：{}\n" \
+                                    "持仓均价：{}\n" \
+                                    "本单盈亏：{} USDT %f0%9f%a5%ba%f0%9f%a5%ba%f0%9f%a5%ba\n" \
+                                    "订单号：{}\n" \
+                                    "订单状态：{}\n" \
+                                    "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), side,
+                                                     origQty, avgPrice, orderProfit, orderId, orderStatus, orderTradeTime)
+                    else:
+                        order_str = "账户：{}\n" \
+                                    "交易对：{}\n" \
+                                    "持仓方向：{}\n" \
+                                    "持仓数量：{}\n" \
+                                    "持仓均价：{}\n" \
+                                    "本单盈亏：{} USDT %f0%9f%92%b0%f0%9f%92%b0%f0%9f%92%b0\n" \
+                                    "订单号：{}\n" \
+                                    "订单状态：{}\n" \
+                                    "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), side,
+                                                     origQty, avgPrice, orderProfit, orderId, orderStatus, orderTradeTime)
                 else:
                     order_str = "账户：{}\n" \
                                 "交易对：{}\n" \
                                 "持仓方向：{}\n" \
                                 "持仓数量：{}\n" \
                                 "持仓均价：{}\n" \
-                                "本单盈亏：{} USDT %f0%9f%92%b0%f0%9f%92%b0%f0%9f%92%b0\n" \
+                                "本单盈亏：{} USDT\n" \
                                 "订单号：{}\n" \
-                                "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
-                                                 side, origQty, avgPrice, orderProfit, orderId, orderTradeTime)
+                                "订单状态：{}\n" \
+                                "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), side,
+                                                 origQty, avgPrice, orderProfit, orderId, orderStatus, orderTradeTime)
                 tg_bot_send_text(order_str, user_info[1], user_info[4])
                 print("=======================")
                 if not event.activationPrice is None:
