@@ -32,6 +32,7 @@ class OrderUpdate:
         self.callbackRate = 0.0
         self.positionSide = None
         self.orderProfit = 0.0  # 自定义添加盈利
+        self.initOrderStatus = ""  # 原始订单类型
 
 
     @staticmethod
@@ -71,5 +72,6 @@ class OrderUpdate:
         result.callbackRate = data_group.get_float_or_default("cr", None)
         result.positionSide = data_group.get_string("ps")
         result.orderProfit = data_group.get_float("rp")  # 自定义添加盈利
+        result.initOrderStatus = data_group.get_string("ot")  # 原始订单类型
 
         return result

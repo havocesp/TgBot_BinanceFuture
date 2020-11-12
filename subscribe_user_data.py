@@ -114,41 +114,42 @@ def run(user_info):
                 print("Is this Close-All: ", event.isClosePosition)
                 print("========Orders=========")
 
-                order_str = "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n" \
-                            "{}\n".format(
+                order_str = "交易对：{}\n" \
+                            "客户端自定订单ID：{}\n" \
+                            "订单方向：{}\n" \
+                            "订单类型：{}\n" \
+                            "有效方式：{}\n" \
+                            "订单原始数量：{}\n" \
+                            "订单原始价格：{}\n" \
+                            "订单平均价格：{}\n" \
+                            "条件订单触发价格，对追踪止损单无效：{}\n" \
+                            "本次事件的具体执行类型：{}\n" \
+                            "订单的当前状态：{}\n" \
+                            "订单ID：{}\n" \
+                            "订单末次成交量：{}\n" \
+                            "订单累计已成交量：{}\n" \
+                            "订单末次成交价格：{}\n" \
+                            "手续费资产类型：{}\n" \
+                            "手续费数量：{}\n" \
+                            "成交时间：{}\n" \
+                            "成交ID：{}\n" \
+                            "买单净值：{}\n" \
+                            "卖单净值：{}\n" \
+                            "该成交是作为挂单成交吗？：{}\n" \
+                            "是否是只减仓单：{}\n" \
+                            "触发价类型：{}\n" \
+                            "原始订单类型：{}\n" \
+                            "持仓方向：{}\n" \
+                            "是否为触发平仓单; 仅在条件订单情况下会推送此字段{}\n" \
+                            "追踪止损激活价格, 仅在追踪止损单时会推送此字段：{}\n" \
+                            "追踪止损回调比例, 仅在追踪止损单时会推送此字段：{}\n" \
+                            "该交易实现盈亏：{}".format(
                     event.symbol, event.clientOrderId, event.side, event.type, event.timeInForce,
                     event.origQty, event.price, event.avgPrice, event.stopPrice, event.executionType,
                     event.orderStatus, event.orderId, event.lastFilledQty, event.cumulativeFilledQty,
                     event.lastFilledPrice, event.commissionAsset, event.commissionAmount, event.orderTradeTime,
                     event.tradeID, event.bidsNotional, event.asksNotional, event.isMarkerSide, event.isReduceOnly,
-                    event.workingType, event.isClosePosition, event.activationPrice, event.callbackRate,
+                    event.workingType, event.initOrderStatus, event.isClosePosition, event.activationPrice, event.callbackRate,
                     event.positionSide, event.orderProfit
                 )
 
