@@ -110,7 +110,7 @@
       <workItem from="1604982190307" duration="51070000" />
       <workItem from="1605072397037" duration="15966000" />
       <workItem from="1605090411412" duration="23171000" />
-      <workItem from="1605152777430" duration="35737000" />
+      <workItem from="1605152777430" duration="38284000" />
     </task>
     <servers />
   </component>
@@ -140,22 +140,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1605105479018" />
-    <state width="1877" height="253" key="GridCell.Tab.0.bottom" timestamp="1605192260604">
+    <state width="1877" height="253" key="GridCell.Tab.0.bottom" timestamp="1605201445477">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1605192260604" />
-    <state width="1877" height="253" key="GridCell.Tab.0.center" timestamp="1605192260604">
+    <state width="1877" height="253" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1605201445477" />
+    <state width="1877" height="253" key="GridCell.Tab.0.center" timestamp="1605201445476">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1605192260604" />
-    <state width="1877" height="253" key="GridCell.Tab.0.left" timestamp="1605192260604">
+    <state width="1877" height="253" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1605201445476" />
+    <state width="1877" height="253" key="GridCell.Tab.0.left" timestamp="1605201445476">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1605192260604" />
-    <state width="1877" height="253" key="GridCell.Tab.0.right" timestamp="1605192260604">
+    <state width="1877" height="253" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1605201445476" />
+    <state width="1877" height="253" key="GridCell.Tab.0.right" timestamp="1605201445476">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="253" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1605192260604" />
+    <state width="1877" height="253" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1605201445476" />
     <state x="466" y="115" key="SettingsEditor" timestamp="1605090466257">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -184,6 +184,6 @@
     <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$settings.coverage" NAME="settings Coverage Results" MODIFIED="1605020233645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$futures__1_.coverage" NAME="futures (1) Coverage Results" MODIFIED="1605001808453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$test.coverage" NAME="test Coverage Results" MODIFIED="1604931403311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$config.coverage" NAME="config Coverage Results" MODIFIED="1605192257291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TgBot_BinanceFuture$config.coverage" NAME="config Coverage Results" MODIFIED="1605201443949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

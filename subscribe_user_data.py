@@ -38,7 +38,7 @@ def zh_order_status(order_s):
         order_s = "创建订单"
     elif order_s == "PARTIALLY_FILLED":
         order_s = "部分成交"
-    elif order_s == "FILL":
+    elif order_s == "FILLED":
         order_s = "完全成交"
     elif order_s == "CANCELED":
         order_s = "撤销订单"
@@ -48,8 +48,6 @@ def zh_order_status(order_s):
         order_s = "风险保障基金(强平)"
     elif order_s == "NEW_ADL":
         order_s = "自动减仓序列(强平)"
-    else:
-        order_s = "有效订单"
     return order_s
 
 
@@ -133,8 +131,7 @@ def run(user_info):
                 dt.strftime('%Y-%m-%d %H:%M:%S')
                 orderTradeTime = str(dt)[:-10]  # 成交时间
                 orderProfit = event.orderProfit  # 该交易实现盈亏
-                if orderStatus == "FILLED" or orderStatus == "PARTIALLY_FILLED" or \
-                        orderStatus == "NEW_INSURANCE" or orderStatus == "NEW_ADL":
+                if float(orderProfit) != 0:
                     if float(orderProfit) < 0:
                         order_str = "账户：{}\n" \
                                     "交易对：{}\n" \
@@ -146,7 +143,7 @@ def run(user_info):
                                     "订单状态：{}\n" \
                                     "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), side,
                                                      origQty, avgPrice, orderProfit, orderId,
-                                                     zh_order_status(orderStatus), orderTradeTime)
+                                                     zh_order_status(orderStatus) or orderStatus, orderTradeTime)
                     else:
                         order_str = "账户：{}\n" \
                                     "交易对：{}\n" \
@@ -158,7 +155,7 @@ def run(user_info):
                                     "订单状态：{}\n" \
                                     "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), side,
                                                      origQty, avgPrice, orderProfit, orderId,
-                                                     zh_order_status(orderStatus), orderTradeTime)
+                                                     zh_order_status(orderStatus) or orderStatus, orderTradeTime)
                 else:
                     order_str = "账户：{}\n" \
                                 "交易对：{}\n" \
@@ -169,7 +166,7 @@ def run(user_info):
                                 "订单状态：{}\n" \
                                 "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
                                                  side, origQty, avgPrice, orderId,
-                                                 zh_order_status(orderStatus), orderTradeTime)
+                                                 zh_order_status(orderStatus) or orderStatus, orderTradeTime)
                 tg_bot_send_text(order_str, user_info[1], user_info[4])
                 print("=======================")
                 if not event.activationPrice is None:
