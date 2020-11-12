@@ -18,6 +18,7 @@ def tg_bot_send_text(send_message, user_id, tg_token):
     """
     send_text = 'https://api.telegram.org/bot' + tg_token + '/sendMessage?chat_id=' + \
                 str(user_id) + '&parse_mode=Markdown&text=' + send_message
+    print(send_text)
     try:
         response = requests.get(send_text)
         return response.json()
@@ -39,14 +40,21 @@ def run(user_info):
                 print("Event Type: ", event.eventType)
                 print("Event time: ", event.eventTime)
                 print("Transaction time: ", event.transactionTime)
+                
                 print("=== Balances ===")
                 PrintMix.print_data(event.balances)
+                balance_str = ""
+                for user_balance in event.balances:
+                    asset = user_balance.asset  # 交易对
+                    walletBalance = user_balance.walletBalance  # 余额
+                    balance_str += "{} {}\n".format(walletBalance, asset)
+                balance_str = "账户：{}\n".format(user_info[0]) + balance_str
+                tg_bot_send_text(balance_str, user_info[1], user_info[4])
                 print("================")
+
                 print("=== Positions ===")
                 PrintMix.print_data(event.positions)
                 print("================")
-                send_str = event.balances
-                tg_bot_send_text(send_str, user_info[1], user_info[4])
 
             elif (event.eventType == "ORDER_TRADE_UPDATE"):
                 print("Event Type: ", event.eventType)
