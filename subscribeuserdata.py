@@ -35,7 +35,7 @@ sub_client = SubscriptionClient(api_key=g_api_key, secret_key=g_secret_key)
 def callback(data_type: 'SubscribeMessageType', event: 'any'):
     if data_type == SubscribeMessageType.RESPONSE:
         print("Event ID: ", event)
-    elif  data_type == SubscribeMessageType.PAYLOAD:
+    elif data_type == SubscribeMessageType.PAYLOAD:
         if(event.eventType == "ACCOUNT_UPDATE"):
             print("Event Type: ", event.eventType)
             print("Event time: ", event.eventTime)
