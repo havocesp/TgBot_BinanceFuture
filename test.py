@@ -60,3 +60,58 @@
 #         update.message.reply_text(send_str)
 # else:
 #     continue
+
+
+# symbol = event.symbol  # 交易对
+# positionSide = ""  # 订单方向
+# if event.positionSide == "LONG":
+#     positionSide = "做多"
+# else:
+#     positionSide = "做空"
+# origQty = event.origQty  # 订单原始数量
+# avgPrice = event.avgPrice  # 订单平均价格
+# # 订单筛选
+# orderStatus = event.orderStatus  # 订单的当前状态
+#
+# orderId = event.orderId  # 订单ID
+# tz = pytz.timezone('Asia/ShangHai')
+# dt = pytz.datetime.datetime.fromtimestamp(event.orderTradeTime / 1000, tz)
+# dt.strftime('%Y-%m-%d %H:%M:%S')
+# orderTradeTime = str(dt)[:-10]  # 成交时间
+# orderProfit = event.orderProfit  # 该交易实现盈亏
+# if float(orderProfit) != 0:
+#     if float(orderProfit) < 0:
+#         order_str = "账户：{}\n" \
+#                     "交易对：{}\n" \
+#                     "持仓方向：{}\n" \
+#                     "持仓数量：{}\n" \
+#                     "持仓均价：{}\n" \
+#                     "本单盈亏：{} USDT %f0%9f%a5%ba%f0%9f%a5%ba%f0%9f%a5%ba\n" \
+#                     "订单号：{}\n" \
+#                     "订单状态：{}\n" \
+#                     "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), positionSide,
+#                                      origQty, avgPrice, orderProfit, orderId,
+#                                      zh_order_status(orderStatus) or orderStatus, orderTradeTime)
+#     else:
+#         order_str = "账户：{}\n" \
+#                     "交易对：{}\n" \
+#                     "持仓方向：{}\n" \
+#                     "持仓数量：{}\n" \
+#                     "持仓均价：{}\n" \
+#                     "本单盈亏：{} USDT %f0%9f%92%b0%f0%9f%92%b0%f0%9f%92%b0\n" \
+#                     "订单号：{}\n" \
+#                     "订单状态：{}\n" \
+#                     "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), positionSide,
+#                                      origQty, avgPrice, orderProfit, orderId,
+#                                      zh_order_status(orderStatus) or orderStatus, orderTradeTime)
+# else:
+#     order_str = "账户：{}\n" \
+#                 "交易对：{}\n" \
+#                 "持仓方向：{}\n" \
+#                 "持仓数量：{}\n" \
+#                 "持仓均价：{}\n" \
+#                 "订单号：{}\n" \
+#                 "订单状态：{}\n" \
+#                 "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
+#                                  positionSide, origQty, avgPrice, orderId,
+#                                  zh_order_status(orderStatus) or orderStatus, orderTradeTime)
