@@ -57,6 +57,9 @@ def run(user_info):
 
                 print("=== Positions ===")
                 PrintMix.print_data(event.positions)
+                # positions_str = ""
+                # for position_info in event.positions:
+                #
                 print("================")
 
             elif (event.eventType == "ORDER_TRADE_UPDATE"):
@@ -100,11 +103,10 @@ def run(user_info):
                 avgPrice = event.avgPrice  # 订单平均价格
                 orderStatus = event.orderStatus  # 订单的当前状态
                 orderId = event.orderId  # 订单ID
-                orderTradeTime = ""  # 成交时间
                 tz = pytz.timezone('Asia/ShangHai')
                 dt = pytz.datetime.datetime.fromtimestamp(event.orderTradeTime/1000, tz)
                 dt.strftime('%Y-%m-%d %H:%M:%S')
-                orderTradeTime = dt
+                orderTradeTime = dt  # 成交时间
                 # 该交易实现盈亏
                 order_str = "账户：{}\n" \
                             "交易对：{}\n" \
@@ -112,7 +114,8 @@ def run(user_info):
                             "持仓数量：{}\n" \
                             "持仓均价：{}\n" \
                             "订单号：{}\n" \
-                            "成交时间：{}".format(user_info[0], symbol, side, origQty, avgPrice, orderId, orderTradeTime)
+                            "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
+                                             side, origQty, avgPrice, orderId, orderTradeTime)
                 tg_bot_send_text(order_str, user_info[1], user_info[4])
                 print("=======================")
                 if not event.activationPrice is None:
@@ -165,8 +168,8 @@ def main():
     if not all_users:
         return
     for user_info in all_users:
-        t = threading.Thread(target=run, args=(user_info,))
-        t.start()
+        user_info[2] = threading.Thread(target=run, args=(user_info,))
+        user_info[2].start()
         break
 
 
