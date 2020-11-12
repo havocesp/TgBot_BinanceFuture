@@ -1,5 +1,8 @@
 import logging
 import threading
+
+import pytz
+
 from binance_f import RequestClient
 from binance_f import SubscriptionClient
 from binance_f.constant.test import *
@@ -40,7 +43,7 @@ def run(user_info):
                 print("Event Type: ", event.eventType)
                 print("Event time: ", event.eventTime)
                 print("Transaction time: ", event.transactionTime)
-                
+
                 print("=== Balances ===")
                 PrintMix.print_data(event.balances)
                 balance_str = ""
@@ -86,6 +89,32 @@ def run(user_info):
                 print("Is this reduce only: ", event.isReduceOnly)
                 print("stop price working type: ", event.workingType)
                 print("Is this Close-All: ", event.isClosePosition)
+                print("========Orders=========")
+                symbol = event.symbol  # 交易对
+                side = ""  # 订单方向
+                if event.side == "SELL":
+                    side = "做空"
+                else:
+                    side = "做多"
+                origQty = event.origQty  # 订单原始数量
+                avgPrice = event.avgPrice  # 订单平均价格
+                orderStatus = event.orderStatus  # 订单的当前状态
+                orderId = event.orderId  # 订单ID
+                orderTradeTime = ""  # 成交时间
+                tz = pytz.timezone('Asia/ShangHai')
+                dt = pytz.datetime.datetime.fromtimestamp(event.orderTradeTime/1000, tz)
+                dt.strftime('%Y-%m-%d %H:%M:%S')
+                orderTradeTime = dt
+                # 该交易实现盈亏
+                order_str = "账户：{}\n" \
+                            "交易对：{}\n" \
+                            "持仓方向：{}\n" \
+                            "持仓数量：{}\n" \
+                            "持仓均价：{}\n" \
+                            "订单号：{}\n" \
+                            "成交时间：{}".format(user_info[0], symbol, side, origQty, avgPrice, orderId, orderTradeTime)
+                tg_bot_send_text(order_str, user_info[1], user_info[4])
+                print("=======================")
                 if not event.activationPrice is None:
                     print("Activation Price for Trailing Stop: ", event.activationPrice)
                 if not event.callbackRate is None:
