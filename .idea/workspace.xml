@@ -21,8 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4b8716e6-dcfb-46ec-8e91-42cfd86275f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/binance_f/privateconfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/binance_f/privateconfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscribeuserdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/subscribeuserdata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b_future.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_future.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b_future_ws.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/binance_f/constant/system.py" beforeDir="false" afterPath="$PROJECT_DIR$/binance_f/constant/system.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binance_f/constant/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/binance_f/constant/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binance_f/privateconfig.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/subscribeuserdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/subscribe/subscribe_user_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +63,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\tools\TgBot_BinanceFuture\subscribe" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\tools\TgBot_BinanceFuture" />
     </key>
@@ -78,7 +85,7 @@
       <workItem from="1604982190307" duration="51070000" />
       <workItem from="1605072397037" duration="15966000" />
       <workItem from="1605090411412" duration="23171000" />
-      <workItem from="1605152777430" duration="5617000" />
+      <workItem from="1605152777430" duration="9892000" />
     </task>
     <servers />
   </component>

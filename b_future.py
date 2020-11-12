@@ -90,7 +90,7 @@ def bind_b_api(update, context):
     # 绑定用户信息到数据库
     insert_sql = "insert into " + t_table + "(tg_id, api_lable, b_api_key, b_secret_key, tg_token) " \
                  "value(%s, '%s','%s', '%s', '%s')" % \
-                 (user_id, api_info_list[0], api_info_list[1], api_info_list[2], teltoken.replace(":", ""))
+                 (user_id, api_info_list[0], api_info_list[1], api_info_list[2], teltoken)
     result = insert_data(insert_sql)
     if result:
         success_str = "绑定成功。"
