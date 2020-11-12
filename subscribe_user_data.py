@@ -48,6 +48,9 @@ def run(user_info):
                 PrintMix.print_data(event.balances)
                 balance_str = ""
                 for user_balance in event.balances:
+                    print("--"*90)
+                    print(user_balance.asset)
+                    print("--"*90)
                     asset = user_balance.asset  # 交易对
                     walletBalance = user_balance.walletBalance  # 余额
                     balance_str += "{} {}\n".format(walletBalance, asset)
@@ -103,6 +106,8 @@ def run(user_info):
                 avgPrice = event.avgPrice  # 订单平均价格
                 # 订单筛选
                 orderStatus = event.orderStatus  # 订单的当前状态
+                # if orderStatus != "FILLED" or orderStatus != "PARTIALLY_FILLED ":
+                #     return
                 orderId = event.orderId  # 订单ID
                 tz = pytz.timezone('Asia/ShangHai')
                 dt = pytz.datetime.datetime.fromtimestamp(event.orderTradeTime/1000, tz)
@@ -170,9 +175,8 @@ def main():
     if not all_users:
         return
     for user_info in all_users:
-        user_info[2] = threading.Thread(target=run, args=(user_info,))
-        user_info[2].start()
-        break
+        t = threading.Thread(target=run, args=(user_info,))
+        t.start()
 
 
 if __name__ == '__main__':
