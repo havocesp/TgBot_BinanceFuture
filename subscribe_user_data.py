@@ -73,13 +73,12 @@ def run(user_info):
                     walletBalance = user_balance.walletBalance  # 余额
                     balance_str += "{} {}\n".format(walletBalance, asset)
                 balance_str = "账户：{}\n".format(user_info[0]) + balance_str
+                # 账户余额变化提醒
                 # tg_bot_send_text(balance_str, user_info[1], user_info[4])
                 print("================")
 
                 print("=== Positions ===")
                 PrintMix.print_data(event.positions)
-                for i in event.positions:
-                    print(i.asset)
                 print("================")
 
             elif (event.eventType == "ORDER_TRADE_UPDATE"):
@@ -113,7 +112,6 @@ def run(user_info):
                 print("stop price working type: ", event.workingType)
                 print("Is this Close-All: ", event.isClosePosition)
                 print("========Orders=========")
-
                 order_str = "交易对：{}\n" \
                             "客户端自定订单ID：{}\n" \
                             "订单方向：{}\n" \
@@ -144,13 +142,13 @@ def run(user_info):
                             "追踪止损激活价格, 仅在追踪止损单时会推送此字段：{}\n" \
                             "追踪止损回调比例, 仅在追踪止损单时会推送此字段：{}\n" \
                             "该交易实现盈亏：{}".format(
-                    event.symbol, event.clientOrderId, event.side, event.type, event.timeInForce,
-                    event.origQty, event.price, event.avgPrice, event.stopPrice, event.executionType,
-                    event.orderStatus, event.orderId, event.lastFilledQty, event.cumulativeFilledQty,
-                    event.lastFilledPrice, event.commissionAsset, event.commissionAmount, event.orderTradeTime,
-                    event.tradeID, event.bidsNotional, event.asksNotional, event.isMarkerSide, event.isReduceOnly,
-                    event.workingType, event.initOrderStatus, event.isClosePosition, event.activationPrice, event.callbackRate,
-                    event.positionSide, event.orderProfit
+                    event.symbol, event.clientOrderId, event.side, event.type, event.timeInForce, event.origQty,
+                    event.price, event.avgPrice, event.stopPrice, event.executionType, event.orderStatus, event.orderId,
+                    event.lastFilledQty, event.cumulativeFilledQty, event.lastFilledPrice, event.commissionAsset,
+                    event.commissionAmount, event.orderTradeTime, event.tradeID, event.bidsNotional, event.asksNotional,
+                    event.isMarkerSide, event.isReduceOnly, event.workingType, event.initOrderStatus,
+                    event.positionSide, event.isClosePosition, event.activationPrice, event.callbackRate,
+                    event.orderProfit
                 )
 
                 tg_bot_send_text(order_str, user_info[1], user_info[4])
@@ -207,6 +205,8 @@ def main():
     for user_info in all_users:
         t = threading.Thread(target=run, args=(user_info,))
         t.start()
+        # TODO 开启一个
+        break
 
 
 if __name__ == '__main__':

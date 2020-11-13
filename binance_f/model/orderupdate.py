@@ -67,11 +67,11 @@ class OrderUpdate:
         result.isMarkerSide = data_group.get_boolean("m")
         result.isReduceOnly = data_group.get_boolean("R")
         result.workingType = data_group.get_string("wt")
+        result.initOrderStatus = data_group.get_string("ot")  # 原始订单类型
+        result.positionSide = data_group.get_string("ps")
         result.isClosePosition = data_group.get_boolean("cp")
         result.activationPrice = data_group.get_float_or_default("AP", None)
         result.callbackRate = data_group.get_float_or_default("cr", None)
-        result.positionSide = data_group.get_string("ps")
         result.orderProfit = data_group.get_float("rp")  # 自定义添加盈利
-        result.initOrderStatus = data_group.get_string("ot")  # 原始订单类型
 
         return result

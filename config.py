@@ -1,10 +1,12 @@
 # ===================Telegram Bot===============================
-# 测试版
+# TODO 测试版
 teltoken = '1473302982:AAH5HjAWjjimwL1xDNih7pfsZZ6BG2NUeTg'
-# 正式版
+# TODO 正式版
 # teltoken = '1386154312:AAGhq_iROaCy0_99hWg-jNKmH0o16fH50K8'
 # ====================Database==================================
+# TODO　数据库
 database = "binance_tg"
+# TODO 数据表
 t_table = "binance_tg_t"
 # ==============================================================
 
