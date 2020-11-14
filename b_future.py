@@ -182,7 +182,7 @@ def b_orders(update, context):
                 # ======================================================================================================
                 # 获取每个交易对的历史记录
                 history_orders = send_signed_request('GET', '/fapi/v1/userTrades', results[0],
-                                                     {'symbol': symbol['symbol'], 'limit': 10})  # 订单历史
+                                                     {'symbol': symbol['symbol'], 'limit': 5})  # 订单历史
                 if not history_orders:
                     continue
                 # 排序
@@ -203,21 +203,42 @@ def b_orders(update, context):
                     positionSide = info['positionSide']  # 持仓方向
                     symbol = info['symbol']  # 交易对
                     time_ = info['time']  # 时间
-                    order_info_str = "是否是买方:{}\n" \
-                                     "手续费:{}\n" \
-                                     "手续费计价单位:{}\n" \
-                                     "是否是挂单方:{}\n" \
-                                     "订单编号:{}\n" \
-                                     "成交价:{}\n" \
-                                     "成交量:{}\n" \
-                                     "成交额:{}\n" \
-                                     "实现盈亏:{}\n" \
-                                     "买卖方向:{}\n" \
-                                     "持仓方向:{}\n" \
-                                     "交易对:{}\n" \
-                                     "时间:{}".format(buyer, commission, commissionAsset, maker, orderId,
-                                                    price, qty, quoteQty, realizedPnl, side, positionSide,
-                                                    symbol, time_)
+                    # 转换时区
+                    tz = pytz.timezone('Asia/ShangHai')
+                    dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
+                    time_ = str(dt.strftime('%Y-%m-%d %H:%M:%S'))[:-10]
+                    order_type = ""
+                    order_info_str = ""
+                    if float(realizedPnl) != 0.0:
+                        order_info_str = "账户：{}\n" \
+                                         "手续费：{}\n" \
+                                         "手续费计价单位：{}\n" \
+                                         "是否是挂单方：{}\n" \
+                                         "订单编号：{}\n" \
+                                         "成交价：{}\n" \
+                                         "成交量：{}\n" \
+                                         "成交额：{}\n" \
+                                         "实现盈亏：{}\n" \
+                                         "买卖方向：{}\n" \
+                                         "交易对：{}\n" \
+                                         "时间：{}".format(result[2], commission, commissionAsset, maker, orderId,
+                                                        price, qty, quoteQty, realizedPnl, positionSide,
+                                                        symbol, time_)
+                    else:
+                        pass
+                        # order_info_str = "账户：{}\n" \
+                        #                  "手续费：{}\n" \
+                        #                  "手续费计价单位：{}\n" \
+                        #                  "是否是挂单方：{}\n" \
+                        #                  "订单编号：{}\n" \
+                        #                  "成交价：{}\n" \
+                        #                  "成交量：{}\n" \
+                        #                  "成交额：{}\n" \
+                        #                  "买卖方向：{}\n" \
+                        #                  "交易对：{}\n" \
+                        #                  "时间：{}".format(result[2], commission, commissionAsset, maker, orderId,
+                        #                                 price, qty, quoteQty, positionSide,
+                        #                                 symbol, time_)
 
 
                     # orderId = info['orderId']  # 订单ID
