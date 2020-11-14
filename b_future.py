@@ -202,7 +202,7 @@ def b_orders(update, context):
                 # ======================================================================================================
                 # 获取每个交易对的历史记录
                 history_orders = send_signed_request('GET', '/fapi/v1/userTrades', results[0],
-                                                     {'symbol': symbol['symbol'], 'limit': 10})  # 订单历史
+                                                     {'symbol': symbol['symbol']})  # 订单历史
                 if not history_orders:
                     continue
                 # 排序
@@ -224,7 +224,7 @@ def b_orders(update, context):
                     symbol = info['symbol']  # 交易对
                     time_ = info['time']  # 时间
                     # 从时间筛选订单，一个小时内订单
-                    if time() - time_ > 60*60:
+                    if time() - float(time_) > 60*60:
                         continue
                     # 转换时区
                     tz = pytz.timezone('Asia/ShangHai')
@@ -242,8 +242,8 @@ def b_orders(update, context):
                                              "成交量：{}\n" \
                                              "成交额：{}\n" \
                                              "手续费：{} {}\n" \
-                                             "实现盈亏：{} \ud83d\udcb0\ud83d\udcb0\ud83d\udcb0\n" \
-                                             "时间：{}".format(result[2], symbol, orderId,
+                                             "实现盈亏：{} USDT\ud83d\udcb0\ud83d\udcb0\ud83d\udcb0\n" \
+                                             "时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
                                                             zh_order_type(maker), zh_order_position(buyer),
                                                             price, qty, quoteQty, commission, commissionAsset,
                                                             realizedPnl, time_)
@@ -257,8 +257,8 @@ def b_orders(update, context):
                                              "成交量：{}\n" \
                                              "成交额：{}\n" \
                                              "手续费：{} {}\n" \
-                                             "实现盈亏：{} \ud83e\udd7a\ud83e\udd7a\ud83e\udd7a\n" \
-                                             "时间：{}".format(result[2], symbol, orderId,
+                                             "实现盈亏：{} USDT\ud83e\udd7a\ud83e\udd7a\ud83e\udd7a\n" \
+                                             "时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
                                                             zh_order_type(maker), zh_order_position(buyer),
                                                             price, qty, quoteQty, commission, commissionAsset,
                                                             realizedPnl, time_)
@@ -306,6 +306,7 @@ def b_orders(update, context):
                     # update.message.reply_text(order_info_str)
                 have_order = True
                 # ======================================================================================================
+        break
 
     if not have_order:
         update.message.reply_text("当前暂无持单，请稍后重试。")
