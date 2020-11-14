@@ -206,7 +206,7 @@ def b_orders(update, context):
                     # 转换时区
                     tz = pytz.timezone('Asia/ShangHai')
                     dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
-                    time_ = str(dt.strftime('%Y-%m-%d %H:%M:%S'))[:-10]
+                    time_ = str(dt.strftime('%Y-%m-%d %H:%M:%S'))
                     order_type = ""
                     order_info_str = ""
                     if float(realizedPnl) != 0.0:
@@ -225,20 +225,19 @@ def b_orders(update, context):
                                                         price, qty, quoteQty, realizedPnl, positionSide,
                                                         symbol, time_)
                     else:
-                        pass
-                        # order_info_str = "账户：{}\n" \
-                        #                  "手续费：{}\n" \
-                        #                  "手续费计价单位：{}\n" \
-                        #                  "是否是挂单方：{}\n" \
-                        #                  "订单编号：{}\n" \
-                        #                  "成交价：{}\n" \
-                        #                  "成交量：{}\n" \
-                        #                  "成交额：{}\n" \
-                        #                  "买卖方向：{}\n" \
-                        #                  "交易对：{}\n" \
-                        #                  "时间：{}".format(result[2], commission, commissionAsset, maker, orderId,
-                        #                                 price, qty, quoteQty, positionSide,
-                        #                                 symbol, time_)
+                        order_info_str = "账户：{}\n" \
+                                         "手续费：{}\n" \
+                                         "手续费计价单位：{}\n" \
+                                         "是否是挂单方：{}\n" \
+                                         "订单编号：{}\n" \
+                                         "成交价：{}\n" \
+                                         "成交量：{}\n" \
+                                         "成交额：{}\n" \
+                                         "买卖方向：{}\n" \
+                                         "交易对：{}\n" \
+                                         "时间：{}".format(result[2], commission, commissionAsset, maker, orderId,
+                                                        price, qty, quoteQty, positionSide,
+                                                        symbol, time_)
 
 
                     # orderId = info['orderId']  # 订单ID
