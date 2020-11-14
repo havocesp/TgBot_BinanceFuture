@@ -139,6 +139,27 @@ def b_balance(update, context):
     update.message.reply_text("全部账户共计总额：\n{} USDT \ud83d\udcb0\n{} BNB \ud83d\udcb0".format(round(float(account_total), 5), round(float(total_bnb.replace("BNB", "")), 5)))
 
 
+def zh_order_type(flag):
+    """
+    订单类型
+    """
+    if flag:
+        return "限价"
+    else:
+        return "市价"
+
+
+def zh_order_position(order_s):
+    """
+    持仓方向
+    """
+    if order_s == "SELL":
+        return "卖单"
+    else:
+        return "买单"
+
+
+
 def b_orders(update, context):
     """
     Get binance history orders
@@ -211,33 +232,29 @@ def b_orders(update, context):
                     order_info_str = ""
                     if float(realizedPnl) != 0.0:
                         order_info_str = "账户：{}\n" \
-                                         "手续费：{}\n" \
-                                         "手续费计价单位：{}\n" \
-                                         "是否是挂单方：{}\n" \
+                                         "手续费：{} {}\n" \
+                                         "订单类型：{} {}\n" \
                                          "订单编号：{}\n" \
                                          "成交价：{}\n" \
                                          "成交量：{}\n" \
                                          "成交额：{}\n" \
                                          "实现盈亏：{}\n" \
-                                         "买卖方向：{}\n" \
                                          "交易对：{}\n" \
-                                         "时间：{}".format(result[2], commission, commissionAsset, maker, orderId,
-                                                        price, qty, quoteQty, realizedPnl, positionSide,
-                                                        symbol, time_)
+                                         "时间：{}".format(result[2], commission, commissionAsset,
+                                                        zh_order_type(maker), zh_order_position(buyer),
+                                                        orderId, price, qty, quoteQty, realizedPnl, symbol, time_)
                     else:
                         order_info_str = "账户：{}\n" \
-                                         "手续费：{}\n" \
-                                         "手续费计价单位：{}\n" \
-                                         "是否是挂单方：{}\n" \
+                                         "手续费：{} {}\n" \
+                                         "订单类型：{} {}\n" \
                                          "订单编号：{}\n" \
                                          "成交价：{}\n" \
                                          "成交量：{}\n" \
                                          "成交额：{}\n" \
-                                         "买卖方向：{}\n" \
                                          "交易对：{}\n" \
-                                         "时间：{}".format(result[2], commission, commissionAsset, maker, orderId,
-                                                        price, qty, quoteQty, positionSide,
-                                                        symbol, time_)
+                                         "时间：{}".format(result[2], commission, commissionAsset,
+                                                        zh_order_type(maker), zh_order_position(buyer),
+                                                        orderId, price, qty, quoteQty, symbol, time_)
 
 
                     # orderId = info['orderId']  # 订单ID
