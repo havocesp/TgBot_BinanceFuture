@@ -224,7 +224,7 @@ def b_orders(update, context):
                     symbol = info['symbol']  # 交易对
                     time_ = info['time']  # 时间
                     # 从时间筛选订单，一个小时内订单
-                    if time() - float(time_)/1000 > 60*60:
+                    if time() - float(time_)/1000 > 30*60:
                         continue
                     # 转换时区
                     tz = pytz.timezone('Asia/ShangHai')
