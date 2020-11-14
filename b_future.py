@@ -136,7 +136,8 @@ def b_balance(update, context):
         send_str = "账户：{}\n".format(u_api[2] or "User") + send_str
         update.message.reply_text(send_str)
     # 发送余额
-    update.message.reply_text("全部账户共计总额：\n{} USDT \ud83d\udcb0\n{} BNB \ud83d\udcb0".format(round(float(account_total), 5), round(float(total_bnb.replace("BNB", "")), 5)))
+    update.message.reply_text("全部账户共计总额：\n{} USDT \ud83d\udcb0\n{} BNB \ud83d\udcb0"
+                              .format(round(float(account_total), 5), round(float(total_bnb.replace("BNB", "")), 5)))
 
 
 def zh_order_type(flag):
@@ -230,8 +231,6 @@ def b_orders(update, context):
                     tz = pytz.timezone('Asia/ShangHai')
                     dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
                     time_ = str(dt.strftime('%Y-%m-%d %H:%M:%S'))
-                    order_type = ""
-                    order_info_str = ""
                     if float(realizedPnl) != 0.0:
                         if float(realizedPnl) > 0.0:
                             order_info_str = "账户：{}\n" \
@@ -247,7 +246,6 @@ def b_orders(update, context):
                                                             zh_order_type(maker), zh_order_position(buyer),
                                                             price, qty, quoteQty, commission, commissionAsset,
                                                             realizedPnl, time_)
-                            # update.message.reply_text(order_info_str)
                         else:
                             order_info_str = "账户：{}\n" \
                                              "交易对：{}\n" \
@@ -262,20 +260,20 @@ def b_orders(update, context):
                                                             zh_order_type(maker), zh_order_position(buyer),
                                                             price, qty, quoteQty, commission, commissionAsset,
                                                             realizedPnl, time_)
-                            # update.message.reply_text(order_info_str)
                     else:
-                        order_info_str = "账户：{}\n" \
-                                         "交易对：{}\n" \
-                                         "订单编号：{}\n" \
-                                         "订单类型：{} {}\n" \
-                                         "成交价：{}\n" \
-                                         "成交量：{}\n" \
-                                         "成交额：{}\n" \
-                                         "手续费：{} {}\n" \
-                                         "时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
-                                                        zh_order_type(maker), zh_order_position(buyer),
-                                                        price, qty, quoteQty, commission, commissionAsset, time_)
-
+                        pass
+                        # order_info_str = "账户：{}\n" \
+                        #                  "交易对：{}\n" \
+                        #                  "订单编号：{}\n" \
+                        #                  "订单类型：{} {}\n" \
+                        #                  "成交价：{}\n" \
+                        #                  "成交量：{}\n" \
+                        #                  "成交额：{}\n" \
+                        #                  "手续费：{} {}\n" \
+                        #                  "时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
+                        #                                 zh_order_type(maker), zh_order_position(buyer),
+                        #                                 price, qty, quoteQty, commission, commissionAsset, time_)
+                    # ==================================================================================================
                     # orderId = info['orderId']  # 订单ID
                     # symbol = info['symbol']  # 交易对
                     # avgPrice = info['avgPrice']  # 平均成交价
@@ -304,8 +302,6 @@ def b_orders(update, context):
                     update.message.reply_text(order_info_str)
                 have_order = True
                 # ======================================================================================================
-        break
-
     if not have_order:
         update.message.reply_text("当前暂无持单，请稍后重试。")
     else:
