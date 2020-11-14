@@ -181,7 +181,8 @@ def b_orders(update, context):
                 # update.message.reply_text(order_info_str)
                 # ======================================================================================================
                 # 获取每个交易对的历史记录
-                history_orders = send_signed_request('GET', '/fapi/v1/allOrders', results[0], {'symbol': symbol['symbol']})  # 订单历史
+                history_orders = send_signed_request('GET', '/fapi/v1/userTrades', results[0],
+                                                     {'symbol': symbol['symbol'], 'limit': 10})  # 订单历史
                 if not history_orders:
                     continue
                 # 排序
@@ -189,30 +190,60 @@ def b_orders(update, context):
                 # 获取持有的币种的最后五笔订单
                 # history_orders = history_orders[-10:]
                 for info in history_orders:
-                    orderId = info['orderId']  # 订单ID
-                    symbol = info['symbol']  # 交易对
-                    avgPrice = info['avgPrice']  # 平均成交价
-                    executedQty = info['executedQty']  # 成交量
-                    cumQuote = info['cumQuote']  # 成交金额
+                    buyer = info['buyer']  # 是否是买方
+                    commission = info['commission']  # 手续费
+                    commissionAsset = info['commissionAsset']  # 手续费计价单位
+                    maker = info['maker']  # 是否是挂单方
+                    orderId = info['orderId']  # 订单编号
+                    price = info['price']  # 成交价
+                    qty = info['qty']  # 成交量
+                    quoteQty = info['quoteQty']  # 成交额
+                    realizedPnl = info['realizedPnl']  # 实现盈亏
                     side = info['side']  # 买卖方向
-                    status = info['status']  # 订单状态
-                    time_ = info['time']  # 下单时间
-                    # 超过一天订单去除
-                    if time() - time_/1000 > 1*60*60:
-                        continue
-                    # 转换时区
-                    tz = pytz.timezone('Asia/ShangHai')
-                    dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
-                    dt.strftime('%Y-%m-%d %H:%M:%S')
-                    order_info_str = "订单ID：{}\n" \
-                                     "交易对：{}\n" \
-                                     "平均成交价：{}\n" \
-                                     "成交量：{}\n" \
-                                     "成交金额：{}\n" \
-                                     "买卖方向：{}\n" \
-                                     "订单状态：{}\n" \
-                                     "下单时间：{}".format(orderId, symbol, avgPrice,
-                                                      executedQty, cumQuote, side, status, dt)
+                    positionSide = info['positionSide']  # 持仓方向
+                    symbol = info['symbol']  # 交易对
+                    time_ = info['time']  # 时间
+                    order_info_str = "是否是买方:{}\n" \
+                                     "手续费:{}\n" \
+                                     "手续费计价单位:{}\n" \
+                                     "是否是挂单方:{}\n" \
+                                     "订单编号:{}\n" \
+                                     "成交价:{}\n" \
+                                     "成交量:{}\n" \
+                                     "成交额:{}\n" \
+                                     "实现盈亏:{}\n" \
+                                     "买卖方向:{}\n" \
+                                     "持仓方向:{}\n" \
+                                     "交易对:{}\n" \
+                                     "时间:{}".format(buyer, commission, commissionAsset, maker, orderId,
+                                                    price, qty, quoteQty, realizedPnl, side, positionSide,
+                                                    symbol, time_)
+
+
+                    # orderId = info['orderId']  # 订单ID
+                    # symbol = info['symbol']  # 交易对
+                    # avgPrice = info['avgPrice']  # 平均成交价
+                    # executedQty = info['executedQty']  # 成交量
+                    # cumQuote = info['cumQuote']  # 成交金额
+                    # side = info['side']  # 买卖方向
+                    # status = info['status']  # 订单状态
+                    # time_ = info['time']  # 下单时间
+                    # # 超过一天订单去除
+                    # if time() - time_/1000 > 1*60*60:
+                    #     continue
+                    # # 转换时区
+                    # tz = pytz.timezone('Asia/ShangHai')
+                    # dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
+                    # dt.strftime('%Y-%m-%d %H:%M:%S')
+                    # order_info_str = "订单ID：{}\n" \
+                    #                  "交易对：{}\n" \
+                    #                  "平均成交价：{}\n" \
+                    #                  "成交量：{}\n" \
+                    #                  "成交金额：{}\n" \
+                    #                  "买卖方向：{}\n" \
+                    #                  "订单状态：{}\n" \
+                    #                  "下单时间：{}".format(orderId, symbol, avgPrice,
+                    #                                   executedQty, cumQuote, side, status, str(dt)[:-10])
                     # 推送到指定用户
                     update.message.reply_text(order_info_str)
                 have_order = True
