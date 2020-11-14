@@ -233,20 +233,36 @@ def b_orders(update, context):
                     order_type = ""
                     order_info_str = ""
                     if float(realizedPnl) != 0.0:
-                        order_info_str = "账户：{}\n" \
-                                         "交易对：{}\n" \
-                                         "订单编号：{}\n" \
-                                         "订单类型：{} {}\n" \
-                                         "成交价：{}\n" \
-                                         "成交量：{}\n" \
-                                         "成交额：{}\n" \
-                                         "手续费：{} {}\n" \
-                                         "实现盈亏：{}\n" \
-                                         "时间：{}".format(result[2], symbol, orderId,
-                                                        zh_order_type(maker), zh_order_position(buyer),
-                                                        price, qty, quoteQty, commission, commissionAsset,
-                                                        realizedPnl, time_)
-                        update.message.reply_text(order_info_str)
+                        if float(realizedPnl) > 0.0:
+                            order_info_str = "账户：{}\n" \
+                                             "交易对：{}\n" \
+                                             "订单编号：{}\n" \
+                                             "订单类型：{} {}\n" \
+                                             "成交价：{}\n" \
+                                             "成交量：{}\n" \
+                                             "成交额：{}\n" \
+                                             "手续费：{} {}\n" \
+                                             "实现盈亏：{} \ud83d\udcb0\ud83d\udcb0\ud83d\udcb0\n" \
+                                             "时间：{}".format(result[2], symbol, orderId,
+                                                            zh_order_type(maker), zh_order_position(buyer),
+                                                            price, qty, quoteQty, commission, commissionAsset,
+                                                            realizedPnl, time_)
+                            update.message.reply_text(order_info_str)
+                        else:
+                            order_info_str = "账户：{}\n" \
+                                             "交易对：{}\n" \
+                                             "订单编号：{}\n" \
+                                             "订单类型：{} {}\n" \
+                                             "成交价：{}\n" \
+                                             "成交量：{}\n" \
+                                             "成交额：{}\n" \
+                                             "手续费：{} {}\n" \
+                                             "实现盈亏：{} \ud83e\udd7a\ud83e\udd7a\ud83e\udd7a\n" \
+                                             "时间：{}".format(result[2], symbol, orderId,
+                                                            zh_order_type(maker), zh_order_position(buyer),
+                                                            price, qty, quoteQty, commission, commissionAsset,
+                                                            realizedPnl, time_)
+                            update.message.reply_text(order_info_str)
                     else:
                         pass
                         # order_info_str = "账户：{}\n" \
