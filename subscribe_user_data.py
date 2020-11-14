@@ -30,20 +30,61 @@ def tg_bot_send_text(send_message, user_id, tg_token):
         return {}
 
 
+def zh_position_side(ps):
+    """
+    持仓方向
+    """
+    if ps == "LONG":
+        ps = "做多"
+    elif ps == "SHORT":
+        ps = "做空"
+    return ps
+
+
+def zh_order_side(o_side):
+    """
+    订单方向
+    """
+    if o_side == "BUY":
+        o_side = "买入"
+    elif o_side == "SELL":
+        o_side = "卖出"
+    return o_side
+
+
+def zh_order_types(ot):
+    """
+    订单类型
+    """
+    if ot == "LIMIT":
+        ot = "限价单"
+    elif ot == "MARKET":
+        ot = "市价单"
+    elif ot == "STOP":
+        ot = "止损单"
+    elif ot == "TAKE_PROFIT":
+        ot = "止盈单"
+    elif ot == "LIQUIDATION ":
+        ot = "强平单"
+    return ot
+
+
 def zh_order_status(order_s):
     """
     汉化订单状态
     """
     if order_s == "NEW":
-        order_s = "创建订单"
+        order_s = "新建订单"
     elif order_s == "PARTIALLY_FILLED":
         order_s = "部分成交"
     elif order_s == "FILLED":
-        order_s = "完全成交"
+        order_s = "全部成交"
     elif order_s == "CANCELED":
         order_s = "撤销订单"
     elif order_s == "EXPIRED":
-        order_s = "失效订单"
+        order_s = "订单过期"
+    elif order_s == "REJECTED ":
+        order_s = "订单被拒绝"
     elif order_s == "NEW_INSURANCE":
         order_s = "风险保障基金(强平)"
     elif order_s == "NEW_ADL":
@@ -80,7 +121,6 @@ def run(user_info):
                 print("=== Positions ===")
                 PrintMix.print_data(event.positions)
                 print("================")
-
             elif (event.eventType == "ORDER_TRADE_UPDATE"):
                 print("Event Type: ", event.eventType)
                 print("Event time: ", event.eventTime)

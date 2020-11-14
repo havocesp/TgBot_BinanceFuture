@@ -1,5 +1,7 @@
 import logging
+from time import time
 
+import pytz
 import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from config import teltoken, t_table, win
@@ -134,8 +136,7 @@ def b_balance(update, context):
         send_str = "账户：{}\n".format(u_api[2] or "User") + send_str
         update.message.reply_text(send_str)
     # 发送余额
-    update.message.reply_text("全部账户共计总额：\n{} USDT \ud83d\udcb0\n{} BNB \ud83d\udcb0".
-                              format(round(float(account_total), 5), round(float(total_bnb.replace("BNB", "")), 5)))
+    update.message.reply_text("全部账户共计总额：\n{} USDT \ud83d\udcb0\n{} BNB \ud83d\udcb0".format(round(float(account_total), 5), round(float(total_bnb.replace("BNB", "")), 5)))
 
 
 def b_orders(update, context):
@@ -158,26 +159,65 @@ def b_orders(update, context):
         if all_symbols:
             all_symbols = all_symbols["positions"]
             for symbol in all_symbols:
+                # ======================================================================================================
                 # 没有持仓的去掉
-                if float(symbol['entryPrice']) == 0.0:
+                # if float(symbol['entryPrice']) == 0.0:
+                #     continue
+                # symbol_ = symbol['symbol']  # 交易对
+                # positionAmt = symbol['positionAmt']  # 持仓数量
+                # entryPrice = symbol['entryPrice']  # 持仓成本价
+                # unrealizedProfit = symbol['unrealizedProfit']  # 持仓未实现盈亏
+                # positionType = "多单"
+                # if float(positionAmt) < 0:
+                #     positionType = "空单"
+                # order_info_str = "账户：{}\n" \
+                #                  "交易对：{}\n" \
+                #                  "持仓方式：{}\n" \
+                #                  "持仓数量：{}\n" \
+                #                  "持仓均价：{}\n" \
+                #                  "持仓未实现盈亏：{}" .format(result[2], symbol_.replace("USDT", "_USDT"), positionType,
+                #                                       positionAmt, entryPrice, unrealizedProfit)
+                # # 推送到指定用户
+                # update.message.reply_text(order_info_str)
+                # ======================================================================================================
+                # 获取每个交易对的历史记录
+                history_orders = send_signed_request('GET', '/fapi/v1/allOrders', results[0], {'symbol': symbol['symbol']})  # 订单历史
+                if not history_orders:
                     continue
-                symbol_ = symbol['symbol']  # 交易对
-                positionAmt = symbol['positionAmt']  # 持仓数量
-                entryPrice = symbol['entryPrice']  # 持仓成本价
-                unrealizedProfit = symbol['unrealizedProfit']  # 持仓未实现盈亏
-                positionType = "多单"
-                if float(positionAmt) < 0:
-                    positionType = "空单"
-                order_info_str = "账户：{}\n" \
-                                 "交易对：{}\n" \
-                                 "持仓方式：{}\n" \
-                                 "持仓数量：{}\n" \
-                                 "持仓均价：{}\n" \
-                                 "持仓未实现盈亏：{}" .format(result[2], symbol_.replace("USDT", "_USDT"), positionType,
-                                                      positionAmt, entryPrice, unrealizedProfit)
-                # 推送到指定用户
-                update.message.reply_text(order_info_str)
+                # 排序
+                # history_orders.sort(key=lambda k: (k.get('time', 0)))
+                # 获取持有的币种的最后五笔订单
+                # history_orders = history_orders[-10:]
+                for info in history_orders:
+                    orderId = info['orderId']  # 订单ID
+                    symbol = info['symbol']  # 交易对
+                    avgPrice = info['avgPrice']  # 平均成交价
+                    executedQty = info['executedQty']  # 成交量
+                    cumQuote = info['cumQuote']  # 成交金额
+                    side = info['side']  # 买卖方向
+                    status = info['status']  # 订单状态
+                    time_ = info['time']  # 下单时间
+                    # 超过一天订单去除
+                    if time() - time_/1000 > 1*60*60:
+                        continue
+                    # 转换时区
+                    tz = pytz.timezone('Asia/ShangHai')
+                    dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
+                    dt.strftime('%Y-%m-%d %H:%M:%S')
+                    order_info_str = "订单ID：{}\n" \
+                                     "交易对：{}\n" \
+                                     "平均成交价：{}\n" \
+                                     "成交量：{}\n" \
+                                     "成交金额：{}\n" \
+                                     "买卖方向：{}\n" \
+                                     "订单状态：{}\n" \
+                                     "下单时间：{}".format(orderId, symbol, avgPrice,
+                                                      executedQty, cumQuote, side, status, dt)
+                    # 推送到指定用户
+                    update.message.reply_text(order_info_str)
                 have_order = True
+                # ======================================================================================================
+
     if not have_order:
         update.message.reply_text("当前暂无持单，请稍后重试。")
     else:
