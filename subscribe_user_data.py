@@ -152,44 +152,98 @@ def run(user_info):
                 print("stop price working type: ", event.workingType)
                 print("Is this Close-All: ", event.isClosePosition)
                 print("========Orders=========")
-                order_str = "交易对：{}\n" \
-                            "客户端自定订单ID：{}\n" \
-                            "订单方向：{}\n" \
-                            "订单类型：{}\n" \
-                            "有效方式：{}\n" \
-                            "订单原始数量：{}\n" \
-                            "订单原始价格：{}\n" \
-                            "订单平均价格：{}\n" \
-                            "条件订单触发价格，对追踪止损单无效：{}\n" \
-                            "本次事件的具体执行类型：{}\n" \
-                            "订单的当前状态：{}\n" \
-                            "订单ID：{}\n" \
-                            "订单末次成交量：{}\n" \
-                            "订单累计已成交量：{}\n" \
-                            "订单末次成交价格：{}\n" \
-                            "手续费资产类型：{}\n" \
-                            "手续费数量：{}\n" \
-                            "成交时间：{}\n" \
-                            "成交ID：{}\n" \
-                            "买单净值：{}\n" \
-                            "卖单净值：{}\n" \
-                            "该成交是作为挂单成交吗？：{}\n" \
-                            "是否是只减仓单：{}\n" \
-                            "触发价类型：{}\n" \
-                            "原始订单类型：{}\n" \
-                            "持仓方向：{}\n" \
-                            "是否为触发平仓单; 仅在条件订单情况下会推送此字段{}\n" \
-                            "追踪止损激活价格, 仅在追踪止损单时会推送此字段：{}\n" \
-                            "追踪止损回调比例, 仅在追踪止损单时会推送此字段：{}\n" \
-                            "该交易实现盈亏：{}".format(
-                    event.symbol, event.clientOrderId, event.side, event.type, event.timeInForce, event.origQty,
-                    event.price, event.avgPrice, event.stopPrice, event.executionType, event.orderStatus, event.orderId,
-                    event.lastFilledQty, event.cumulativeFilledQty, event.lastFilledPrice, event.commissionAsset,
-                    event.commissionAmount, event.orderTradeTime, event.tradeID, event.bidsNotional, event.asksNotional,
-                    event.isMarkerSide, event.isReduceOnly, event.workingType, event.initOrderStatus,
-                    event.positionSide, event.isClosePosition, event.activationPrice, event.callbackRate,
-                    event.orderProfit
-                )
+                # order_str = "交易对：{}\n" \
+                #             "客户端自定订单ID：{}\n" \
+                #             "订单方向：{}\n" \
+                #             "订单类型：{}\n" \
+                #             "有效方式：{}\n" \
+                #             "订单原始数量：{}\n" \
+                #             "订单原始价格：{}\n" \
+                #             "订单平均价格：{}\n" \
+                #             "条件订单触发价格，对追踪止损单无效：{}\n" \
+                #             "本次事件的具体执行类型：{}\n" \
+                #             "订单的当前状态：{}\n" \
+                #             "订单ID：{}\n" \
+                #             "订单末次成交量：{}\n" \
+                #             "订单累计已成交量：{}\n" \
+                #             "订单末次成交价格：{}\n" \
+                #             "手续费资产类型：{}\n" \
+                #             "手续费数量：{}\n" \
+                #             "成交时间：{}\n" \
+                #             "成交ID：{}\n" \
+                #             "买单净值：{}\n" \
+                #             "卖单净值：{}\n" \
+                #             "该成交是作为挂单成交吗？：{}\n" \
+                #             "是否是只减仓单：{}\n" \
+                #             "触发价类型：{}\n" \
+                #             "原始订单类型：{}\n" \
+                #             "持仓方向：{}\n" \
+                #             "是否为触发平仓单; 仅在条件订单情况下会推送此字段{}\n" \
+                #             "追踪止损激活价格, 仅在追踪止损单时会推送此字段：{}\n" \
+                #             "追踪止损回调比例, 仅在追踪止损单时会推送此字段：{}\n" \
+                #             "该交易实现盈亏：{}".format(
+                #     event.symbol, event.clientOrderId, event.side, event.type, event.timeInForce, event.origQty,
+                #     event.price, event.avgPrice, event.stopPrice, event.executionType, event.orderStatus, event.orderId,
+                #     event.lastFilledQty, event.cumulativeFilledQty, event.lastFilledPrice, event.commissionAsset,
+                #     event.commissionAmount, event.orderTradeTime, event.tradeID, event.bidsNotional, event.asksNotional,
+                #     event.isMarkerSide, event.isReduceOnly, event.workingType, event.initOrderStatus,
+                #     event.positionSide, event.isClosePosition, event.activationPrice, event.callbackRate,
+                #     event.orderProfit
+                # )
+
+                symbol = event.symbol  # 交易对
+                positionSide = ""  # 订单方向
+                if event.side == "SELL":
+                    positionSide = "做空"
+                else:
+                    positionSide = "做多"
+                origQty = event.origQty  # 订单原始数量
+                avgPrice = event.avgPrice  # 订单平均价格
+                # 订单筛选
+                orderStatus = event.orderStatus  # 订单的当前状态
+
+                orderId = event.orderId  # 订单ID
+                tz = pytz.timezone('Asia/ShangHai')
+                dt = pytz.datetime.datetime.fromtimestamp(event.orderTradeTime / 1000, tz)
+                dt.strftime('%Y-%m-%d %H:%M:%S')
+                orderTradeTime = str(dt)[:-10]  # 成交时间
+                orderProfit = event.orderProfit  # 该交易实现盈亏
+                if float(orderProfit) != 0:
+                    if float(orderProfit) < 0:
+                        order_str = "账户：{}\n" \
+                                    "交易对：{}\n" \
+                                    "持仓方向：{}\n" \
+                                    "持仓数量：{}\n" \
+                                    "持仓均价：{}\n" \
+                                    "本单盈亏：{} USDT %f0%9f%a5%ba%f0%9f%a5%ba%f0%9f%a5%ba\n" \
+                                    "订单号：{}\n" \
+                                    "订单状态：{}\n" \
+                                    "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), positionSide,
+                                                     origQty, avgPrice, orderProfit, orderId,
+                                                     zh_order_status(orderStatus) or orderStatus, orderTradeTime)
+                    else:
+                        order_str = "账户：{}\n" \
+                                    "交易对：{}\n" \
+                                    "持仓方向：{}\n" \
+                                    "持仓数量：{}\n" \
+                                    "持仓均价：{}\n" \
+                                    "本单盈亏：{} USDT %f0%9f%92%b0%f0%9f%92%b0%f0%9f%92%b0\n" \
+                                    "订单号：{}\n" \
+                                    "订单状态：{}\n" \
+                                    "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'), positionSide,
+                                                     origQty, avgPrice, orderProfit, orderId,
+                                                     zh_order_status(orderStatus) or orderStatus, orderTradeTime)
+                else:
+                    order_str = "账户：{}\n" \
+                                "交易对：{}\n" \
+                                "持仓方向：{}\n" \
+                                "持仓数量：{}\n" \
+                                "持仓均价：{}\n" \
+                                "订单号：{}\n" \
+                                "订单状态：{}\n" \
+                                "成交时间：{}".format(user_info[0], symbol.replace('USDT', '-USDT'),
+                                                 positionSide, origQty, avgPrice, orderId,
+                                                 zh_order_status(orderStatus) or orderStatus, orderTradeTime)
 
                 tg_bot_send_text(order_str, user_info[1], user_info[4])
                 print("=======================")
@@ -243,6 +297,8 @@ def main():
     if not all_users:
         return
     for user_info in all_users:
+        if user_info[2] != 1375095749:
+            continue
         t = threading.Thread(target=run, args=(user_info,))
         t.start()
         # TODO 开启一个

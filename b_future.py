@@ -87,6 +87,8 @@ def bind_b_api(update, context):
     results = select_data(select_sql)
     if results:
         update.message.reply_text("此API已经被绑定！")
+        global bind_enable
+        bind_enable = False
         return
 
     # 绑定用户信息到数据库
@@ -97,6 +99,9 @@ def bind_b_api(update, context):
     if result:
         success_str = "绑定成功。"
         update.message.reply_text(success_str)
+
+        # TODO 启动自动推送
+
     else:
         failure_str = "绑定失败，请重试。"
         update.message.reply_text(failure_str)
@@ -261,7 +266,7 @@ def b_orders(update, context):
                                                             price, qty, quoteQty, commission, commissionAsset,
                                                             realizedPnl, time_)
                     else:
-                        pass
+                        continue
                         # order_info_str = "账户：{}\n" \
                         #                  "交易对：{}\n" \
                         #                  "订单编号：{}\n" \
