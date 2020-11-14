@@ -27,3 +27,14 @@ win = "\ud83d\udcb0"
 
 # ==================================================一下是测试代码======================================================
 
+# 1605339476000
+# 2020-11-14 15:37:56
+
+import time
+import pytz
+
+ss = (time.time() + 60*60)*1000
+tz = pytz.timezone('Asia/ShangHai')
+dt = pytz.datetime.datetime.fromtimestamp(ss / 1000, tz)
+time_ = str(dt.strftime('%Y-%m-%d %H:%M:%S'))
+print(time_)

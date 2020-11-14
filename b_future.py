@@ -153,11 +153,10 @@ def zh_order_position(order_s):
     """
     持仓方向
     """
-    if order_s == "SELL":
-        return "卖单"
-    else:
+    if order_s:
         return "买单"
-
+    else:
+        return "卖单"
 
 
 def b_orders(update, context):
@@ -203,7 +202,7 @@ def b_orders(update, context):
                 # ======================================================================================================
                 # 获取每个交易对的历史记录
                 history_orders = send_signed_request('GET', '/fapi/v1/userTrades', results[0],
-                                                     {'symbol': symbol['symbol'], 'limit': 5})  # 订单历史
+                                                     {'symbol': symbol['symbol'], 'limit': 10})  # 订单历史
                 if not history_orders:
                     continue
                 # 排序
@@ -224,6 +223,9 @@ def b_orders(update, context):
                     positionSide = info['positionSide']  # 持仓方向
                     symbol = info['symbol']  # 交易对
                     time_ = info['time']  # 时间
+                    # 从时间筛选订单，一个小时内订单
+                    if time() - time_ > 60*60:
+                        continue
                     # 转换时区
                     tz = pytz.timezone('Asia/ShangHai')
                     dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
@@ -232,29 +234,32 @@ def b_orders(update, context):
                     order_info_str = ""
                     if float(realizedPnl) != 0.0:
                         order_info_str = "账户：{}\n" \
-                                         "手续费：{} {}\n" \
-                                         "订单类型：{} {}\n" \
+                                         "交易对：{}\n" \
                                          "订单编号：{}\n" \
+                                         "订单类型：{} {}\n" \
                                          "成交价：{}\n" \
                                          "成交量：{}\n" \
                                          "成交额：{}\n" \
+                                         "手续费：{} {}\n" \
                                          "实现盈亏：{}\n" \
-                                         "交易对：{}\n" \
-                                         "时间：{}".format(result[2], commission, commissionAsset,
+                                         "时间：{}".format(result[2], symbol, orderId,
                                                         zh_order_type(maker), zh_order_position(buyer),
-                                                        orderId, price, qty, quoteQty, realizedPnl, symbol, time_)
+                                                        price, qty, quoteQty, commission, commissionAsset,
+                                                        realizedPnl, time_)
+                        update.message.reply_text(order_info_str)
                     else:
-                        order_info_str = "账户：{}\n" \
-                                         "手续费：{} {}\n" \
-                                         "订单类型：{} {}\n" \
-                                         "订单编号：{}\n" \
-                                         "成交价：{}\n" \
-                                         "成交量：{}\n" \
-                                         "成交额：{}\n" \
-                                         "交易对：{}\n" \
-                                         "时间：{}".format(result[2], commission, commissionAsset,
-                                                        zh_order_type(maker), zh_order_position(buyer),
-                                                        orderId, price, qty, quoteQty, symbol, time_)
+                        pass
+                        # order_info_str = "账户：{}\n" \
+                        #                  "交易对：{}\n" \
+                        #                  "订单编号：{}\n" \
+                        #                  "订单类型：{} {}\n" \
+                        #                  "成交价：{}\n" \
+                        #                  "成交量：{}\n" \
+                        #                  "成交额：{}\n" \
+                        #                  "手续费：{} {}\n" \
+                        #                  "时间：{}".format(result[2], symbol, orderId,
+                        #                                 zh_order_type(maker), zh_order_position(buyer),
+                        #                                 price, qty, quoteQty, commission, commissionAsset, time_)
 
 
                     # orderId = info['orderId']  # 订单ID
@@ -282,7 +287,7 @@ def b_orders(update, context):
                     #                  "下单时间：{}".format(orderId, symbol, avgPrice,
                     #                                   executedQty, cumQuote, side, status, str(dt)[:-10])
                     # 推送到指定用户
-                    update.message.reply_text(order_info_str)
+                    # update.message.reply_text(order_info_str)
                 have_order = True
                 # ======================================================================================================
 
