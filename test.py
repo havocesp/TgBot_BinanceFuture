@@ -61,13 +61,13 @@
 # else:
 #     continue
 
-
+# ======================================================================================================================
 # symbol = event.symbol  # 交易对
-# positionSide = ""  # 订单方向
-# if event.positionSide == "LONG":
-#     positionSide = "做多"
-# else:
+# # 订单方向
+# if event.side == "SELL":
 #     positionSide = "做空"
+# else:
+#     positionSide = "做多"
 # origQty = event.origQty  # 订单原始数量
 # avgPrice = event.avgPrice  # 订单平均价格
 # # 订单筛选

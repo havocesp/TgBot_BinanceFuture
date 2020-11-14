@@ -185,7 +185,7 @@ def b_orders(update, context):
         if all_symbols:
             all_symbols = all_symbols["positions"]
             for symbol in all_symbols:
-                # ======================================================================================================
+                # =======================================当前持仓========================================================
                 # 没有持仓的去掉
                 # if float(symbol['entryPrice']) == 0.0:
                 #     continue
@@ -205,8 +205,9 @@ def b_orders(update, context):
                 #                                       positionAmt, entryPrice, unrealizedProfit)
                 # # 推送到指定用户
                 # update.message.reply_text(order_info_str)
-                # ======================================================================================================
+                # ========================================历史持仓=======================================================
                 # 获取每个交易对的历史记录
+                # 可以设置开始结束时间做筛选，13位时间戳
                 history_orders = send_signed_request('GET', '/fapi/v1/userTrades', results[0],
                                                      {'symbol': symbol['symbol']})  # 订单历史
                 if not history_orders:
@@ -266,18 +267,18 @@ def b_orders(update, context):
                                                             price, qty, quoteQty, commission, commissionAsset,
                                                             realizedPnl, time_)
                     else:
-                        continue
-                        # order_info_str = "账户：{}\n" \
-                        #                  "交易对：{}\n" \
-                        #                  "订单编号：{}\n" \
-                        #                  "订单类型：{} {}\n" \
-                        #                  "成交价：{}\n" \
-                        #                  "成交量：{}\n" \
-                        #                  "成交额：{}\n" \
-                        #                  "手续费：{} {}\n" \
-                        #                  "时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
-                        #                                 zh_order_type(maker), zh_order_position(buyer),
-                        #                                 price, qty, quoteQty, commission, commissionAsset, time_)
+                        # continue
+                        order_info_str = "账户：{}\n" \
+                                         "交易对：{}\n" \
+                                         "订单编号：{}\n" \
+                                         "订单类型：{} {}\n" \
+                                         "成交价：{}\n" \
+                                         "成交量：{}\n" \
+                                         "成交额：{}\n" \
+                                         "手续费：{} {}\n" \
+                                         "时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
+                                                        zh_order_type(maker), zh_order_position(buyer),
+                                                        price, qty, quoteQty, commission, commissionAsset, time_)
                     # ==================================================================================================
                     # orderId = info['orderId']  # 订单ID
                     # symbol = info['symbol']  # 交易对
@@ -308,7 +309,7 @@ def b_orders(update, context):
                 have_order = True
                 # ======================================================================================================
     if not have_order:
-        update.message.reply_text("当前暂无持单，请稍后重试。")
+        update.message.reply_text("最近暂无交易，请稍后重试。")
     else:
         update.message.reply_text("订单查询完成。")
 
