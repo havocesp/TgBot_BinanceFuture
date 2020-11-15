@@ -229,7 +229,7 @@ def b_orders(update, context):
                     symbol = info['symbol']  # 交易对
                     time_ = info['time']  # 时间
                     # 从时间筛选订单，半个小时内订单
-                    if time() - float(time_)/1000 > 30*60:
+                    if time() - float(time_)/1000 > 60*60:
                         continue
                     # 转换时区
                     tz = pytz.timezone('Asia/ShangHai')
@@ -265,18 +265,18 @@ def b_orders(update, context):
                                                             price, qty, quoteQty, commission, commissionAsset,
                                                             realizedPnl, time_)
                     else:
-                        # continue
-                        order_info_str = "账户：{}\n" \
-                                         "交易对：{}\n" \
-                                         "订单编号：{}\n" \
-                                         "订单类型：{} {}\n" \
-                                         "成交价：{}\n" \
-                                         "成交量：{}\n" \
-                                         "成交额：{}\n" \
-                                         "手续费：{} {}\n" \
-                                         "成交时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
-                                                        zh_order_type(maker), zh_order_position(buyer),
-                                                        price, qty, quoteQty, commission, commissionAsset, time_)
+                        continue
+                        # order_info_str = "账户：{}\n" \
+                        #                  "交易对：{}\n" \
+                        #                  "订单编号：{}\n" \
+                        #                  "订单类型：{} {}\n" \
+                        #                  "成交价：{}\n" \
+                        #                  "成交量：{}\n" \
+                        #                  "成交额：{}\n" \
+                        #                  "手续费：{} {}\n" \
+                        #                  "成交时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
+                        #                                 zh_order_type(maker), zh_order_position(buyer),
+                        #                                 price, qty, quoteQty, commission, commissionAsset, time_)
                     # ==================================================================================================
                     # orderId = info['orderId']  # 订单ID
                     # symbol = info['symbol']  # 交易对

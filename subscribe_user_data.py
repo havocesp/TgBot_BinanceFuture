@@ -212,7 +212,7 @@ def run(user_info):
                                "订单方向：{}\n" \
                                "数量：{} {}\n" \
                                "平均价格：{} {}/USDT\n" \
-                               "下单时间：{}".format(user_info[0], symbol.replace("USDT", "-USDT"), order_id,
+                               "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
                                                 zh_order_status(orderStatus), zh_order_types(order_type),
                                                 zh_order_side(side),
                                                 origQty, symbol.replace("USDT", ""), price,
@@ -231,7 +231,7 @@ def run(user_info):
                                    "价值：{} USDT\n" \
                                    "手续费：{} {}\n" \
                                    "本单盈亏：{}\n" \
-                                   "下单时间：{}".format(user_info[0], symbol.replace("USDT", "-USDT"), order_id,
+                                   "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
                                                     zh_order_status(orderStatus), zh_order_types(order_type),
                                                     zh_order_side(side),
                                                     cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice, symbol.replace("USDT", ""),
@@ -249,7 +249,7 @@ def run(user_info):
                                    "持仓均价：{} USDT\n" \
                                    "价值：{} {}/USDT\n" \
                                    "手续费：{} {}\n" \
-                                   "下单时间：{}".format(user_info[0], symbol.replace("USDT", "-USDT"), order_id,
+                                   "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
                                                     zh_order_status(orderStatus), zh_order_types(order_type),
                                                     zh_order_side(side), origQty, symbol.replace("USDT", ""),
                                                     avgPrice, symbol.replace("USDT", ""),
