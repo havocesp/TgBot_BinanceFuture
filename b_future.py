@@ -87,8 +87,6 @@ def bind_b_api(update, context):
     results = select_data(select_sql)
     if results:
         update.message.reply_text("此API已经被绑定！")
-        global bind_enable
-        bind_enable = False
         return
 
     # 绑定用户信息到数据库
@@ -306,7 +304,7 @@ def b_orders(update, context):
                     #                                   executedQty, cumQuote, side, status, str(dt)[:-10])
                     # 推送到指定用户
                     update.message.reply_text(order_info_str)
-                have_order = True
+                    have_order = True
                 # ======================================================================================================
     if not have_order:
         update.message.reply_text("最近暂无交易，请稍后重试。")
