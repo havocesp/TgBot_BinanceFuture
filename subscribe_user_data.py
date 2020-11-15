@@ -211,11 +211,12 @@ def run(user_info):
                                "订单类型：{}\n" \
                                "订单方向：{}\n" \
                                "数量：{} {}\n" \
-                               "平均价格：{} USDT\n" \
+                               "平均价格：{} {}/USDT\n" \
                                "下单时间：{}".format(user_info[0], symbol.replace("USDT", "-USDT"), order_id,
                                                 zh_order_status(orderStatus), zh_order_types(order_type),
                                                 zh_order_side(side),
-                                                origQty, symbol.replace("USDT", ""), price, orderTradeTime)
+                                                origQty, symbol.replace("USDT", ""), price,
+                                                symbol.replace("USDT", ""), orderTradeTime)
                     tg_bot_send_text(send_str, user_info[1], user_info[4])
                 elif (orderStatus == "PARTIALLY_FILLED" or orderStatus == "FILLED") and executionType == "TRADE":
                     if float(orderProfit) != 0:
@@ -226,14 +227,14 @@ def run(user_info):
                                    "订单类型：{}\n" \
                                    "订单方向：{}\n" \
                                    "数量：{} {}\n" \
-                                   "平均价格：{} USDT\n" \
+                                   "平均价格：{} {}/USDT\n" \
                                    "价值：{} USDT\n" \
-                                   "手续费：{}\n" \
+                                   "手续费：{} {}\n" \
                                    "本单盈亏：{}\n" \
                                    "下单时间：{}".format(user_info[0], symbol.replace("USDT", "-USDT"), order_id,
                                                     zh_order_status(orderStatus), zh_order_types(order_type),
                                                     zh_order_side(side),
-                                                    cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice,
+                                                    cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice, symbol.replace("USDT", ""),
                                                     float(origQty) * float(avgPrice), commissionAmount, commissionAsset,
                                                     orderProfit, orderTradeTime)
                         tg_bot_send_text(send_str, user_info[1], user_info[4])
@@ -246,11 +247,12 @@ def run(user_info):
                                    "订单方向：{}\n" \
                                    "持仓量：{} {}\n" \
                                    "持仓均价：{} USDT\n" \
-                                   "价值：{} USDT\n" \
-                                   "手续费：{}\n" \
+                                   "价值：{} {}/USDT\n" \
+                                   "手续费：{} {}\n" \
                                    "下单时间：{}".format(user_info[0], symbol.replace("USDT", "-USDT"), order_id,
                                                     zh_order_status(orderStatus), zh_order_types(order_type),
-                                                    zh_order_side(side), origQty, symbol.replace("USDT", ""), avgPrice,
+                                                    zh_order_side(side), origQty, symbol.replace("USDT", ""),
+                                                    avgPrice, symbol.replace("USDT", ""),
                                                     float(origQty) * float(avgPrice), commissionAmount, commissionAsset,
                                                     orderTradeTime)
                         tg_bot_send_text(send_str, user_info[1], user_info[4])
