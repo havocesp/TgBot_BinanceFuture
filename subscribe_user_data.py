@@ -215,7 +215,8 @@ def run(user_info):
                                "价值：{} USDT\n" \
                                "下单时间：{}".format(user_info[1], order_id,
                                                 zh_order_status(orderStatus), zh_order_types(order_type),
-                                                symbol, zh_order_side(side), origQty, symbol, avgPrice,
+                                                symbol.replace("USDT", "-USDT"), zh_order_side(side),
+                                                origQty, symbol.replace("USDT", ""), price,
                                                 float(origQty) * float(avgPrice), orderTradeTime)
                     tg_bot_send_text(send_str, user_info[1], user_info[4])
                 elif (orderStatus == "PARTIALLY_FILLED" or orderStatus == "FILLED") and executionType == "TRADE":
@@ -233,7 +234,8 @@ def run(user_info):
                                    "本单盈亏：{}\n" \
                                    "下单时间：{}".format(user_info[1], order_id,
                                                     zh_order_status(orderStatus), zh_order_types(order_type),
-                                                    symbol, zh_order_side(side), cumulativeFilledQty, symbol, avgPrice,
+                                                    symbol.replace("USDT", "-USDT"), zh_order_side(side),
+                                                    cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice,
                                                     commissionAmount, commissionAsset,
                                                     float(origQty) * float(avgPrice), orderProfit, orderTradeTime)
                         tg_bot_send_text(send_str, user_info[1], user_info[4])
@@ -250,7 +252,8 @@ def run(user_info):
                                    "手续费：{}\n" \
                                    "下单时间：{}".format(user_info[1], order_id,
                                                     zh_order_status(orderStatus), zh_order_types(order_type),
-                                                    symbol, zh_order_side(side), origQty, symbol, avgPrice,
+                                                    symbol.replace("USDT", "-USDT"), zh_order_side(side), origQty,
+                                                    symbol.replace("USDT", ""), avgPrice,
                                                     commissionAmount, commissionAsset,
                                                     float(origQty) * float(avgPrice), orderTradeTime)
                         tg_bot_send_text(send_str, user_info[1], user_info[4])
