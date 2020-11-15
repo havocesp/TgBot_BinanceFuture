@@ -20,7 +20,7 @@ def tg_bot_send_text(send_message, user_id, tg_token):
     To send message
     """
     send_text = 'https://api.telegram.org/bot' + tg_token + '/sendMessage?chat_id=' + \
-                str(user_id) + '&parse_mode=Markdown&text=' + send_message
+                str(user_id) + '&text=' + send_message
     print(send_text)
     try:
         response = requests.get(send_text)
@@ -167,7 +167,7 @@ def run(user_info):
                             "条件订单触发价格，对追踪止损单无效：{}  本次事件的具体执行类型：{}  订单的当前状态：{}  订单ID：{}  " \
                             "订单末次成交量：{}  订单累计已成交量：{}  订单末次成交价格：{}  手续费资产类型：{}  手续费数量：{}  " \
                             "成交时间：{}  该成交是作为挂单成交吗？：{}  是否是只减仓单：{}  触发价类型：{}  原始订单类型：{}  " \
-                            "持仓方向：{}  该交易实现盈亏：{}".format(
+                            "持仓方向：{}  该交易实现盈亏：{}%f0%9f%92%b0%f0%9f%92%b0%f0%9f%92%b0 %f0%9f%a5%ba%f0%9f%a5%ba%f0%9f%a5%ba".format(
                     event.symbol, event.side, event.type, event.origQty,
                     event.price, event.avgPrice, event.stopPrice, event.executionType, event.orderStatus, event.orderId,
                     event.lastFilledQty, event.cumulativeFilledQty, event.lastFilledPrice, event.commissionAsset,
@@ -230,8 +230,6 @@ def main():
             continue
         t = threading.Thread(target=run, args=(user_info,))
         t.start()
-        # TODO 开启一个
-        break
 
 
 if __name__ == '__main__':

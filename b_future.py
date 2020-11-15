@@ -23,7 +23,7 @@ def tg_bot_send_text(message, user_id):
     To send message
     """
     send_text = 'https://api.telegram.org/bot' + teltoken + '/sendMessage?chat_id=' + \
-                str(user_id) + '&parse_mode=Markdown&text=' + message
+                str(user_id) + '&text=' + message
     response = requests.get(send_text)
     return response.json()
 
