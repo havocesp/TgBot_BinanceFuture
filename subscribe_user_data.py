@@ -19,8 +19,7 @@ def tg_bot_send_text(send_message, user_id, tg_token):
     """
     To send message
     """
-    send_text = 'https://api.telegram.org/bot' + tg_token + '/sendMessage?chat_id=' + \
-                str(user_id) + '&text=' + send_message
+    send_text = 'https://api.telegram.org/bot' + tg_token + '/sendMessage?chat_id=' + str(user_id) + '&text=' + send_message
     print(send_text)
     try:
         response = requests.get(send_text)
@@ -108,6 +107,8 @@ def run(user_info):
     user_info：api_lable, tg_id, b_api_key, b_secret_key, tg_token
     启动单线程的数据订阅
     """
+    # TODO 查询当前持仓
+    # 创建当前持仓列表，记录交易对，持仓方向，
     def callback(data_type: 'SubscribeMessageType', event: 'any'):
         if data_type == SubscribeMessageType.RESPONSE:
             print("Event ID: ", event)
@@ -116,7 +117,6 @@ def run(user_info):
                 print("Event Type: ", event.eventType)
                 print("Event time: ", event.eventTime)
                 print("Transaction time: ", event.transactionTime)
-
                 print("=== Balances ===")
                 PrintMix.print_data(event.balances)
                 balance_str = ""
@@ -128,7 +128,6 @@ def run(user_info):
                 # 账户余额变化提醒
                 # tg_bot_send_text(balance_str, user_info[1], user_info[4])
                 print("================")
-
                 print("=== Positions ===")
                 PrintMix.print_data(event.positions)
                 print("================")
@@ -163,19 +162,100 @@ def run(user_info):
                 print("stop price working type: ", event.workingType)
                 print("Is this Close-All: ", event.isClosePosition)
                 print("========Orders=========")
-                order_str = "交易对：{}\n订单方向：{}\n订单类型：{}\n订单原始数量：{}\n订单原始价格：{}\n订单平均价格：{}\n" \
-                            "条件订单触发价格，对追踪止损单无效：{}\n本次事件的具体执行类型：{}\n订单的当前状态：{}\n订单ID：{}\n" \
-                            "订单末次成交量：{}\n订单累计已成交量：{}\n订单末次成交价格：{}\n手续费资产类型：{}\n手续费数量：{}\n" \
-                            "成交时间：{}\n该成交是作为挂单成交吗？：{}\n是否是只减仓单：{}\n触发价类型：{}\n原始订单类型：{}\n" \
-                            "持仓方向：{}\n该交易实现盈亏：{}".format(
-                    event.symbol, event.side, event.type, event.origQty,
-                    event.price, event.avgPrice, event.stopPrice, event.executionType, event.orderStatus, event.orderId,
-                    event.lastFilledQty, event.cumulativeFilledQty, event.lastFilledPrice, event.commissionAsset,
-                    event.commissionAmount, event.orderTradeTime, event.isMarkerSide, event.isReduceOnly,
-                    event.workingType, event.initOrderStatus, event.positionSide, event.orderProfit
-                )
+                # order_str = "交易对：{}\n订单方向：{}\n订单类型：{}\n订单原始数量：{}\n订单原始价格：{}\n订单平均价格：{}\n" \
+                #             "条件订单触发价格，对追踪止损单无效：{}\n本次事件的具体执行类型：{}\n订单的当前状态：{}\n订单ID：{}\n" \
+                #             "订单末次成交量：{}\n订单累计已成交量：{}\n订单末次成交价格：{}\n手续费资产类型：{}\n手续费数量：{}\n" \
+                #             "成交时间：{}\n该成交是作为挂单成交吗？：{}\n是否是只减仓单：{}\n触发价类型：{}\n原始订单类型：{}\n" \
+                #             "持仓方向：{}\n该交易实现盈亏：{}".format(
+                #     event.symbol, event.side, event.type, event.origQty,
+                #     event.price, event.avgPrice, event.stopPrice, event.executionType, event.orderStatus, event.orderId,
+                #     event.lastFilledQty, event.cumulativeFilledQty, event.lastFilledPrice, event.commissionAsset,
+                #     event.commissionAmount, event.orderTradeTime, event.isMarkerSide, event.isReduceOnly,
+                #     event.workingType, event.initOrderStatus, event.positionSide, event.orderProfit
+                # )
+                symbol = event.symbol  # 交易对
+                order_id = event.orderId  # 订单ID
+                order_type = event.type  # 订单类型
+                side = event.side  # 订单方向
+
+                # -----------------------------------------------------------
+                origQty = event.origQty  # 订单原始数量
+                price = event.price  # 订单原始价格
+                # -----------------------------------------------------------
+                avgPrice = event.avgPrice  # 订单平均价格
+                # ------------------------------------------------------------
+                cumulativeFilledQty = event.cumulativeFilledQty  # 订单累计成交量
+                lastFilledPrice = event.lastFilledPrice  # 订单末次成交价
+                # -----------------------------------------------------------
+
+                executionType = event.executionType  # 本次事件的执行类型
+                orderStatus = event.orderStatus  # 订单当前状态
+                isMarkerSide = event.isMarkerSide  # 该成交是否为挂单成交
+                positionSide = event.positionSide  # 持仓方向
+
+                commissionAsset = event.commissionAsset  # 手续费资产类型
+                commissionAmount = event.commissionAmount  # 手续费数量
+                orderProfit = event.orderProfit  # 该交易实现盈亏
+
+                tz = pytz.timezone('Asia/ShangHai')
+                dt = pytz.datetime.datetime.fromtimestamp(event.orderTradeTime / 1000, tz)
+                dt.strftime('%Y-%m-%d %H:%M:%S')
+                orderTradeTime = str(dt)[:-10]  # 成交时间
+
+                # 创建/取消订单
+                if (orderStatus == "NEW" or orderStatus == "CANCELED") and not isMarkerSide:
+                    send_str = "账户：{}\n" \
+                               "订单号：{}\n" \
+                               "订单状态：{}\n" \
+                               "订单类型：{}\n" \
+                               "交易对：{}\n" \
+                               "订单方向：{}\n" \
+                               "持仓量：{} {}\n" \
+                               "平均价格：{}\n" \
+                               "价值：{} USDT\n" \
+                               "下单时间：{}".format(user_info[1], order_id,
+                                                zh_order_status(orderStatus), zh_order_types(order_type),
+                                                symbol, zh_order_side(side), origQty, symbol, avgPrice,
+                                                float(origQty) * float(avgPrice), orderTradeTime)
+                    tg_bot_send_text(send_str, user_info[1], user_info[4])
+                elif (orderStatus == "PARTIALLY_FILLED" or orderStatus == "FILLED") and executionType == "TRADE":
+                    if float(orderProfit) != 0:
+                        send_str = "账户：{}\n" \
+                                   "订单号：{}\n" \
+                                   "订单状态：{}\n" \
+                                   "订单类型：{}\n" \
+                                   "交易对：{}\n" \
+                                   "订单方向：{}\n" \
+                                   "持仓量：{} {}\n" \
+                                   "平均价格：{}\n" \
+                                   "价值：{} USDT\n" \
+                                   "手续费：{}\n" \
+                                   "本单盈亏：{}\n" \
+                                   "下单时间：{}".format(user_info[1], order_id,
+                                                    zh_order_status(orderStatus), zh_order_types(order_type),
+                                                    symbol, zh_order_side(side), cumulativeFilledQty, symbol, avgPrice,
+                                                    commissionAmount, commissionAsset,
+                                                    float(origQty) * float(avgPrice), orderProfit, orderTradeTime)
+                        tg_bot_send_text(send_str, user_info[1], user_info[4])
+                    else:
+                        send_str = "账户：{}\n" \
+                                   "订单号：{}\n" \
+                                   "订单状态：{}\n" \
+                                   "订单类型：{}\n" \
+                                   "交易对：{}\n" \
+                                   "订单方向：{}\n" \
+                                   "持仓量：{} {}\n" \
+                                   "平均价格：{}\n" \
+                                   "价值：{} USDT\n" \
+                                   "手续费：{}\n" \
+                                   "下单时间：{}".format(user_info[1], order_id,
+                                                    zh_order_status(orderStatus), zh_order_types(order_type),
+                                                    symbol, zh_order_side(side), origQty, symbol, avgPrice,
+                                                    commissionAmount, commissionAsset,
+                                                    float(origQty) * float(avgPrice), orderTradeTime)
+                        tg_bot_send_text(send_str, user_info[1], user_info[4])
                 # ======================================================================================================
-                tg_bot_send_text(order_str, user_info[1], user_info[4])
+                # tg_bot_send_text(order_str, user_info[1], user_info[4])
                 # ======================================================================================================
                 if not event.activationPrice is None:
                     print("Activation Price for Trailing Stop: ", event.activationPrice)
@@ -230,8 +310,6 @@ def main():
             continue
         t = threading.Thread(target=run, args=(user_info,))
         t.start()
-        # TODO 开启一个
-        break
 
 
 if __name__ == '__main__':

@@ -228,7 +228,7 @@ def b_orders(update, context):
                     positionSide = info['positionSide']  # 持仓方向
                     symbol = info['symbol']  # 交易对
                     time_ = info['time']  # 时间
-                    # 从时间筛选订单，一个小时内订单
+                    # 从时间筛选订单，半个小时内订单
                     if time() - float(time_)/1000 > 30*60:
                         continue
                     # 转换时区
@@ -246,7 +246,7 @@ def b_orders(update, context):
                                              "成交额：{}\n" \
                                              "手续费：{} {}\n" \
                                              "实现盈亏：{} USDT\ud83d\udcb0\ud83d\udcb0\ud83d\udcb0\n" \
-                                             "时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
+                                             "成交时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
                                                             zh_order_type(maker), zh_order_position(buyer),
                                                             price, qty, quoteQty, commission, commissionAsset,
                                                             realizedPnl, time_)
@@ -260,7 +260,7 @@ def b_orders(update, context):
                                              "成交额：{}\n" \
                                              "手续费：{} {}\n" \
                                              "实现盈亏：{} USDT\ud83e\udd7a\ud83e\udd7a\ud83e\udd7a\n" \
-                                             "时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
+                                             "成交时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
                                                             zh_order_type(maker), zh_order_position(buyer),
                                                             price, qty, quoteQty, commission, commissionAsset,
                                                             realizedPnl, time_)
@@ -274,7 +274,7 @@ def b_orders(update, context):
                                          "成交量：{}\n" \
                                          "成交额：{}\n" \
                                          "手续费：{} {}\n" \
-                                         "时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
+                                         "成交时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
                                                         zh_order_type(maker), zh_order_position(buyer),
                                                         price, qty, quoteQty, commission, commissionAsset, time_)
                     # ==================================================================================================
