@@ -205,57 +205,54 @@ def run(user_info):
                 # 创建/取消订单
                 if (orderStatus == "NEW" or orderStatus == "CANCELED") and not isMarkerSide:
                     send_str = "账户：{}\n" \
+                               "交易对：{}\n" \
                                "订单号：{}\n" \
                                "订单状态：{}\n" \
                                "订单类型：{}\n" \
-                               "交易对：{}\n" \
                                "订单方向：{}\n" \
-                               "持仓量：{} {}\n" \
-                               "平均价格：{}\n" \
-                               "价值：{} USDT\n" \
-                               "下单时间：{}".format(user_info[1], order_id,
+                               "数量：{} {}\n" \
+                               "平均价格：{} USDT\n" \
+                               "下单时间：{}".format(user_info[0], symbol.replace("USDT", "-USDT"), order_id,
                                                 zh_order_status(orderStatus), zh_order_types(order_type),
-                                                symbol.replace("USDT", "-USDT"), zh_order_side(side),
-                                                origQty, symbol.replace("USDT", ""), price,
-                                                float(origQty) * float(avgPrice), orderTradeTime)
+                                                zh_order_side(side),
+                                                origQty, symbol.replace("USDT", ""), price, orderTradeTime)
                     tg_bot_send_text(send_str, user_info[1], user_info[4])
                 elif (orderStatus == "PARTIALLY_FILLED" or orderStatus == "FILLED") and executionType == "TRADE":
                     if float(orderProfit) != 0:
                         send_str = "账户：{}\n" \
+                                   "交易对：{}\n" \
                                    "订单号：{}\n" \
                                    "订单状态：{}\n" \
                                    "订单类型：{}\n" \
-                                   "交易对：{}\n" \
                                    "订单方向：{}\n" \
-                                   "持仓量：{} {}\n" \
-                                   "平均价格：{}\n" \
+                                   "数量：{} {}\n" \
+                                   "平均价格：{} USDT\n" \
                                    "价值：{} USDT\n" \
                                    "手续费：{}\n" \
                                    "本单盈亏：{}\n" \
-                                   "下单时间：{}".format(user_info[1], order_id,
+                                   "下单时间：{}".format(user_info[0], symbol.replace("USDT", "-USDT"), order_id,
                                                     zh_order_status(orderStatus), zh_order_types(order_type),
-                                                    symbol.replace("USDT", "-USDT"), zh_order_side(side),
+                                                    zh_order_side(side),
                                                     cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice,
-                                                    commissionAmount, commissionAsset,
-                                                    float(origQty) * float(avgPrice), orderProfit, orderTradeTime)
+                                                    float(origQty) * float(avgPrice), commissionAmount, commissionAsset,
+                                                    orderProfit, orderTradeTime)
                         tg_bot_send_text(send_str, user_info[1], user_info[4])
                     else:
                         send_str = "账户：{}\n" \
+                                   "交易对：{}\n" \
                                    "订单号：{}\n" \
                                    "订单状态：{}\n" \
                                    "订单类型：{}\n" \
-                                   "交易对：{}\n" \
                                    "订单方向：{}\n" \
                                    "持仓量：{} {}\n" \
-                                   "平均价格：{}\n" \
+                                   "持仓均价：{} USDT\n" \
                                    "价值：{} USDT\n" \
                                    "手续费：{}\n" \
-                                   "下单时间：{}".format(user_info[1], order_id,
+                                   "下单时间：{}".format(user_info[0], symbol.replace("USDT", "-USDT"), order_id,
                                                     zh_order_status(orderStatus), zh_order_types(order_type),
-                                                    symbol.replace("USDT", "-USDT"), zh_order_side(side), origQty,
-                                                    symbol.replace("USDT", ""), avgPrice,
-                                                    commissionAmount, commissionAsset,
-                                                    float(origQty) * float(avgPrice), orderTradeTime)
+                                                    zh_order_side(side), origQty, symbol.replace("USDT", ""), avgPrice,
+                                                    float(origQty) * float(avgPrice), commissionAmount, commissionAsset,
+                                                    orderTradeTime)
                         tg_bot_send_text(send_str, user_info[1], user_info[4])
                 # ======================================================================================================
                 # tg_bot_send_text(order_str, user_info[1], user_info[4])
