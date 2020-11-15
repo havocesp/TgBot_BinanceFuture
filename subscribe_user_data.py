@@ -102,7 +102,7 @@ def zh_order_status(order_s):
     return order_s
 
 
-def run(user_info):
+def order_start(user_info):
     """
     user_info：api_lable, tg_id, b_api_key, b_secret_key, tg_token
     启动单线程的数据订阅
@@ -299,6 +299,25 @@ def run(user_info):
     sub_client.subscribe_user_data_event(listen_key, callback, error)
 
 
+def order_stop(user_info):
+    """
+    user_info：api_lable, tg_id, b_api_key, b_secret_key, tg_token
+    停止订单推送
+    """
+    # Start user data stream
+    request_client = RequestClient(api_key=user_info[2], secret_key=user_info[3])
+    listen_key = request_client.start_user_data_stream()
+    print("listenKey: ", listen_key)
+
+    # Keep user data stream
+    # result = request_client.keep_user_data_stream()
+    # print("Result: ", result)
+
+    # Close user data stream
+    result = request_client.close_user_data_stream()
+    print("Result: ", result)
+
+
 def main():
     """
     多线程开启订阅
@@ -310,7 +329,7 @@ def main():
     for user_info in all_users:
         if user_info[1] != 685705504:
             continue
-        t = threading.Thread(target=run, args=(user_info,))
+        t = threading.Thread(target=order_start, args=(user_info,))
         t.start()
 
 

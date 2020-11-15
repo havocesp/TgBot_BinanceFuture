@@ -1,5 +1,7 @@
 # ===================Telegram Bot===============================
 # TODO 测试版
+import threading
+
 teltoken = '1473302982:AAH5HjAWjjimwL1xDNih7pfsZZ6BG2NUeTg'
 # TODO 正式版
 # teltoken = '1386154312:AAGhq_iROaCy0_99hWg-jNKmH0o16fH50K8'
@@ -26,4 +28,12 @@ failure = "\ud83e\udd7a"
 win = "\ud83d\udcb0"
 
 # ==================================================一下是测试代码======================================================
+def order_start(ooo):
+    print(ooo)
+    print()
 
+
+t = threading.Thread(target=order_start, args=("user_info",))
+t.start()
+print(t.setName("{}".format("NZNpinpsTXWjVxFGM3wdAmS2kirfMaSzA61weRi6xjDP1mAQ7exwwQzsdkoZr9V4")))
+print(t.getName())

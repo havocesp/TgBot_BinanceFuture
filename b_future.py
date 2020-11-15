@@ -1,4 +1,5 @@
 import logging
+import threading
 from time import time
 
 import pytz
@@ -8,6 +9,7 @@ from config import teltoken, t_table, win
 from futures import send_signed_request
 
 from sql_config import insert_data, select_data
+from subscribe_user_data import order_start, order_stop
 
 
 # Enable logging
@@ -319,16 +321,34 @@ def start_ws(update, context):
     """
     开启订单推送
     """
-    print("这里开始了订单推送")
-    update.message.reply_text("这里开始了订单推送！")
+    all_user_sql = "select api_lable, tg_id, b_api_key, b_secret_key, tg_token from " + t_table
+    all_users = select_data(all_user_sql)
+    if not all_users:
+        update.message.reply_text("请先绑定相关API。")
+        return
+    for user_info in all_users:
+        if user_info[1] != 685705504:
+            continue
+        t = threading.Thread(target=order_start, args=(user_info,))
+        t.start()
+        update.message.reply_text("账户：{}，开始了订单推送！".format(user_info[0]))
 
 
 def stop_ws(update, context):
     """
     停止订单推送
     """
-    print("停止了订单推送")
-    update.message.reply_text("停止了订单推送！")
+    all_user_sql = "select api_lable, tg_id, b_api_key, b_secret_key, tg_token from " + t_table
+    all_users = select_data(all_user_sql)
+    if not all_users:
+        update.message.reply_text("请先绑定相关API。")
+        return
+    for user_info in all_users:
+        if user_info[1] != 685705504:
+            continue
+        t = threading.Thread(target=order_stop, args=(user_info,))
+        t.start()
+        update.message.reply_text("账户：{}，停止了订单推送！".format(user_info[0]))
 
 
 def tg_error(update, context):
