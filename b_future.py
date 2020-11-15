@@ -36,7 +36,9 @@ def tg_start(update, context):
     description_str = "/help = 查看命令\n" \
                       "/balance = 查询余额\n" \
                       "/orders = 查询订单\n" \
-                      "/bind = 绑定API"
+                      "/bind = 绑定API\n" \
+                      "/startws = 开启订单推送\n" \
+                      "/stopws = 停止订单推送"
     update.message.reply_text(description_str)
     pass
 
@@ -48,12 +50,14 @@ def tg_help(update, context):
     description_str = "/help = 查看命令\n" \
                       "/balance = 查询余额\n" \
                       "/orders = 查询订单\n" \
-                      "/bind = 绑定API"
+                      "/bind = 绑定API\n" \
+                      "/startws = 开启订单推送\n" \
+                      "/stopws = 停止订单推送"
     update.message.reply_text(description_str)
     pass
 
 
-def tg_bind_command(update, context):
+def tg_bind_api(update, context):
     """
     Bind binance API switch
     """
@@ -97,7 +101,6 @@ def bind_b_api(update, context):
     if result:
         success_str = "绑定成功。"
         update.message.reply_text(success_str)
-
         # TODO 启动自动推送
 
     else:
@@ -307,9 +310,25 @@ def b_orders(update, context):
                     have_order = True
                 # ======================================================================================================
     if not have_order:
-        update.message.reply_text("最近暂无交易，请稍后重试。")
+        update.message.reply_text("最近暂无订单，请稍后重试。")
     else:
         update.message.reply_text("订单查询完成。")
+
+
+def start_ws(update, context):
+    """
+    开启订单推送
+    """
+    print("这里开始了订单推送")
+    update.message.reply_text("这里开始了订单推送！")
+
+
+def stop_ws(update, context):
+    """
+    停止订单推送
+    """
+    print("停止了订单推送")
+    update.message.reply_text("停止了订单推送！")
 
 
 def tg_error(update, context):
@@ -331,7 +350,9 @@ def main():
     dp.add_handler(CommandHandler("help", tg_help))
     dp.add_handler(CommandHandler("balance", b_balance))
     dp.add_handler(CommandHandler("orders", b_orders))
-    dp.add_handler(CommandHandler("bind", tg_bind_command))
+    dp.add_handler(CommandHandler("bind", tg_bind_api))
+    dp.add_handler(CommandHandler("startws", start_ws))
+    dp.add_handler(CommandHandler("stopws", stop_ws))
     dp.add_handler(MessageHandler(Filters.text, bind_b_api))
 
     # log all errors
