@@ -163,16 +163,16 @@ def run(user_info):
                 print("stop price working type: ", event.workingType)
                 print("Is this Close-All: ", event.isClosePosition)
                 print("========Orders=========")
-                order_str = "交易对：{}  订单方向：{}  订单类型：{}  订单原始数量：{}  订单原始价格：{}  订单平均价格：{}  " \
-                            "条件订单触发价格，对追踪止损单无效：{}  本次事件的具体执行类型：{}  订单的当前状态：{}  订单ID：{}  " \
-                            "订单末次成交量：{}  订单累计已成交量：{}  订单末次成交价格：{}  手续费资产类型：{}  手续费数量：{}  " \
-                            "成交时间：{}  该成交是作为挂单成交吗？：{}  是否是只减仓单：{}  触发价类型：{}  原始订单类型：{}  " \
-                            "持仓方向：{}  该交易实现盈亏：{}%f0%9f%92%b0%f0%9f%92%b0%f0%9f%92%b0 %f0%9f%a5%ba%f0%9f%a5%ba%f0%9f%a5%ba".format(
+                order_str = "交易对：{}\n订单方向：{}\n订单类型：{}\n订单原始数量：{}\n订单原始价格：{}\n订单平均价格：{}\n" \
+                            "条件订单触发价格，对追踪止损单无效：{}\n本次事件的具体执行类型：{}\n订单的当前状态：{}\n订单ID：{}\n" \
+                            "订单末次成交量：{}\n订单累计已成交量：{}\n订单末次成交价格：{}\n手续费资产类型：{}\n手续费数量：{}\n" \
+                            "成交时间：{}\n该成交是作为挂单成交吗？：{}\n是否是只减仓单：{}\n触发价类型：{}\n原始订单类型：{}\n" \
+                            "持仓方向：{}\n该交易实现盈亏：{}".format(
                     event.symbol, event.side, event.type, event.origQty,
                     event.price, event.avgPrice, event.stopPrice, event.executionType, event.orderStatus, event.orderId,
                     event.lastFilledQty, event.cumulativeFilledQty, event.lastFilledPrice, event.commissionAsset,
                     event.commissionAmount, event.orderTradeTime, event.isMarkerSide, event.isReduceOnly,
-                    event.workingType, event.initOrderStatus, event.callbackRate, event.orderProfit
+                    event.workingType, event.initOrderStatus, event.positionSide, event.orderProfit
                 )
                 # ======================================================================================================
                 tg_bot_send_text(order_str, user_info[1], user_info[4])
@@ -230,6 +230,8 @@ def main():
             continue
         t = threading.Thread(target=run, args=(user_info,))
         t.start()
+        # TODO 开启一个
+        break
 
 
 if __name__ == '__main__':
