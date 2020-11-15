@@ -28,12 +28,3 @@ failure = "\ud83e\udd7a"
 win = "\ud83d\udcb0"
 
 # ==================================================一下是测试代码======================================================
-def order_start(ooo):
-    print(ooo)
-    print()
-
-
-t = threading.Thread(target=order_start, args=("user_info",))
-t.start()
-print(t.setName("{}".format("NZNpinpsTXWjVxFGM3wdAmS2kirfMaSzA61weRi6xjDP1mAQ7exwwQzsdkoZr9V4")))
-print(t.getName())

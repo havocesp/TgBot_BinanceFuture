@@ -14,6 +14,12 @@ from config import t_table
 from sql_config import select_data
 import requests
 
+logger = logging.getLogger("binance-client")
+logger.setLevel(level=logging.WARN)
+handler = logging.StreamHandler()
+handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)
+
 
 def tg_bot_send_text(send_message, user_id, tg_token):
     """
@@ -288,12 +294,6 @@ def order_start(user_info):
     # result = request_client.close_user_data_stream()
     # print("Result: ", result)
 
-    logger = logging.getLogger("binance-client")
-    logger.setLevel(level=logging.INFO)
-    handler = logging.StreamHandler()
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-
     sub_client = SubscriptionClient(api_key=g_api_key, secret_key=g_secret_key)
 
     sub_client.subscribe_user_data_event(listen_key, callback, error)
@@ -315,6 +315,7 @@ def order_stop(user_info):
 
     # Close user data stream
     result = request_client.close_user_data_stream()
+    print("**=="*90)
     print("Result: ", result)
 
 
