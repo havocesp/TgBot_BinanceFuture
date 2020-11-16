@@ -108,7 +108,7 @@ def zh_order_status(order_s):
     return order_s
 
 
-def order_start(user_info):
+def all_order_start(user_info):
     """
     user_info：api_lable, tg_id, b_api_key, b_secret_key, tg_token
     启动单线程的数据订阅
@@ -268,6 +268,123 @@ def order_start(user_info):
                         # tg_bot_send_text(send_str, user_info[1], user_info[4])
                 # ======================================================================================================
                 # tg_bot_send_text(order_str, user_info[1], user_info[4])
+                # ======================================================================================================
+                if not event.activationPrice is None:
+                    print("Activation Price for Trailing Stop: ", event.activationPrice)
+                if not event.callbackRate is None:
+                    print("Callback Rate for Trailing Stop: ", event.callbackRate)
+            elif (event.eventType == "listenKeyExpired"):
+                print("Event: ", event.eventType)
+                print("Event time: ", event.eventTime)
+                print("CAUTION: YOUR LISTEN-KEY HAS BEEN EXPIRED!!!")
+                print("CAUTION: YOUR LISTEN-KEY HAS BEEN EXPIRED!!!")
+                print("CAUTION: YOUR LISTEN-KEY HAS BEEN EXPIRED!!!")
+        else:
+            print("Unknown Data:")
+
+    def error(e: 'BinanceApiException'):
+        print(e.error_code + e.error_message)
+
+    # Start user data stream
+    request_client = RequestClient(api_key=user_info[2], secret_key=user_info[3])
+    listen_key = request_client.start_user_data_stream()
+    print("listenKey: ", listen_key)
+
+    # Keep user data stream
+    result = request_client.keep_user_data_stream()
+    print("Result: ", result)
+
+    # Close user data stream
+    # result = request_client.close_user_data_stream()
+    # print("Result: ", result)
+
+    sub_client = SubscriptionClient(api_key=g_api_key, secret_key=g_secret_key)
+
+    sub_client.subscribe_user_data_event(listen_key, callback, error)
+
+
+def profit_order_start(user_info):
+    """
+    user_info：api_lable, tg_id, b_api_key, b_secret_key, tg_token
+    启动单线程的数据订阅
+    """
+    # TODO 查询当前持仓
+    # 创建当前持仓列表，记录交易对，持仓方向，
+    def callback(data_type: 'SubscribeMessageType', event: 'any'):
+        if data_type == SubscribeMessageType.RESPONSE:
+            print("Event ID: ", event)
+        elif data_type == SubscribeMessageType.PAYLOAD:
+            if (event.eventType == "ACCOUNT_UPDATE"):
+                print("Event Type: ", event.eventType)
+                print("Event time: ", event.eventTime)
+                print("Transaction time: ", event.transactionTime)
+                print("=== Balances ===")
+                PrintMix.print_data(event.balances)
+                balance_str = ""
+                for user_balance in event.balances:
+                    asset = user_balance.asset  # 交易对
+                    walletBalance = user_balance.walletBalance  # 余额
+                    balance_str += "{} {}\n".format(walletBalance, asset)
+                balance_str = "账户：{}\n".format(user_info[0]) + balance_str
+                # 账户余额变化提醒
+                # tg_bot_send_text(balance_str, user_info[1], user_info[4])
+                print("================")
+                print("=== Positions ===")
+                PrintMix.print_data(event.positions)
+                print("================")
+            elif (event.eventType == "ORDER_TRADE_UPDATE"):
+                symbol = event.symbol  # 交易对
+                order_id = event.orderId  # 订单ID
+                order_type = event.type  # 订单类型
+                side = event.side  # 订单方向
+
+                # -----------------------------------------------------------
+                origQty = event.origQty  # 订单原始数量
+                price = event.price  # 订单原始价格
+                # -----------------------------------------------------------
+                avgPrice = event.avgPrice  # 订单平均价格
+                # ------------------------------------------------------------
+                cumulativeFilledQty = event.cumulativeFilledQty  # 订单累计成交量
+                lastFilledPrice = event.lastFilledPrice  # 订单末次成交价
+                # -----------------------------------------------------------
+
+                executionType = event.executionType  # 本次事件的执行类型
+                orderStatus = event.orderStatus  # 订单当前状态
+                isMarkerSide = event.isMarkerSide  # 该成交是否为挂单成交
+                positionSide = event.positionSide  # 持仓方向
+
+                commissionAsset = event.commissionAsset  # 手续费资产类型
+                commissionAmount = event.commissionAmount  # 手续费数量
+                bidsNotional = event.bidsNotional  # 买单净值
+                asksNotional = event.asksNotional  # 卖单净值
+                orderProfit = event.orderProfit  # 该交易实现盈亏
+
+                tz = pytz.timezone('Asia/ShangHai')
+                dt = pytz.datetime.datetime.fromtimestamp(event.orderTradeTime / 1000, tz)
+                dt.strftime('%Y-%m-%d %H:%M:%S')
+                orderTradeTime = str(dt)[:-10]  # 成交时间
+                if float(orderProfit) != 0:
+                    send_str = "账户：{}\n" \
+                               "交易对：{}\n" \
+                               "订单号：{}\n" \
+                               "订单状态：{}\n" \
+                               "订单类型：{}\n" \
+                               "订单方向：{}\n" \
+                               "数量：{} {}\n" \
+                               "平均价格：{} {}/USDT\n" \
+                               "价值：{} USDT\n" \
+                               "手续费：{} {}\n" \
+                               "本单盈亏：{} USDT\n" \
+                               "下单时间：{}\n" \
+                               "买单净值：{}\n" \
+                               "卖单净值：{}\n".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
+                                                  zh_order_status(orderStatus), zh_order_types(order_type),
+                                                  zh_order_side(side),
+                                                  cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice,
+                                                  symbol.replace("USDT", ""),
+                                                  float(origQty) * float(avgPrice), commissionAmount, commissionAsset,
+                                                  orderProfit, orderTradeTime, bidsNotional, asksNotional)
+                    tg_bot_send_text(send_str, user_info[1], user_info[4])
                 # ======================================================================================================
                 if not event.activationPrice is None:
                     print("Activation Price for Trailing Stop: ", event.activationPrice)

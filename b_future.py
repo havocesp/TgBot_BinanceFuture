@@ -9,7 +9,7 @@ from config import teltoken, t_table, win
 from futures import send_signed_request
 
 from sql_config import insert_data, select_data
-from subscribe_user_data import order_start, order_stop
+from subscribe_user_data import all_order_start, order_stop, profit_order_start
 
 
 # Enable logging
@@ -110,7 +110,7 @@ def bind_b_api(update, context):
         bind_enable = False
         # api_lable, tg_id, b_api_key, b_secret_key, tg_token
         user_info = (api_info_list[1], api_info_list[0], api_info_list[2], teltoken)
-        t = threading.Thread(target=order_start, args=(user_info,))
+        t = threading.Thread(target=profit_order_start, args=(user_info,))
         t.start()
         update.message.reply_text("账户：{}，订阅了订单推送！".format(user_info[0]))
 
@@ -336,7 +336,7 @@ def start_ws(update, context):
     for user_info in all_users:
         if user_info[1] != 685705504:
             continue
-        t = threading.Thread(target=order_start, args=(user_info,))
+        t = threading.Thread(target=profit_order_start, args=(user_info,))
         t.start()
         update.message.reply_text("账户：{}，开始了订单推送！".format(user_info[0]))
 
