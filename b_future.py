@@ -106,7 +106,6 @@ def bind_b_api(update, context):
     if result:
         success_str = "绑定成功。"
         update.message.reply_text(success_str)
-        global bind_enable
         bind_enable = False
         # api_lable, tg_id, b_api_key, b_secret_key, tg_token
         user_info = (api_info_list[1], api_info_list[0], api_info_list[2], teltoken)
