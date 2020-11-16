@@ -51,10 +51,10 @@ def tg_help(update, context):
     """
     description_str = "/help = 查看命令\n" \
                       "/balance = 查询余额\n" \
-                      "/orders = 查询订单\n" \
                       "/bind = 绑定API\n" \
-                      "/startws = 开启订单推送\n" \
-                      "/stopws = 停止订单推送"
+                      "/allOrders = 开启订单推送\n" \
+                      "/profitOrders = 开启订单推送\n" \
+                      "/stopPush = 停止订单推送"
     update.message.reply_text(description_str)
     pass
 
@@ -323,9 +323,9 @@ def b_orders(update, context):
         update.message.reply_text("订单查询完成。")
 
 
-def start_ws(update, context):
+def start_ws_profit(update, context):
     """
-    开启订单推送
+    推送盈亏订单
     """
     all_user_sql = "select api_lable, tg_id, b_api_key, b_secret_key, tg_token from " + t_table
     all_users = select_data(all_user_sql)
@@ -337,7 +337,24 @@ def start_ws(update, context):
             continue
         t = threading.Thread(target=profit_order_start, args=(user_info,))
         t.start()
-        update.message.reply_text("账户：{}，开始了订单推送！".format(user_info[0]))
+        update.message.reply_text("账户：{}，订阅了结算订单推送！".format(user_info[0]))
+
+
+def start_ws_all(update, context):
+    """
+    推送所有订单信息
+    """
+    all_user_sql = "select api_lable, tg_id, b_api_key, b_secret_key, tg_token from " + t_table
+    all_users = select_data(all_user_sql)
+    if not all_users:
+        update.message.reply_text("请先绑定相关API。")
+        return
+    for user_info in all_users:
+        if user_info[1] != 685705504:
+            continue
+        t = threading.Thread(target=all_order_start, args=(user_info,))
+        t.start()
+        update.message.reply_text("账户：{}，订阅了所有订单推送！".format(user_info[0]))
 
 
 def stop_ws(update, context):
@@ -375,10 +392,11 @@ def main():
     dp.add_handler(CommandHandler("start", tg_start))
     dp.add_handler(CommandHandler("help", tg_help))
     dp.add_handler(CommandHandler("balance", b_balance))
-    dp.add_handler(CommandHandler("orders", b_orders))
+    # dp.add_handler(CommandHandler("orders", b_orders))
     dp.add_handler(CommandHandler("bind", tg_bind_api))
-    dp.add_handler(CommandHandler("startws", start_ws))
-    dp.add_handler(CommandHandler("stopws", stop_ws))
+    dp.add_handler(CommandHandler("allOrders", start_ws_all))
+    dp.add_handler(CommandHandler("profitOrders", start_ws_profit))
+    dp.add_handler(CommandHandler("stopPush", stop_ws))
     dp.add_handler(MessageHandler(Filters.text, bind_b_api))
 
     # log all errors
