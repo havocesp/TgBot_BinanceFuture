@@ -80,6 +80,9 @@ def bind_b_api(update, context):
     """
     Bind binance API
     """
+    global bind_enable
+    if not bind_enable:
+        return
     user_id = update.message.from_user.id
     api_info = update.message.text.strip().replace(" ", "")
     if len(api_info) < 128:
@@ -103,13 +106,17 @@ def bind_b_api(update, context):
     if result:
         success_str = "绑定成功。"
         update.message.reply_text(success_str)
-        # TODO 启动自动推送
+        global bind_enable
+        bind_enable = False
+        # api_lable, tg_id, b_api_key, b_secret_key, tg_token
+        user_info = (api_info_list[1], api_info_list[0], api_info_list[2], teltoken)
+        t = threading.Thread(target=order_start, args=(user_info,))
+        t.start()
+        update.message.reply_text("账户：{}，订阅了订单推送！".format(user_info[0]))
 
     else:
         failure_str = "绑定失败，请重试。"
         update.message.reply_text(failure_str)
-    global bind_enable
-    bind_enable = False
 
 
 def b_balance(update, context):

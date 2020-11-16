@@ -62,8 +62,8 @@ class OrderUpdate:
         result.commissionAmount = data_group.get_float_or_default("n", None)
         result.orderTradeTime = data_group.get_int("T")
         result.tradeID = data_group.get_int("t")
-        result.bidsNotional = data_group.get_float("b")
-        result.asksNotional = data_group.get_float("a")
+        result.bidsNotional = data_group.get_float("b")  # 买单净值
+        result.asksNotional = data_group.get_float("a")  # 卖单净值
         result.isMarkerSide = data_group.get_boolean("m")
         result.isReduceOnly = data_group.get_boolean("R")
         result.workingType = data_group.get_string("wt")
