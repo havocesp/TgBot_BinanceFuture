@@ -218,8 +218,10 @@ def all_order_start(user_info):
                                "订单状态：创建委托订单\n" \
                                "数量：{} {}\n" \
                                "平均价格：{} USDT\n" \
+                               "价值：{} USDT\n" \
                                "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
-                                                origQty, symbol.replace("USDT", ""), price, orderTradeTime)
+                                                origQty, symbol.replace("USDT", ""),
+                                                avgPrice, float(origQty) * float(avgPrice), orderTradeTime)
                     tg_bot_send_text(send_str, user_info[1], user_info[4])
                 elif (orderStatus == "PARTIALLY_FILLED" or orderStatus == "FILLED") and executionType == "TRADE":
                     if float(orderProfit) != 0:
@@ -227,12 +229,12 @@ def all_order_start(user_info):
                                    "交易对：{}\n" \
                                    "订单号：{}\n" \
                                    "订单状态：订单完结\n" \
-                                   "数量：{} {}\n" \
-                                   "平均价格：{} USDT\n" \
+                                   "持仓量：{} {}\n" \
+                                   "持仓均价：{} USDT\n" \
                                    "价值：{.5f} USDT\n" \
                                    "手续费：{} {}\n" \
                                    "本单盈亏：{} USDT\n" \
-                                   "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
+                                   "成交时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
                                                     cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice,
                                                     symbol.replace("USDT", ""),
                                                     float(origQty) * float(avgPrice), commissionAmount, commissionAsset,
@@ -242,16 +244,29 @@ def all_order_start(user_info):
                         send_str = "账户：{}\n" \
                                    "交易对：{}\n" \
                                    "订单号：{}\n" \
-                                   "订单状态：取消委托订单\n" \
-                                   "持仓量：{} {}\n" \
-                                   "持仓均价：{} USDT\n" \
-                                   "价值：{} USDT\n" \
+                                   "订单状态：订单成交\n" \
+                                   "成交量：{} {}\n" \
+                                   "成交均价：{} USDT\n" \
+                                   "价值：{.5f} USDT\n" \
                                    "手续费：{} {}\n" \
-                                   "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
-                                                    origQty, symbol.replace("USDT", ""),
-                                                    avgPrice, float(origQty) * float(avgPrice), commissionAmount,
-                                                    commissionAsset, orderTradeTime)
+                                   "成交时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
+                                                    cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice,
+                                                    symbol.replace("USDT", ""),
+                                                    float(origQty) * float(avgPrice), commissionAmount, commissionAsset,
+                                                    orderTradeTime)
                         tg_bot_send_text(send_str, user_info[1], user_info[4])
+                else:
+                    send_str = "账户：{}\n" \
+                               "交易对：{}\n" \
+                               "订单号：{}\n" \
+                               "订单状态：取消委托订单\n" \
+                               "数量：{} {}\n" \
+                               "平均价格：{} USDT\n" \
+                               "价值：{} USDT\n" \
+                               "取消时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
+                                                origQty, symbol.replace("USDT", ""),
+                                                avgPrice, float(origQty) * float(avgPrice), orderTradeTime)
+                    tg_bot_send_text(send_str, user_info[1], user_info[4])
                 # ======================================================================================================
                 # tg_bot_send_text(order_str, user_info[1], user_info[4])
                 # ======================================================================================================
@@ -354,16 +369,16 @@ def profit_order_start(user_info):
                                "交易对：{}\n" \
                                "订单号：{}\n" \
                                "订单状态：订单完结\n" \
-                               "数量：{} {}\n" \
-                               "平均价格：{} USDT\n" \
+                               "持仓量：{} {}\n" \
+                               "持仓均价：{} USDT\n" \
                                "价值：{.5f} USDT\n" \
                                "手续费：{} {}\n" \
                                "本单盈亏：{} USDT\n" \
-                               "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
-                                                  cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice,
-                                                  symbol.replace("USDT", ""),
-                                                  float(origQty) * float(avgPrice), commissionAmount, commissionAsset,
-                                                  orderProfit, orderTradeTime)
+                               "成交时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
+                                                cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice,
+                                                symbol.replace("USDT", ""),
+                                                float(origQty) * float(avgPrice), commissionAmount, commissionAsset,
+                                                orderProfit, orderTradeTime)
                     tg_bot_send_text(send_str, user_info[1], user_info[4])
                 # ======================================================================================================
                 if not event.activationPrice is None:
