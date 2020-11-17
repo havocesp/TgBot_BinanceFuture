@@ -218,7 +218,7 @@ def all_order_start(user_info):
                                "订单状态：创建委托订单\n" \
                                "数量：{} {}\n" \
                                "平均价格：{} USDT\n" \
-                               "价值：{} USDT\n" \
+                               "价值：{:.5f} USDT\n" \
                                "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
                                                 origQty, symbol.replace("USDT", ""),
                                                 price, float(origQty) * float(price), orderTradeTime)
@@ -231,7 +231,7 @@ def all_order_start(user_info):
                                    "订单状态：订单完结\n" \
                                    "持仓量：{} {}\n" \
                                    "持仓均价：{} USDT\n" \
-                                   "价值：{.5f} USDT\n" \
+                                   "价值：{:.5f} USDT\n" \
                                    "手续费：{} {}\n" \
                                    "本单盈亏：{} USDT\n" \
                                    "成交时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
@@ -247,7 +247,7 @@ def all_order_start(user_info):
                                    "订单状态：订单成交\n" \
                                    "成交量：{} {}\n" \
                                    "成交均价：{} USDT\n" \
-                                   "价值：{.5f} USDT\n" \
+                                   "价值：{:.5f} USDT\n" \
                                    "手续费：{} {}\n" \
                                    "成交时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
                                                     cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice,
@@ -262,7 +262,7 @@ def all_order_start(user_info):
                                "订单状态：取消委托订单\n" \
                                "数量：{} {}\n" \
                                "平均价格：{} USDT\n" \
-                               "价值：{} USDT\n" \
+                               "价值：{:.5f} USDT\n" \
                                "取消时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
                                                 origQty, symbol.replace("USDT", ""),
                                                 price, float(origQty) * float(price), orderTradeTime)
@@ -371,7 +371,7 @@ def profit_order_start(user_info):
                                "订单状态：订单完结\n" \
                                "持仓量：{} {}\n" \
                                "持仓均价：{} USDT\n" \
-                               "价值：{.5f} USDT\n" \
+                               "价值：{:.5f} USDT\n" \
                                "手续费：{} {}\n" \
                                "本单盈亏：{} USDT\n" \
                                "成交时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
