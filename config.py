@@ -1,7 +1,5 @@
 # ===================Telegram Bot===============================
 # TODO 测试版
-import threading
-
 teltoken = '1473302982:AAH5HjAWjjimwL1xDNih7pfsZZ6BG2NUeTg'
 # TODO 正式版
 # teltoken = '1386154312:AAGhq_iROaCy0_99hWg-jNKmH0o16fH50K8'
@@ -28,4 +26,3 @@ failure = "\ud83e\udd7a"
 win = "\ud83d\udcb0"
 
 # ==================================================一下是测试代码======================================================
-print("{:.5f}".format(0.00003*8945432))

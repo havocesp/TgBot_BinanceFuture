@@ -38,10 +38,7 @@ def tg_start(update, context):
     description_str = "/help = 查看命令\n" \
                       "/bind = 绑定API\n" \
                       "/orders = 查询历史订单\n" \
-                      "/balance = 查询余额" \
-                      # "/allOrders = 开启所有订单推送\n" \
-                      # "/profitOrders = 开启完结订单推送\n" \
-                      # "/stopPush = 停止订单推送"
+                      "/balance = 查询余额"
     update.message.reply_text(description_str)
     pass
 
@@ -53,10 +50,7 @@ def tg_help(update, context):
     description_str = "/help = 查看命令\n" \
                       "/bind = 绑定API\n" \
                       "/orders = 查询历史订单\n" \
-                      "/balance = 查询余额" \
-                    # "/allOrders = 开启所有订单推送\n" \
-                    # "/profitOrders = 开启完结订单推送\n" \
-                    # "/stopPush = 停止订单推送"
+                      "/balance = 查询余额"
     update.message.reply_text(description_str)
     pass
 
