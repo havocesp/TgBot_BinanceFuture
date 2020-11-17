@@ -367,23 +367,17 @@ def profit_order_start(user_info):
                     send_str = "账户：{}\n" \
                                "交易对：{}\n" \
                                "订单号：{}\n" \
-                               "订单状态：{}\n" \
-                               "订单类型：{}\n" \
-                               "订单方向：{}\n" \
+                               "订单状态：订单完结\n" \
                                "数量：{} {}\n" \
-                               "平均价格：{} {}/USDT\n" \
-                               "价值：{} USDT\n" \
+                               "平均价格：{} USDT\n" \
+                               "价值：{.5f} USDT\n" \
                                "手续费：{} {}\n" \
                                "本单盈亏：{} USDT\n" \
-                               "下单时间：{}\n" \
-                               "买单净值：{}\n" \
-                               "卖单净值：{}\n".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
-                                                  zh_order_status(orderStatus), zh_order_types(order_type),
-                                                  zh_order_side(side),
+                               "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
                                                   cumulativeFilledQty, symbol.replace("USDT", ""), avgPrice,
                                                   symbol.replace("USDT", ""),
                                                   float(origQty) * float(avgPrice), commissionAmount, commissionAsset,
-                                                  orderProfit, orderTradeTime, bidsNotional, asksNotional)
+                                                  orderProfit, orderTradeTime)
                     tg_bot_send_text(send_str, user_info[1], user_info[4])
                 # ======================================================================================================
                 if not event.activationPrice is None:
