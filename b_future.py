@@ -248,42 +248,43 @@ def b_orders(update, context):
                                              "交易对：{}\n" \
                                              "订单编号：{}\n" \
                                              "订单类型：{} {}\n" \
-                                             "成交价：{}\n" \
-                                             "成交量：{}\n" \
-                                             "成交额：{}\n" \
+                                             "成交价：{} USDT\n" \
+                                             "成交量：{} {}\n" \
+                                             "成交额：{} USDT\n" \
                                              "手续费：{} {}\n" \
                                              "实现盈亏：{} USDT\ud83d\udcb0\ud83d\udcb0\ud83d\udcb0\n" \
                                              "成交时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
                                                             zh_order_type(maker), zh_order_position(buyer),
-                                                            price, qty, quoteQty, commission, commissionAsset,
-                                                            realizedPnl, time_)
+                                                            price, qty, symbol.replace("USDT", ""), quoteQty,
+                                                              commission, commissionAsset, realizedPnl, time_)
                         else:
                             order_info_str = "账户：{}\n" \
                                              "交易对：{}\n" \
                                              "订单编号：{}\n" \
                                              "订单类型：{} {}\n" \
-                                             "成交价：{}\n" \
-                                             "成交量：{}\n" \
-                                             "成交额：{}\n" \
+                                             "成交价：{} USDT\n" \
+                                             "成交量：{} {}\n" \
+                                             "成交额：{} USDT\n" \
                                              "手续费：{} {}\n" \
                                              "实现盈亏：{} USDT\ud83e\udd7a\ud83e\udd7a\ud83e\udd7a\n" \
                                              "成交时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
-                                                            zh_order_type(maker), zh_order_position(buyer),
-                                                            price, qty, quoteQty, commission, commissionAsset,
-                                                            realizedPnl, time_)
+                                                              zh_order_type(maker), zh_order_position(buyer),
+                                                              price, qty, symbol.replace("USDT", ""), quoteQty,
+                                                              commission, commissionAsset, realizedPnl, time_)
                     else:
                         # continue
                         order_info_str = "账户：{}\n" \
                                          "交易对：{}\n" \
                                          "订单编号：{}\n" \
                                          "订单类型：{} {}\n" \
-                                         "成交价：{}\n" \
-                                         "成交量：{}\n" \
-                                         "成交额：{}\n" \
+                                         "成交价：{} USDT\n" \
+                                         "成交量：{} {}\n" \
+                                         "成交额：{} USDT\n" \
                                          "手续费：{} {}\n" \
                                          "成交时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
                                                         zh_order_type(maker), zh_order_position(buyer),
-                                                        price, qty, quoteQty, commission, commissionAsset, time_)
+                                                        price, qty, symbol.replace("USDT", ""), quoteQty,
+                                                          commission, commissionAsset, time_)
                     # ==================================================================================================
                     # 推送到指定用户
                     update.message.reply_text(order_info_str)
