@@ -276,43 +276,19 @@ def b_orders(update, context):
                                                             price, qty, quoteQty, commission, commissionAsset,
                                                             realizedPnl, time_)
                     else:
-                        continue
-                        # order_info_str = "账户：{}\n" \
-                        #                  "交易对：{}\n" \
-                        #                  "订单编号：{}\n" \
-                        #                  "订单类型：{} {}\n" \
-                        #                  "成交价：{}\n" \
-                        #                  "成交量：{}\n" \
-                        #                  "成交额：{}\n" \
-                        #                  "手续费：{} {}\n" \
-                        #                  "成交时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
-                        #                                 zh_order_type(maker), zh_order_position(buyer),
-                        #                                 price, qty, quoteQty, commission, commissionAsset, time_)
+                        # continue
+                        order_info_str = "账户：{}\n" \
+                                         "交易对：{}\n" \
+                                         "订单编号：{}\n" \
+                                         "订单类型：{} {}\n" \
+                                         "成交价：{}\n" \
+                                         "成交量：{}\n" \
+                                         "成交额：{}\n" \
+                                         "手续费：{} {}\n" \
+                                         "成交时间：{}".format(result[2], symbol.replace("USDT", "_USDT"), orderId,
+                                                        zh_order_type(maker), zh_order_position(buyer),
+                                                        price, qty, quoteQty, commission, commissionAsset, time_)
                     # ==================================================================================================
-                    # orderId = info['orderId']  # 订单ID
-                    # symbol = info['symbol']  # 交易对
-                    # avgPrice = info['avgPrice']  # 平均成交价
-                    # executedQty = info['executedQty']  # 成交量
-                    # cumQuote = info['cumQuote']  # 成交金额
-                    # side = info['side']  # 买卖方向
-                    # status = info['status']  # 订单状态
-                    # time_ = info['time']  # 下单时间
-                    # # 超过一天订单去除
-                    # if time() - time_/1000 > 1*60*60:
-                    #     continue
-                    # # 转换时区
-                    # tz = pytz.timezone('Asia/ShangHai')
-                    # dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
-                    # dt.strftime('%Y-%m-%d %H:%M:%S')
-                    # order_info_str = "订单ID：{}\n" \
-                    #                  "交易对：{}\n" \
-                    #                  "平均成交价：{}\n" \
-                    #                  "成交量：{}\n" \
-                    #                  "成交金额：{}\n" \
-                    #                  "买卖方向：{}\n" \
-                    #                  "订单状态：{}\n" \
-                    #                  "下单时间：{}".format(orderId, symbol, avgPrice,
-                    #                                   executedQty, cumQuote, side, status, str(dt)[:-10])
                     # 推送到指定用户
                     update.message.reply_text(order_info_str)
                     have_order = True
@@ -392,11 +368,11 @@ def main():
     dp.add_handler(CommandHandler("start", tg_start))
     dp.add_handler(CommandHandler("help", tg_help))
     dp.add_handler(CommandHandler("balance", b_balance))
-    # dp.add_handler(CommandHandler("orders", b_orders))
+    dp.add_handler(CommandHandler("orders", b_orders))
     dp.add_handler(CommandHandler("bind", tg_bind_api))
-    dp.add_handler(CommandHandler("allOrders", start_ws_all))
-    dp.add_handler(CommandHandler("profitOrders", start_ws_profit))
-    dp.add_handler(CommandHandler("stopPush", stop_ws))
+    # dp.add_handler(CommandHandler("allOrders", start_ws_all))
+    # dp.add_handler(CommandHandler("profitOrders", start_ws_profit))
+    # dp.add_handler(CommandHandler("stopPush", stop_ws))
     dp.add_handler(MessageHandler(Filters.text, bind_b_api))
 
     # log all errors
