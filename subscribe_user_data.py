@@ -212,17 +212,31 @@ def all_order_start(user_info):
 
                 # 创建/取消订单
                 if (orderStatus == "NEW" or orderStatus == "CANCELED") and not isMarkerSide:
-                    send_str = "账户：{}\n" \
-                               "交易对：{}\n" \
-                               "订单号：{}\n" \
-                               "订单状态：创建委托订单\n" \
-                               "数量：{} {}\n" \
-                               "平均价格：{} USDT\n" \
-                               "价值：{:.5f} USDT\n" \
-                               "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
-                                                origQty, symbol.replace("USDT", ""),
-                                                price, float(origQty) * float(price), orderTradeTime)
-                    tg_bot_send_text(send_str, user_info[1], user_info[4])
+                    if orderStatus == "NEW":
+
+                        send_str = "账户：{}\n" \
+                                   "交易对：{}\n" \
+                                   "订单号：{}\n" \
+                                   "订单状态：创建委托订单\n" \
+                                   "数量：{} {}\n" \
+                                   "平均价格：{} USDT\n" \
+                                   "价值：{:.5f} USDT\n" \
+                                   "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
+                                                    origQty, symbol.replace("USDT", ""),
+                                                    price, float(origQty) * float(price), orderTradeTime)
+                        tg_bot_send_text(send_str, user_info[1], user_info[4])
+                    else:
+                        send_str = "账户：{}\n" \
+                                   "交易对：{}\n" \
+                                   "订单号：{}\n" \
+                                   "订单状态：取消委托订单\n" \
+                                   "数量：{} {}\n" \
+                                   "平均价格：{} USDT\n" \
+                                   "价值：{:.5f} USDT\n" \
+                                   "取消时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
+                                                    origQty, symbol.replace("USDT", ""),
+                                                    price, float(origQty) * float(price), orderTradeTime)
+                        tg_bot_send_text(send_str, user_info[1], user_info[4])
                 elif (orderStatus == "PARTIALLY_FILLED" or orderStatus == "FILLED") and executionType == "TRADE":
                     if float(orderProfit) > 0:
                         send_str = "账户：{}\n" \
@@ -271,18 +285,18 @@ def all_order_start(user_info):
                                                     float(origQty) * float(avgPrice), commissionAmount, commissionAsset,
                                                     orderTradeTime)
                         tg_bot_send_text(send_str, user_info[1], user_info[4])
-                else:
-                    send_str = "账户：{}\n" \
-                               "交易对：{}\n" \
-                               "订单号：{}\n" \
-                               "订单状态：取消委托订单\n" \
-                               "数量：{} {}\n" \
-                               "平均价格：{} USDT\n" \
-                               "价值：{:.5f} USDT\n" \
-                               "取消时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
-                                                origQty, symbol.replace("USDT", ""),
-                                                price, float(origQty) * float(price), orderTradeTime)
-                    tg_bot_send_text(send_str, user_info[1], user_info[4])
+                # else:
+                #     send_str = "账户：{}\n" \
+                #                "交易对：{}\n" \
+                #                "订单号：{}\n" \
+                #                "订单状态：取消委托订单\n" \
+                #                "数量：{} {}\n" \
+                #                "平均价格：{} USDT\n" \
+                #                "价值：{:.5f} USDT\n" \
+                #                "取消时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
+                #                                 origQty, symbol.replace("USDT", ""),
+                #                                 price, float(origQty) * float(price), orderTradeTime)
+                #     tg_bot_send_text(send_str, user_info[1], user_info[4])
                 # ======================================================================================================
                 # tg_bot_send_text(order_str, user_info[1], user_info[4])
                 # ======================================================================================================
