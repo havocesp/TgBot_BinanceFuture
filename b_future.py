@@ -39,7 +39,7 @@ def tg_start(update, context):
                       "/balance = 查询余额\n" \
                       "/bind = 绑定API\n" \
                       "/allOrders = 开启所有订单推送\n" \
-                      "/profitOrders = 开启结算订单推送\n" \
+                      "/profitOrders = 开启完结订单推送\n" \
                       "/stopPush = 停止订单推送"
     update.message.reply_text(description_str)
     pass
@@ -53,7 +53,7 @@ def tg_help(update, context):
                       "/balance = 查询余额\n" \
                       "/bind = 绑定API\n" \
                       "/allOrders = 开启所有订单推送\n" \
-                      "/profitOrders = 开启结算订单推送\n" \
+                      "/profitOrders = 开启完结订单推送\n" \
                       "/stopPush = 停止订单推送"
     update.message.reply_text(description_str)
     pass
@@ -337,7 +337,7 @@ def start_ws_profit(update, context):
             continue
         t = threading.Thread(target=profit_order_start, args=(user_info,))
         t.start()
-        update.message.reply_text("账户：{}，订阅了结算订单推送！".format(user_info[0]))
+        update.message.reply_text("账户：{}，订阅了完结订单推送！".format(user_info[0]))
 
 
 def start_ws_all(update, context):
