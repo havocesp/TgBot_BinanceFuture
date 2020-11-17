@@ -221,7 +221,7 @@ def all_order_start(user_info):
                                "价值：{} USDT\n" \
                                "下单时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
                                                 origQty, symbol.replace("USDT", ""),
-                                                avgPrice, float(origQty) * float(avgPrice), orderTradeTime)
+                                                price, float(origQty) * float(price), orderTradeTime)
                     tg_bot_send_text(send_str, user_info[1], user_info[4])
                 elif (orderStatus == "PARTIALLY_FILLED" or orderStatus == "FILLED") and executionType == "TRADE":
                     if float(orderProfit) != 0:
@@ -265,7 +265,7 @@ def all_order_start(user_info):
                                "价值：{} USDT\n" \
                                "取消时间：{}".format(user_info[0], symbol.replace("USDT", "_USDT"), order_id,
                                                 origQty, symbol.replace("USDT", ""),
-                                                avgPrice, float(origQty) * float(avgPrice), orderTradeTime)
+                                                price, float(origQty) * float(price), orderTradeTime)
                     tg_bot_send_text(send_str, user_info[1], user_info[4])
                 # ======================================================================================================
                 # tg_bot_send_text(order_str, user_info[1], user_info[4])
