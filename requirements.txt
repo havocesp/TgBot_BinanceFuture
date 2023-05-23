@@ -9,7 +9,7 @@ pycparser==2.20
 PyMySQL==0.10.1
 python-telegram-bot==13.0
 pytz==2020.4
-requests==2.24.0
+requests==2.31.0
 six==1.15.0
 tornado==6.1
 tzlocal==2.1
