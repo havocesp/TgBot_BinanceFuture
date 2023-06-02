@@ -2,7 +2,7 @@ APScheduler==3.6.3
 certifi==2020.11.8
 cffi==1.14.3
 chardet==3.0.4
-cryptography==3.2.1
+cryptography==41.0.0
 decorator==4.4.2
 idna==2.10
 pycparser==2.20
