@@ -3,13 +3,13 @@ import threading
 from time import time
 
 import pytz
-import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-from config import teltoken, t_table, win
+from config import teltoken, t_table
 from futures import send_signed_request
 
 from sql_config import insert_data, select_data
 from subscribe_user_data import all_order_start, order_stop, profit_order_start
+from security import safe_requests
 
 
 # Enable logging
@@ -26,7 +26,7 @@ def tg_bot_send_text(message, user_id):
     """
     send_text = 'https://api.telegram.org/bot' + teltoken + '/sendMessage?chat_id=' + \
                 str(user_id) + '&text=' + message
-    response = requests.get(send_text)
+    response = safe_requests.get(send_text)
     return response.json()
 
 

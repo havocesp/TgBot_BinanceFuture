@@ -12,7 +12,7 @@ from binance_f.exception.binanceapiexception import BinanceApiException
 from binance_f.base.printobject import *
 from config import t_table
 from sql_config import select_data
-import requests
+from security import safe_requests
 
 logger = logging.getLogger("binance-client")
 logger.setLevel(level=logging.WARN)
@@ -28,7 +28,7 @@ def tg_bot_send_text(send_message, user_id, tg_token):
     send_text = 'https://api.telegram.org/bot' + tg_token + '/sendMessage?chat_id=' + str(user_id) + '&text=' + send_message
     print(send_text)
     try:
-        response = requests.get(send_text)
+        response = safe_requests.get(send_text)
         return response.json()
     except Exception as e:
         print(e)
