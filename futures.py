@@ -33,7 +33,8 @@ def dispatch_request(http_method, api_key):
 
 
 # used for sending request requires the signature
-def send_signed_request(http_method, url_path, api_info=(), payload={}):
+def send_signed_request(http_method, url_path, api_info=(), payload=None):
+    payload = {} if payload is None else payload
     query_string = urlencode(payload)
     # replace single quote to double quote
     query_string = query_string.replace('%27', '%22')
