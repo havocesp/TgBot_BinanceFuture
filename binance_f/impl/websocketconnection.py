@@ -91,19 +91,18 @@ class WebsocketConnection:
             self.ws.close()
             self.ws = None
         self.delay_in_second = delay_in_second
-        self.logger.warning("[Sub][" + str(self.id) + "] Reconnecting after "
-                            + str(self.delay_in_second) + " seconds later")
+        self.logger.warning("[Sub][%s] Reconnecting after %s seconds later", str(self.id), str(self.delay_in_second))
 
     def re_connect(self):
         if self.delay_in_second != 0:
             self.delay_in_second -= 1
-            self.logger.warning("In delay connection: " + str(self.delay_in_second))
+            self.logger.warning("In delay connection: %s", str(self.delay_in_second))
         else:
             self.connect()
 
     def connect(self):
         if self.state == ConnectionState.CONNECTED:
-            self.logger.info("[Sub][" + str(self.id) + "] Already connected")
+            self.logger.info("[Sub][%s] Already connected", str(self.id))
         else:
             self.__thread = threading.Thread(target=websocket_func, args=[self])
             self.__thread.start()
@@ -115,10 +114,10 @@ class WebsocketConnection:
         self.ws.close()
         del websocket_connection_handler[self.ws]
         self.__watch_dog.on_connection_closed(self)
-        self.logger.error("[Sub][" + str(self.id) + "] Closing normally")
+        self.logger.error("[Sub][%s] Closing normally", str(self.id))
 
     def on_open(self, ws):
-        self.logger.info("[Sub][" + str(self.id) + "] Connected to server")
+        self.logger.info("[Sub][%s] Connected to server", str(self.id))
         self.ws = ws
         self.last_receive_time = get_current_timestamp()
         self.state = ConnectionState.CONNECTED
@@ -132,7 +131,7 @@ class WebsocketConnection:
             print('error')
             exception = BinanceApiException(BinanceApiException.SUBSCRIPTION_ERROR, error_message)
             self.request.error_handler(exception)
-        self.logger.error("[Sub][" + str(self.id) + "] " + str(error_message))
+        self.logger.error("[Sub][%s] %s", str(self.id), str(error_message))
 
     def on_failure(self, error):
         print('on_failure')
@@ -200,4 +199,4 @@ class WebsocketConnection:
         if self.ws is not None:
             self.ws.close()
             self.state = ConnectionState.CLOSED_ON_ERROR
-            self.logger.error("[Sub][" + str(self.id) + "] Connection is closing due to error")
+            self.logger.error("[Sub][%s] Connection is closing due to error", str(self.id))
