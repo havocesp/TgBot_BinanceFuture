@@ -10,6 +10,7 @@ from futures import send_signed_request
 
 from sql_config import insert_data, select_data
 from subscribe_user_data import all_order_start, order_stop, profit_order_start
+import math
 
 
 # Enable logging
@@ -242,7 +243,7 @@ def b_orders(update, context):
                     tz = pytz.timezone('Asia/ShangHai')
                     dt = pytz.datetime.datetime.fromtimestamp(time_/1000, tz)
                     time_ = str(dt.strftime('%Y-%m-%d %H:%M:%S'))
-                    if float(realizedPnl) != 0.0:
+                    if not math.isclose(float(realizedPnl), 0.0, rel_tol=1e-09, abs_tol=0.0):
                         if float(realizedPnl) > 0.0:
                             order_info_str = "账户：{}\n" \
                                              "交易对：{}\n" \
