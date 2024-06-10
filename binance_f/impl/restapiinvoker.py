@@ -24,7 +24,7 @@ def get_limits_usage(response):
     limits = {}
     limits_headers = ["X-MBX-USED-WEIGHT-", "X-MBX-ORDER-COUNT-" ]  # Limit headers to catch
     for key,value in response.headers.items():
-        if any([key.startswith(h) for h in limits_headers]):
+        if any(key.startswith(h) for h in limits_headers):
             limits[key] = value
     return limits
 
