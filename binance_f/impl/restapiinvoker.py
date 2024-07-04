@@ -1,6 +1,8 @@
 import requests
 from binance_f.exception.binanceapiexception import BinanceApiException
 from binance_f.impl.utils import *
+from security import safe_requests
+
 # from binance_f.base.printobject import *
 
 
@@ -30,7 +32,7 @@ def get_limits_usage(response):
 
 def call_sync(request):
     if request.method == "GET":
-        response = requests.get(request.host + request.url, headers=request.header)
+        response = safe_requests.get(request.host + request.url, headers=request.header)
         limits = get_limits_usage(response)
         json_wrapper = parse_json_from_string(response.text)
         print(response.text)
