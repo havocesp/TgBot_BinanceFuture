@@ -28,7 +28,7 @@ def tg_bot_send_text(send_message, user_id, tg_token):
     send_text = 'https://api.telegram.org/bot' + tg_token + '/sendMessage?chat_id=' + str(user_id) + '&text=' + send_message
     print(send_text)
     try:
-        response = requests.get(send_text)
+        response = requests.get(send_text, timeout=60)
         return response.json()
     except Exception as e:
         print(e)
